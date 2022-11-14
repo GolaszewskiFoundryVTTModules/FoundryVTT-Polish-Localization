@@ -1835,5 +1835,7 @@
   "all": "wszystko",
   "authorized": "autoryzowane",
   "selected": "wybrane",
-  "units": "jednostki"
+  "units": "jednostki",
+  "SETTINGS.PhotosensitiveModeL": "Włącznie tego trybu redukuje częstotliwość i czas trwania efektów i animacji zawierających błyski, gwałtowne ruchy i powtarzalne wzory.",
+  "SETTINGS.PhotosensitiveModeN": "Tryb Nadwrażliwości na Bodźce Wzrokowe"
 }
