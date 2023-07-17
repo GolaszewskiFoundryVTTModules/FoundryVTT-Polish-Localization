@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Almendra";
+    src: url('fonts/Almendra-Regular.woff2') format('woff2'),
+        url('fonts/Almendra-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kingthings";
+    src: url('fonts/Kingthings_Petrock.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Kirsty";
+    src: url('fonts/Kirsty.woff2') format('woff2');
+}
+
+body.auth #main-header h1 {
+    font-family: "Kirsty";
+}

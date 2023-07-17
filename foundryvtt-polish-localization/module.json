@@ -1,23 +1,25 @@
 {
-  "name": "foundryvtt-polish-localization",
   "title": "Foundry Polish Localization",
   "description": "Adds Polish language support to FoundryVTT.",
-  "author": "Michał Gołaszewski",
   "version": "1.0",
-  "minimumCoreVersion": "0.8.0",
-  "compatibleCoreVersion": "0.8.9",
   "languages": [
     {
       "lang": "pl",
       "name": "Polski",
-      "path": "lang/pl.json"
+      "path": "lang/pl.json",
+      "flags": {}
     }
   ],
+  "styles": [
+    "style.css"
+  ],
   "coreTranslation": true,
-  "scripts": [],
-  "styles": [],
-  "packs": [],
   "url": "https://github.com/GolaszewskiFoundryVTTModules/FoundryVTT-Polish-Localization",
   "manifest": "https://raw.githubusercontent.com/GolaszewskiFoundryVTTModules/FoundryVTT-Polish-Localization/main/foundryvtt-polish-localization/module.json",
-  "download": "https://github.com/GolaszewskiFoundryVTTModules/FoundryVTT-Polish-Localization/releases/download/v1.0/foundryvtt-polish-localization.zip"
+  "download": "https://github.com/GolaszewskiFoundryVTTModules/FoundryVTT-Polish-Localization/releases/download/v1.0/foundryvtt-polish-localization.zip",
+  "id": "foundryvtt-polish-localization",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "0.11.305"
+  }
 }
