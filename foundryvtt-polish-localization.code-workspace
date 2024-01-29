@@ -10,14 +10,29 @@
 		},
 		"cSpell.language": "en,pl-PL",
 		"cSpell.words": [
+			"adaptywna",
+			"Arkaniczne",
+			"Autozapisów",
+			"Dezinstalacja",
+			"dezinstalację",
+			"Discorda",
+			"Emotki",
 			"Gamemastery",
-			"Arkaniczne"
+			"hostowania",
+			"jednostrzał",
+			"migrowane",
+			"Niezmapowane",
+			"Skryptowanych",
+			"Wróżkowe",
+			"zaskutkuje"
 		],
 		"workbench.editor.enablePreview": false,
 		"workbench.list.openMode": "doubleClick",
 		"editor.maxTokenizationLineLength": 100000,
 		"cSpell.ignoreRegExpList": [
-			"@UUID\[[^\]]*\]"
+			"\"\\S*\":",
+			"@UUID\\[[^\\]]*\\]",
+			"\\{\\S*\\}"
 		]
 	}
 }

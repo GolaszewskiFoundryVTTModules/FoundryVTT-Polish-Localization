@@ -1,12 +1,12 @@
 {
-  "title": "Foundry Polish Localization",
+  "title": "Foundry VTT Polish Localization",
   "description": "Adds Polish language support to FoundryVTT.",
   "version": "1.0",
   "languages": [
     {
       "lang": "pl",
       "name": "Polski",
-      "path": "lang/pl.json",
+      "path": "lang/pl/pl.json",
       "flags": {}
     }
   ],

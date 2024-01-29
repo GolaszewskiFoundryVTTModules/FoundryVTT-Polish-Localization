@@ -283,6 +283,8 @@ class LocalizationUpdater:
         logging.info("\n")
 
         self.save_file_to_directory(self.pl_path, self.rebuild_nested_json(self.pl_extracted))
+        # re-save en file to ensure same lines 
+        self.save_file_to_directory(self.en_path, self.rebuild_nested_json(self.en_extracted))
 
 def copy_files_and_directories(src_directory, dst_directory):
     """
@@ -330,8 +332,8 @@ def main():
     file_sets = []
     
     temp_en_old_directory = "tools/HelperScripts/OldLocale/"
-    core_en_directory = "lang/"
-    core_pl_directory = "lang/"
+    core_en_directory = "lang/en/"
+    core_pl_directory = "lang/pl/"
     
     en_to_pl_file_pairs =  [
         ("en", "pl")
