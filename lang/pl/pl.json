@@ -2345,7 +2345,7 @@
             "pile": "Stos"
         },
         "Card": {
-            "base": "Baza"
+            "base": "Podstawowa"
         },
         "JournalEntryPage": {
             "image": "Obraz",
