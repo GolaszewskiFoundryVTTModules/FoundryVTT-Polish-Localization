@@ -1662,7 +1662,7 @@
         "HotReloadLabel": "Przeładuj Pliki Pakietów na Gorąco",
         "HotReloadHint": "Pozwala Pakietom na przeładowywanie na gorąco niektórych assetów, takich jak CSS, HTML i Lokalizacja bez konieczności pełnego odświeżenia. Ustawienie to jest zalecane jedynie dla deweloperów.",
         "News": "Nowości",
-        "FeaturedContent": "Polecane Treści",
+        "FeaturedContent": "Wyróżnione Treści",
         "NoFeaturedContent": "Nie uzyskano żadnych rekomendacji zawartości z serwera foundryvtt.com",
         "BACKUPS": {
             "Backup": "Kopia Zapasowa",
