@@ -19,7 +19,7 @@
   "download": "https://github.com/GolaszewskiFoundryVTTModules/FoundryVTT-Polish-Localization/releases/download/v1.0/foundryvtt-polish-localization.zip",
   "id": "foundryvtt-polish-localization",
   "compatibility": {
-    "minimum": "11",
-    "verified": "0.11.315"
+    "minimum": "12",
+    "verified": "0.12.999"
   }
 }
