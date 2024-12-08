@@ -814,7 +814,8 @@
         "Users": "Users",
         "Wall": "Wall",
         "Walls": "Walls",
-        "TypePageFormat": "{type} {page}"
+        "TypePageFormat": "{type} {page}",
+        "Document": "Document"
     },
     "DRAWING": {
         "ConfigDefaultTitle": "Default Drawing Configuration",
@@ -1031,7 +1032,9 @@
         },
         "TAGS": {
             "Add": "Add Tag",
-            "Remove": "Remove Tag"
+            "Remove": "Remove Tag",
+            "ErrorBlank": "Tags in an HTMLStringTagsElement may not be blank.",
+            "ErrorNonUnique": "Tag \"{tag}\" is already set."
         }
     },
     "FILES": {
@@ -1775,7 +1778,6 @@
         "UpdateChannel": "Software Update Channel",
         "UpdateChannelHint": "You may choose an update channel to control the types of updates you wish to receive for the core Foundry Virtual Tabletop software. If you do not have a specific reason to change this, it is recommended to consume the Stable channel.",
         "UpdateCheck": "Update",
-        "UpdateCheckFor": "Perform Update If Available",
         "UpdateHint": "You may update your Foundry Virtual Tabletop software to a new version by checking for update on your preferred Software Update Channel.",
         "UpdatePrototype": "Prototype",
         "UpdatePrototypeHint": "Prototype: Releases for previewing the design of experimental features which are not yet fully developed.",
@@ -2090,7 +2092,8 @@
                 "Latest": "The latest version of this package was last verified for core software version {verified}",
                 "World": "This world's system was last verified for core software version {verified}"
             }
-        }
+        },
+        "UpdatePerformIfAvailable": "Perform Update If Available"
     },
     "THEME": {
         "foundry": "Foundry Virtual Tabletop",
@@ -2268,8 +2271,8 @@
         "ExportWarningNone": "There are no unlocked compendium packs available for {type} Documents which you can export to.",
         "ExportExistingFolder": "Existing Folder",
         "ExportNewFolder": "New Folder",
-        "Exporting": "Exporting {type}s to Compendium {compendium}.",
-        "ExportDone": "Finished exporting {type}s to Compendium {compendium}.",
+        "Exporting": "Exporting {type} to Compendium {compendium}.",
+        "ExportDone": "Finished exporting {type} to Compendium {compendium}.",
         "CreateTable": "Create Rollable Table",
         "CreateTableConfirm": "Create a new Rollable Table document using the contents of this Folder as table results?",
         "InvalidDocumentType": "Invalid Document type \"{type}\" provided for this Folder.",
@@ -3008,7 +3011,14 @@
             "SETTINGS": {
                 "label": "Dynamic Token Rings",
                 "hint": "Choose an available dynamic token ring visualization. Changing it requires a reload.",
-                "defaultConfigLabel": "Foundry VTT Default Ring"
+                "coreSteel": "Foundry VTT Steel Ring",
+                "coreBronze": "Foundry VTT Bronze Ring",
+                "FIT_MODES": {
+                    "label": "Dynamic Token Rings Fit Modes",
+                    "hint": "Choose the fit mode for the Dynamic Rings.",
+                    "subject": "Standard",
+                    "grid": "Grid"
+                }
             }
         }
     },

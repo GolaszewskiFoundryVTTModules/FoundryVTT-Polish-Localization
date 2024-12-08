@@ -814,7 +814,8 @@
         "Users": "Użytkownicy",
         "Wall": "Ściana",
         "Walls": "Ściany",
-        "TypePageFormat": "{type} {page}"
+        "TypePageFormat": "{type} {page}",
+        "Document": "Dokument"
     },
     "DRAWING": {
         "ConfigDefaultTitle": "Domyślna Konfiguracja Rysowania",
@@ -1031,7 +1032,9 @@
         },
         "TAGS": {
             "Add": "Dodaj Tag",
-            "Remove": "Usuń Tag"
+            "Remove": "Usuń Tag",
+            "ErrorBlank": "Tags to HTMLStringTagsElement i nie może być pusty.",
+            "ErrorNonUnique": "Tag \"{tag}\" jest już ustawiony."
         }
     },
     "FILES": {
@@ -1775,7 +1778,6 @@
         "UpdateChannel": "Kanał Aktualizacji Oprogramowania",
         "UpdateChannelHint": "Możesz wybrać kanał aktualizacji by kontrolować jaki rodzaj aktualizacji oprogramowania rdzeniowego Foundry Virtual Tabletop chcesz otrzymywać. Jeśli nie masz żadnego szczególnego powodu aby zmieniać tą opcję, zaleca się korzystać z kanału Wydawniczego.",
         "UpdateCheck": "Aktualizuj",
-        "UpdateCheckFor": "Przeprowadź Aktualizację Jeśli Jest Dostępna",
         "UpdateHint": "Możesz zaktualizować swoje oprogramowanie Foundry Virtual Tabletop do nowej wersji, sprawdzając dostępność aktualizacji na wybranym Kanale Aktualizacji.",
         "UpdatePrototype": "Prototypowy",
         "UpdatePrototypeHint": "Prototypowy: Wydania służące podglądowi eksperymentalnych funkcji, które nie zostały jeszcze w pełni wykończone.",
@@ -2090,7 +2092,8 @@
                 "Latest": "Najnowsza wersja tego pakietu była ostatni raz weryfikowana dla oprogramowania rdzeniowego w wersji {verified}",
                 "World": "System tego świata był ostatni raz weryfikowany dla oprogramowania rdzeniowego w wersji {verified}"
             }
-        }
+        },
+        "UpdatePerformIfAvailable": "Przeprowadź Aktualizację Jeśli Jest Dostępna"
     },
     "THEME": {
         "foundry": "Foundry Virtual Tabletop",
@@ -2269,7 +2272,7 @@
         "ExportExistingFolder": "Istniejący Folder",
         "ExportNewFolder": "Nowy Folder",
         "Exporting": "Eksportowanie dokumentów typu {type} do Kompendium {compendium}.",
-        "ExportDone": "Ukończono wielokrotne eksportowanie {type} do Kompendium {compendium}.",
+        "ExportDone": "Ukończono eksportowanie {type} do Kompendium {compendium}.",
         "CreateTable": "Utwórz Tabelę Rzutów",
         "CreateTableConfirm": "Utworzyć nową Tabelę Rzutów używając zawartości tego Folderu jako wyników?",
         "InvalidDocumentType": "Dla tego Folderu podano nieprawidłowy typ Dokumentu \"{type}\".",
@@ -3008,7 +3011,14 @@
             "SETTINGS": {
                 "label": "Dynamiczne Pierścienie Żetonów",
                 "hint": "Wybierz jedną z dostępnych wizualizacji dynamicznego pierścienia żetonów. Zmiana wymaga przeładowania.",
-                "defaultConfigLabel": "Domyślny Pierścień Foundry VTT"
+                "coreSteel": "Foundry VTT Pierścień Stalowy",
+                "coreBronze": "Foundry VTT Pierścień Brązowy",
+                "FIT_MODES": {
+                    "label": "Tryby Dopasowywania Dynamicznych Pierścieni Żetonów",
+                    "hint": "Wybierz tryb dopasowywania dla Dynamicznych Pierścieni.",
+                    "subject": "Standardowy",
+                    "grid": "Siatka"
+                }
             }
         }
     },
