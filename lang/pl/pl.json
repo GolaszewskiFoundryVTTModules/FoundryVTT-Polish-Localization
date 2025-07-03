@@ -105,28 +105,49 @@
         "ImportOverwriteWarning": "Część zawartość z przygody {name} istnieje już w twoim Świecie. Jeśli zaimportujesz przygodę, ta zawartość zostanie nadpisana. Czy chcesz kontynuować?",
         "ImportAll": "Importuj Wszystko",
         "ImportContent": "Importuj {label}",
-        "Name": "Nazwa Przygody",
-        "NameHint": "Wybierz dla tej przygody nazwę, która będzie unikalna w zakresie zawierającej zawierającego ją pakietu.",
-        "Image": "Obraz Baneru",
-        "ImageHint": "Podaj obraz baneru o wymiarach przynajmniej 768px szerokości na 300px wysokości, który będzie wyświetlany dla tej przygody.",
-        "Caption": "Podpis Baneru",
-        "CaptionHint": "Podaj teks podpisu, który będzie wyświetlany pod obrazkiem banera. Podpis może zawierać tekst czysty lub HTML.",
-        "Description": "Opis Przygody",
-        "DescriptionHint": "Podaj opis zawierający przeglądowe informacje i skrót przygody.",
         "Create": "Stwórz Przygodę",
         "ExportEdit": "Przebuduj Przygodę",
         "ExportSubmit": "Buduj Przygodę",
-        "ExportTabSummary": "Podsumowanie",
-        "ExportTabContents": "Zawartość",
         "ExportDropZone": "Przeciągnij zawartość ze swojego Świata aby umieścić go w Przygodzie.",
         "ExportPackNoSystem": "Próbujesz eksportować Aktorów lub Przedmioty do Przygody, która jest agnostyczna względem systemu. Kompendium przygody musi posiadać wypełnione pole systemu odpowiadające systemowi, z którego pochodzą ci Aktorzy lub Przedmioty.",
-        "ExportPrimaryDocumentsOnly": "Możesz dodawać wyłącznie pierwotne Dokumenty istniejące w tym Świecie.",
+        "ExportPrimaryDocumentsOnly": "Możesz dodawać wyłącznie Dokumenty pierwotne, które istnieją w tym Świecie.",
         "CreateSuccess": "Przygoda \"{name}\" została pomyślnie utworzona!",
         "UpdateSuccess": "Przygoda \"{name}\" została pomyślnie zaktualizowana!",
-        "DocumentUpdate": "Ten Dokument zostanie zaktualizowany po zbudowaniu Przygody",
-        "DocumentAdd": "Ten dokument zostanie dodany po zbudowaniu Przygody",
-        "DocumentMissing": "Tego Dokumentu brakuje w Świecie gry i nie zostanie on zaktualizowany po zbudowaniu Przygody",
-        "DocumentRemove": "Ten Dokument zostanie usunięty po zbudowaniu Przygody"
+        "DocumentUpdate": "Ten Dokument zostanie zaktualizowany po zbudowaniu Przygody.",
+        "DocumentAdd": "Ten dokument zostanie dodany po zbudowaniu Przygody.",
+        "DocumentMissing": "Tego Dokumentu brakuje w Świecie gry i nie zostanie on zaktualizowany po zbudowaniu Przygody.",
+        "DocumentRemove": "Ten Dokument zostanie usunięty po zbudowaniu Przygody.",
+        "ImportHeaderOptions": "Opcje",
+        "Importer": {
+            "V1": "Importer Przygód (V1)",
+            "V2": "Importer Przygód (V2)"
+        },
+        "FIELDS": {
+            "name": {
+                "label": "Nazwa Przygody",
+                "hint": "Wybierz dla tej przygody nazwę, która będzie unikalna w zakresie zawierającego ją pakietu."
+            },
+            "img": {
+                "label": "Obraz Baneru",
+                "hint": "Podaj obraz baneru o wymiarach przynajmniej 768px szerokości na 300px wysokości, który będzie wyświetlany dla tej przygody."
+            },
+            "caption": {
+                "label": "Podpis Baneru",
+                "hint": "Podaj tekst podpisu, który będzie wyświetlany pod obrazkiem banera. Podpis może zawierać tekst czysty lub HTML."
+            },
+            "description": {
+                "label": "Opis Przygody",
+                "hint": "Podaj opis, zawierający przegląd i streszczenie przygody."
+            }
+        },
+        "TABS": {
+            "summary": "Podsumowanie",
+            "contents": "Zawartość"
+        },
+        "ACTIONS": {
+            "ClearSection": "Wyczyść Sekcję",
+            "RestoreSection": "Przywróć Sekcję"
+        }
     },
     "APP": {
         "NavigateBackConfirm": "Czy na pewno chcesz opuścić grę Foundry Virtual Tabletop?"
@@ -165,11 +186,13 @@
             "darknessAdvancedWarning": "Ustawienia zaawansowane nie są dostępne dla źródeł ciemności."
         },
         "SECTIONS": {
-            "BASIC": "Podstawowa Konfiguracja",
-            "ADVANCED": "Opcje Zaawansowane",
-            "ANIMATION": "Animacja Światła",
-            "APPEARANCE": "Wygląd Światła",
-            "PLACEMENT": "Umiejscowienie Światła"
+            "appearance": "Wygląd Światła",
+            "placement": "Umiejscowienie Światła"
+        },
+        "TABS": {
+            "basic": "Podstawowa Konfiguracja",
+            "animation": "Animacja Światła",
+            "advanced": "Opcje Zaawansowane"
         }
     },
     "AMBIENT_SOUND": {
@@ -255,6 +278,9 @@
             "ControlsMenu": "Sterowanie Aplikacją",
             "ToggleControls": "Przełącz Sterowanie",
             "Close": "Zamknij Okno"
+        },
+        "IMAGE_POPOUT": {
+            "AltText": "Zamieszczone obrazek o nieznanej treści."
         }
     },
     "AUDIO": {
@@ -268,7 +294,7 @@
                 "tooltip": "Określa lokalną głośność playlist i dźwięków środowiskowych klasyfikowanych jako środowisko."
             },
             "INTERFACE": {
-                "label": "Interface",
+                "label": "Interfejs",
                 "tooltip": "Określa lokalną głośność dźwięków powiązanych z interfejsem oraz interakcją z użytkownikiem."
             }
         }
@@ -280,7 +306,6 @@
         "DeckPreset": "Konfiguruj Preset",
         "DeckPresetPokerDark": "Talia Pokerowa (Ciemna)",
         "DeckPresetPokerLight": "Talia Pokerowa (Jasna)",
-        "Deal": "Rozdaj",
         "DealHint": "Wybierz zestaw rąk lub stosów, do których rozdane zostaną karty. Do wszystkich wybranych rąk/stosów rozdana zostanie identyczna liczba kart.",
         "DealTitle": "Rozdaj Karty",
         "DealTo": "Rozdaj Do",
@@ -288,13 +313,10 @@
         "DeleteCannot": "Usunięcie Niemożliwe",
         "DeleteCannotHint": "Następujące talie kart nadal posiadają wyciągnięte karty i nie mogą zostać usunięte, proszę je zresetować: {decks}",
         "DeleteMustReset": "Ten przedmiot typu {type} musi zostać zresetowany zanim będzie można go usunąć, czy chcesz kontynuować?",
-        "DeleteReset": "Resetuj i Usuń",
-        "Description": "Opis Zbioru Kart",
         "Dimensions": "Domyślne Wymiary",
-        "Draw": "Dobierz",
         "DrawFrom": "Dobierz Z",
         "DrawTitle": "Dobierz Karty",
-        "DrawHint": "Wybierz talię, z której chciałbyś dobrac określoną ilość kart.",
+        "DrawHint": "Wybierz talię, z której chciałbyś dobrać określoną ilość kart.",
         "DrawMode": "Tryb Dobierania",
         "DrawModeTop": "Z wierzchu (Pierwsze)",
         "DrawModeBottom": "Ze spodu (Ostatnie)",
@@ -303,22 +325,12 @@
         "Facedown": "Zakryte",
         "HeaderDetails": "Konfiguracja",
         "HeaderCards": "Karty",
-        "Image": "Domyślny obraz rewersu",
         "Number": "Ilość",
         "NoCards": "Brak Dostępnych Kart",
-        "Pass": "Przekaż",
         "PassTo": "Przekaż Do",
         "PassTitle": "Przekaż Karty",
         "PassHint": "Przekaż określoną liczbę kart do innej ręki lub stosu.",
         "PassWarnNoTargets": "Nie istnieją żadne ręki ani stosy, do których można by przekazać karty.",
-        "Type": "Typ Zbioru Kart",
-        "TypeDeck": "Talia",
-        "TypeHand": "Ręka",
-        "TypePile": "Stos",
-        "Save": "Zapisz",
-        "Shuffle": "Potasuj",
-        "SortMode": "Tryb Sortowania",
-        "Reset": "Resetuj",
         "ResetConfirm": "Czy na pewno chcesz zresetować {name}? Wszystkie rozdane karty zostaną przywrócone.",
         "ReturnConfirm": "Czy jesteś pewien? Wszystkie karty w {name} zostaną przywrócone do ich talii źródłowych.",
         "NotifyShuffle": "Potasowano: {link}",
@@ -328,38 +340,92 @@
         "NotifyDraw": "Dobrano {number} kart z: {link}",
         "NotifyDeal": "Rozdano po {number} kart do: {link}",
         "NotifyReset": "Przywrócono wszystkie karty do: {link}",
-        "NotifyReturn": "Przywrócono wszystkie karty z: {link}"
+        "NotifyReturn": "Przywrócono wszystkie karty z: {link}",
+        "FIELDS": {
+            "img": {
+                "label": "Domyślny obraz rewersu"
+            },
+            "type": {
+                "label": "Typ Zbioru Kart"
+            }
+        },
+        "ACTIONS": {
+            "Create": "Stwórz Kartę",
+            "Delete": "Usuń Kartę",
+            "Deal": "Rozdaj",
+            "Draw": "Dobierz",
+            "Edit": "Edytuj Kartę",
+            "NextFace": "Następny Awers",
+            "Pass": "Przekaż",
+            "PreviousFace": "Poprzedni Awers",
+            "Reset": "Resetuj",
+            "ResetDelete": "Resetuj i Usuń",
+            "Save": "Zapisz",
+            "Shuffle": "Potasuj",
+            "ToggleSortMode": "Przełącz Tryb Sortowania"
+        },
+        "TABS": {
+            "details": "Szczegóły",
+            "cards": "Karty"
+        }
     },
     "CARD": {
-        "Create": "Stwórz Kartę",
-        "Delete": "Usuń Kartę",
-        "Edit": "Edytuj Kartę",
-        "HeaderDetails": "Szczegóły Karty",
-        "HeaderBack": "Rewers Karty",
-        "HeaderFaces": "Awersy Karty",
-        "BackName": "Nazwa Rewersu",
-        "BackImage": "Obraz Rewersu",
-        "BackText": "Tekst Rewersu",
-        "FaceName": "Nazwa Awersu",
-        "FaceImage": "Obraz Awersu",
-        "FaceText": "Tekst Awersu",
-        "FaceAdd": "Dodaj Awers",
-        "FaceDelete": "Usuń Awers",
-        "FaceNext": "Następny Awers",
-        "FacePrevious": "Poprzedni Awers",
-        "FaceDeleteWarning": "Usunięcie awersu karty usunie permanentne jego dane z Karty.",
-        "Description": "Opis",
         "Dimensions": "Domyślne Wymiary",
-        "Drawn": "Wyciągnięta",
-        "Face": "Awers",
-        "Type": "Rodzaj",
-        "Name": "Nazwa",
-        "Suit": "Barwa",
-        "Value": "Wartość",
         "Save": "Zapisz Kartę",
         "Unknown": "Nieznana ({source})",
         "Play": "Zagraj Kartę",
-        "PlayHint": "Zagraj kartę, przekładając ją do innej ręki lub stosu."
+        "PlayHint": "Zagraj kartę, przekładając ją do innej ręki lub stosu.",
+        "Image": "Obraz Karty",
+        "ACTIONS": {
+            "AddFace": "Dodaj Awers",
+            "DeleteFace": {
+                "Title": "Usuń Awers",
+                "Warning": "Usunięcie awersu karty usunie permanentne jego dane z Karty."
+            }
+        },
+        "TABS": {
+            "details": "Szczegóły",
+            "faces": "Awersy",
+            "back": "Rewers"
+        },
+        "FIELDS": {
+            "suit": {
+                "label": "Barwa"
+            },
+            "value": {
+                "label": "Wartość"
+            },
+            "drawn": {
+                "label": "Wyciągnięta"
+            },
+            "face": {
+                "label": "Awers"
+            },
+            "faces": {
+                "element": {
+                    "name": {
+                        "label": "Nazwa Awersu"
+                    },
+                    "img": {
+                        "label": "Obraz Awersu"
+                    },
+                    "text": {
+                        "label": "Tekst Awersu"
+                    }
+                }
+            },
+            "back": {
+                "name": {
+                    "label": "Nazwa Rewersu"
+                },
+                "img": {
+                    "label": "Obraz Rewersu"
+                },
+                "text": {
+                    "label": "Tekst Rewersu"
+                }
+            }
+        }
     },
     "CHAT": {
         "Chat": "Czat",
@@ -382,7 +448,9 @@
         "RollTables": "Tabele Rzutów",
         "JumpToBottom": "Skocz na Dół",
         "PrivateRollContent": "{user} wykonuje prywatny rzut kośćmi",
-        "UnknownUser": "Nieznany Użytkownik"
+        "UnknownUser": "Nieznany Użytkownik",
+        "Dismiss": "Anuluj",
+        "EnterMessage": "Wpisz wiadomość"
     },
     "COMBAT": {
         "NavLabel": "Nawigacja po Starciach Bitewnych",
@@ -405,9 +473,7 @@
         "PanToCombatant": "Przenieś Do Uczestnika",
         "PingCombatant": "Wskaż Uczestnika",
         "WarnNonVisibleToken": "Ten uczestnik walki nie jest dla ciebie widoczny.",
-        "Resource": "Śledzony Zasób",
-        "ResourceHint": "Wybierz atrybut śledzony wśród uczestników starcia.",
-        "Round": "Runda",
+        "Round": "Runda {round}",
         "Rounds": "Rundy",
         "RoundPrev": "Poprzednia Runda",
         "RoundNext": "Następna Runda",
@@ -417,8 +483,6 @@
         "Settings": "Ustawienia Okna Walki",
         "SettingsSave": "Zapisz Ustawienia Okna",
         "SidebarTitle": "Okno Walki",
-        "SkipDefeated": "Pomijaj Pokonanych",
-        "SkipDefeatedHint": "Czy automatycznie pomijać tury uczestników oznaczonych jako pokonani?",
         "Sounds": {
             "Epic": "Epicki",
             "MC": "Komentator Walki"
@@ -447,7 +511,64 @@
         "CombatantReroll": "Przerzuć Inicjatywę",
         "CombatantToken": "Powiązany Żeton",
         "CombatantScene": "Scena Uczestnika",
-        "CombatantNotInScene": "Uczestnik Walki {name} nie jest obecny w obecnie wyświetlanej Scenie"
+        "CombatantNotInScene": "Uczestnik Walki {name} nie jest obecny w obecnie wyświetlanej Scenie",
+        "ClearMovementHistories": "Wyczyść Historie Ruchu",
+        "InitiativeScore": "Wartość Inicjatywy",
+        "CombatantUpdateNamed": "Aktualizuj Uczestnika: {name}",
+        "CombatantClearMovementHistory": "Wyczyść Historię Ruchu",
+        "CombatantMovementHistoryCleared": "Wyczyszczono historię ruchu dla Żetonu \"{name}\".",
+        "FIELDS": {
+            "round": {
+                "label": "Runda"
+            },
+            "turn": {
+                "label": "Tura"
+            }
+        },
+        "TURN_MARKERS": {
+            "ANIMATIONS": {
+                "SPIN": "Obrót",
+                "SPIN_PULSE": "Obrót z Pulsowaniem",
+                "PULSE": "Pulsowanie"
+            }
+        },
+        "CONFIG": {
+            "SHEET": {
+                "TURN_MARKERS": "Znaczniki Tury Żetonu"
+            },
+            "FIELDS": {
+                "core": {
+                    "combatTrackerConfig": {
+                        "skipDefeated": {
+                            "label": "Pomijaj Pokonanych",
+                            "hint": "Czy automatycznie pomijać tury uczestników oznaczonych jako pokonani?"
+                        },
+                        "resource": {
+                            "label": "Śledzony Zasób",
+                            "hint": "Wybierz atrybut śledzony wśród uczestników starcia."
+                        },
+                        "turnMarker": {
+                            "enabled": {
+                                "label": "Włącz Znaczniki",
+                                "hint": "Włącz domyślnie znaczniki tury walki dla wszystkich Żetonów."
+                            },
+                            "src": {
+                                "label": "Źródło Mediów",
+                                "hint": "Plik obrazu lub wideo używany domyślnie jako znacznik tury Żetonu."
+                            },
+                            "animation": {
+                                "label": "Animacja",
+                                "hint": "Typ animacji używany domyślnie dla każdego znacznika tury Żetonu."
+                            },
+                            "disposition": {
+                                "label": "Zabarwienie Usposobienia",
+                                "hint": "Zastosuj do znacznika tury zabarwienie oparte o usposobienie Żetonu."
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "COMPENDIUM": {
         "Name": "Nazwa Kompendium",
@@ -455,23 +576,12 @@
         "CreateHint": "Stwórz nowe kompendium dla obecnego świata.",
         "FilterDocuments": "Filtruj Dokumenty po Typie",
         "ClearFilters": "Wyczyść Filtry",
-        "Delete": "Usuń Kompendium",
-        "DeleteWarning": "Ta Paczka Kompendium zostanie bezpowrotnie usunięta i nie będzie można jej odzyskać.",
         "DeleteEntry": "Usuń Wpis",
-        "Duplicate": "Duplikuj Kompendium",
-        "DuplicateTitle": "Tytuł Nowego Kompendium",
-        "DuplicateHint": "Możesz powielić kompendium aby mieć w swoim Świecie lokalną kopię, którą można bezpiecznie edytować.",
         "ErrorRequireTitle": "Aby utworzyć Kompendium Świata musisz podać jego tytuł.",
-        "ImportAll": "Importuj Całą Zawartość",
-        "ImportAllHint": "Importuj pełną zawartość tego Kompendium do nowego lub istniejącego Folderu. Proszę zwróć uwagę, że importowanie dużych kompendiów będzie miało negatywny wpływ na wydajność aplikacji.",
-        "ImportAllStart": "Importowanie {number} Dokumentów typu {type} i {folderNumber} Folderów do folderu {folder}. Proszę o cierpliwość.",
-        "ImportAllFinish": "Pomyślnie zaimportowano {number} Dokumentów typu {type} i {folderNumber} Folderów do folderu {folder}.",
         "ImportEntry": "Importuj Wpis",
         "SidebarTitle": "Paczki Kompendium",
         "Type": "Typ Dokumentu",
         "TypeHint": "Każda Paczka Kompendium zawiera konkretny rodzaj Dokumentu.",
-        "ToggleLocked": "Przełącz Blokadę Zapisu",
-        "ToggleLockedWarning": "Próbujesz zdjąć blokadę zapisu z kompendium, które nie przynależy do tego Świata. Wszelkie zmiany wprowadzone w nim zmiany mogą zostać utracone jeśli system lub moduł, będący jego właścicielem zostanie zaktualizowany. Możesz chcieć zamiast tego zduplikować kompendium do swojego świata. Czy kontynuować mimo to?",
         "CannotViewWarning": "Nie masz wystarczających uprawnień aby obejrzeć tę paczkę Kompendium.",
         "OwnershipInheritBelow": "Dziedzicz od dołu",
         "OwnershipReset": "Przywróć Domyślne",
@@ -488,6 +598,33 @@
                 "Label": "Konfiguruj Grafikę",
                 "Title": "Grafika Kompendium"
             }
+        },
+        "Delete": {
+            "Option": "Usuń Kompendium",
+            "Title": "Usuń Kompendium: {compendium}",
+            "Warning": "Ta Paczka Kompendium zostanie bezpowrotnie usunięta i nie będzie można jej odzyskać."
+        },
+        "Duplicate": {
+            "Option": "Duplikuj Kompendium",
+            "Title": "Duplikuj Kompendium: {compendium}",
+            "Label": "Tytuł Nowego Kompendium",
+            "Hint": "Możesz powielić kompendium aby mieć w swoim Świecie lokalną kopię, którą można bezpiecznie edytować.",
+            "Submit": "Duplikuj"
+        },
+        "ImportAll": {
+            "Option": "Importuj Całą Zawartość",
+            "Title": "Importuj Całą Zawartość: {compendium}",
+            "Submit": "Import",
+            "Hint": "Importuj pełną zawartość tego Kompendium do nowego lub istniejącego Folderu. Proszę zwróć uwagę, że importowanie dużych kompendiów będzie miało negatywny wpływ na wydajność aplikacji.",
+            "Start": "Importowanie {number} Dokumentów typu {type} i {folderNumber} Folderów do folderu {folder}. Proszę o cierpliwość.",
+            "Finish": "Pomyślnie zaimportowano {number} Dokumentów typu {type} i {folderNumber} Folderów do folderu {folder}."
+        },
+        "Locked": "{title} [Zablokowane]",
+        "ToggleLocked": {
+            "Option": "Przełącz Blokadę Edycji",
+            "Title": "Przełącz Blokadę Edycji: {compendium}",
+            "Unlock": "Odblokuj",
+            "Warning": "Próbujesz odblokować do edycji kompendium, które nie należy do tego Świata. Wszelkie zmiany, które wprowadzisz w tej paczce kompendium, mogą zostać utracone, jeśli System lub Moduł, do którego należy, zostanie zaktualizowany. Zamiast tego możesz zduplikować kompendium do swojego Świata. Co chcesz zrobić?"
         }
     },
     "CONTROLS": {
@@ -500,10 +637,7 @@
         "BasicSelectP": "Zaznacz dowolne posiadane przez ciebie żetony, aby zobaczyć mapę z ich perspektywy.",
         "TargetSelect": "Wybierz Cele",
         "TargetSelectP": "Oznacz jako cel dowolny Żeton, który widzisz.",
-        "BasicMeasure": "Zmierz Odległość",
-        "BasicMeasureStart": "Rozpocznij Mierzenie",
-        "BasicMeasureWaypoints": "Umieść Punkt Pośredni",
-        "BasicMeasureFollow": "Podążaj za Ścieżką",
+        "BasicMeasure": "Odmierz Odległość",
         "GroupMeasure": "Zarządzanie Miarką",
         "MeasureType": "Typ Szablonu",
         "MeasureConfigHint": "Skonfiguruj umiejscowienie oraz wyświetlanie szablonu miarki.",
@@ -586,7 +720,7 @@
         "RegionEllipse": "Rysuj Elipsę",
         "RegionPolygon": "Rysuj Wielokąt",
         "RegionHole": "Stwórz Dziury",
-        "RegionHoleP": "Po włączeniu, każdy narysowany w Regionie Kształt będzie tworzył Dziurę w której zachowania Regionu nie mają zastosowania.",
+        "RegionHoleP": "Po włączeniu, każdy narysowany w Regionie Kształt będzie tworzył Dziurę w której Zachowania Regionu nie mają zastosowania.",
         "RegionSnap": "Po włączeniu, każdy narysowany w Regionie Kształt będzie przyciągany do siatki.",
         "RegionClear": "Wyczyść Regiony",
         "RegionPerformance": "<em>Uwaga Dotycząca Wydajności:</em> Każdy rysunek stanowi odrębny Kształt. Uważaj aby nie umieścić wielu kształtów nakładających się na siebie. Zamiast łączyć proste kształty w skomplikowany Region, rozważ użycie narzędzia rysowania wielokątów.",
@@ -622,7 +756,6 @@
         "LeftClick2": "Podwójne Kliknięcie Lewego Przycisku Myszy",
         "LeftDrag": "Kliknij i Przeciągnij Lewy Przycisk Myszy",
         "LongPress": "Długie Przytrzymanie",
-        "Double": "Dwukrotnie",
         "RightClick": "Prawy Przycisk Myszy",
         "MiddleClick": "Kliknij Środkowym",
         "AltRightClick": "{alt} + Prawy Przycisk Myszy",
@@ -632,14 +765,13 @@
         "Ctrl": "Control",
         "CtrlAbbr": "CTRL",
         "CtrlClickDrag": "{mod} + Kliknij + Przeciągnij",
-        "Alt": "ALT",
+        "Alt": "Alt",
         "AltClick": "{alt} + Kliknij",
         "AltClickDrag": "{alt} + Click + Drag",
         "CtrlClick": "{mod} + Kliknij",
         "ShiftClick": "SHIFT + Kliknij",
         "ChainCtrlClick": "Przytrzymaj <span class=\"reference\">{mod}</span> i <span class=\"reference\">Kliknij</span>",
         "DoubleClick": "Podwójne Kliknięcie",
-        "DoubleRightClick": "Podwójne Kliknięcie Prawego Przycisku Myszy",
         "ShiftScroll": "SHIFT + Przewiń",
         "ShiftOrCtrlScroll": "<span class=\"reference\">SHIFT + Przewiń</span> lub <span class=\"reference\">{mod} + Przewiń</span>",
         "ShiftDrag": "SHIFT + Przeciągnij",
@@ -647,7 +779,6 @@
         "Delete": "USUŃ",
         "Drag": "Przeciągnij",
         "Drop": "Upuść",
-        "During": "podczas",
         "KeyHighlight": "Podświetl Obiekty na Płótnie",
         "KeyPan": "Przesuń Płótno",
         "KeyZoomIn": "Przybliżenie",
@@ -661,11 +792,6 @@
         "KeyPaste": "Wklej Elementy Płótna",
         "KeyUndo": "Cofnij Operację na Płótnie",
         "KeyHotbar": "Aktywuj Element Paska Szybkiego Wyboru",
-        "RulerTitle": "Pomiary Linijką",
-        "RulerMeasure": "Zmierz Dystans z Pomocą Linijki",
-        "RulerWaypoint": "Umieść Punkt Pośredni",
-        "RulerMove": "Przemieść żeton po odmierzonej trasie",
-        "RulerWhile": "podczas odmierzania odległości żetonu",
         "ObjectSheet": "Otwórz Kartę Danego Obiektu",
         "ObjectHUD": "Pokaż HUD Obiektu (Jeśli Dotyczy)",
         "ObjectConfig": "Otwórz Panel Zarządzania Obiektem",
@@ -717,10 +843,19 @@
         "UndoDeleteObjects": "Cofnięto usunięcie {count} obiektów typu {type}.",
         "EmptyUndoHistory": "Nie ma więcej historii dla obiektów typu {type}, którą można by cofnąć.",
         "ObjectIsLocked": "Nie możesz wykonać tej akcji podczas gdy obiekt typu {type} jest zablokowany.",
-        "ObjectConfigured": "Nie możesz wykonać tej akcji podczas konfigurowania innego obiektu."
+        "ObjectConfigured": "Nie możesz wykonać tej akcji podczas konfigurowania innego obiektu.",
+        "RightClick2": "Podwójne Kliknięcie Prawego Przycisku Myszy",
+        "RightClickDuringDrag": "Kliknij Prawym Przyciskiem Podczas Przeciągania",
+        "Control": "Control",
+        "Shift": "Shift",
+        "RulerPlaceWaypoint": "Umieść Punkt Pomiarowy",
+        "RulerRemoveWaypoint": "Usuń Punkt Pomiarowy",
+        "UnconstrainedMovement": "Ruch Nieograniczony",
+        "UnconstrainedMovementP": "Gdy aktywne, możesz przesuwać Żetony przez Ściany i nieprzekraczalny teren.",
+        "CutObjects": "Wytnij {count} obiekt(ów) typu {type}."
     },
     "DICE": {
-        "ErrorNonNumeric": "Formuła rzutu {formula} nie zwróciła wartości liczbowej.",
+        "ErrorNonNumeric": "Formuła rzutu \"{formula}\" nie zwróciła wartości liczbowej.",
         "ManualRoll": "Rzut Ręczny",
         "RollResolution": "Wynik Rzutu",
         "SubmitRoll": "Wprowadź Rzut",
@@ -735,7 +870,8 @@
             "Default": "Cyfrowe Rzuty Foundry VTT",
             "Mersenne": "Cyfrowe Rzuty (Mersenne Twister)",
             "Manual": "Wprowadzanie Ręczne"
-        }
+        },
+        "ErrorNotParsable": "Formuła rzutu \"{formula}\" nie jest ciągiem znaków."
     },
     "DOCUMENT": {
         "Create": "Stwórz {type}",
@@ -772,7 +908,7 @@
         "Combat": "Starcie",
         "Combats": "Starcia Bitewne",
         "Combatant": "Uczestnik Starcia",
-        "Combatants": "Uczestnicy Walki",
+        "Combatants": "Uczestnicy Starcia",
         "CopyOf": "{name} (Kopia)",
         "Drawing": "Rysunek",
         "Drawings": "Rysunki",
@@ -815,7 +951,52 @@
         "Wall": "Ściana",
         "Walls": "Ściany",
         "TypePageFormat": "{type} {page}",
-        "Document": "Dokument"
+        "Document": "Dokument",
+        "NewCount": "Nowy {type} ({count})",
+        "CardPlural": "Karty",
+        "CombatantGroup": "Grupa Uczestników Starcia",
+        "CombatantGroups": "Grupy Uczestników Starcia",
+        "JournalEntryCategory": "Kategoria",
+        "JournalEntryCategories": "Kategorie",
+        "FIELDS": {
+            "name": {
+                "label": "Nazwa"
+            },
+            "type": {
+                "label": "Typ"
+            },
+            "img": {
+                "label": "Ścieżka Obrazu"
+            },
+            "description": {
+                "label": "Opis"
+            },
+            "width": {
+                "label": "Szerokość"
+            },
+            "height": {
+                "label": "Wysokość"
+            },
+            "hidden": {
+                "label": "Ukryty"
+            },
+            "elevation": {
+                "label": "Uniesienie"
+            },
+            "rotation": {
+                "label": "Rotacja"
+            },
+            "sort": {
+                "label": "Kolejność Sortowania",
+                "hint": "Ustal kolejność sortowania tego Dokumentu w stosunku do innych w tej samej kolekcji. Niższa wartość będzie sortowana w pierwszej kolejności."
+            },
+            "x": {
+                "label": "X"
+            },
+            "y": {
+                "label": "Y"
+            }
+        }
     },
     "DRAWING": {
         "ConfigDefaultTitle": "Domyślna Konfiguracja Rysowania",
@@ -823,21 +1004,14 @@
         "SubmitCreate": "Utwórz Rysunek",
         "SubmitUpdate": "Aktualizuj Rysunek",
         "SubmitReset": "Resetuj Ustawienia Domyślne",
-        "TabPosition": "Pozycja",
-        "TabLines": "Linie",
-        "TabFill": "Wypełnienie",
-        "TabText": "Tekst",
         "NotePosition": "Zarządzaj położeniem i widocznością obrazka.",
         "NoteLines": "Zarządzaj konturem obrazka.",
         "NoteFill": "Zarządzaj preferencjami wypełnienia dla tego Obrazka.",
         "NoteText": "Zarządzaj podpisami obrazka (jeśli istnieją).",
-        "Author": "Autor",
-        "Width": "Szerokość",
-        "Height": "Wysokość",
         "Rotation": "Rotacja",
         "ZIndex": "Indeks Z",
-        "LineWidth": "Długość linii",
-        "StrokeColor": "Kolor Pędzla",
+        "LineWidth": "Grubość Linii",
+        "StrokeColor": "Kolor Linii",
         "LineOpacity": "Nieprzezroczystość Linii",
         "SmoothingFactor": "Wygładzanie",
         "SmoothingFactorHint": "Dla rysowania odręcznego parametr wygładzania kontroluje intensywność wygładzania linii funkcją sklejania.",
@@ -858,7 +1032,18 @@
         "Object": "Obiekt",
         "Information": "Informacja",
         "JointValidationError": "Rysunki muszą posiadać widoczny tekst, widoczne wypełnienie lub widoczne linie.",
-        "JointValidationErrorUI": "Rysunki muszą posiadać widoczny tekst, widoczne wypełnienie lub widoczne linie. Proszę zweryfikuje domyślne ustawienia Rysunków."
+        "JointValidationErrorUI": "Rysunki muszą posiadać widoczny tekst, widoczne wypełnienie lub widoczne linie. Proszę zweryfikuje domyślne ustawienia Rysunków.",
+        "TABS": {
+            "position": "Pozycja",
+            "lines": "Linie",
+            "fill": "Wypełnienie",
+            "text": "Tekst"
+        },
+        "FIELDS": {
+            "sort": {
+                "label": "Sortuj"
+            }
+        }
     },
     "EFFECT": {
         "MODE_CUSTOM": "Własny",
@@ -867,27 +1052,13 @@
         "MODE_DOWNGRADE": "Osłabienie",
         "MODE_UPGRADE": "Usprawnienie",
         "MODE_OVERRIDE": "Nadpisanie",
-        "TabDetails": "Szczegóły",
-        "TabDuration": "Czas Trwania",
-        "TabEffects": "Efekty",
-        "Name": "Nazwa Efektu",
-        "Image": "Grafika Efektu",
-        "Tint": "Kolor Zabarwienia Ikony",
-        "Disabled": "Efekt Zawieszony",
-        "Origin": "Źródło Efektu",
-        "Transfer": "Zastosuj Efekt do Aktora",
-        "TransferHint": "Po zaznaczeniu, ten Efekt będzie aplikowany do każdego Aktora, który jest w posiadaniu jego Obiektu-rodzica.",
         "TransferLegacy": "Przenieś Efekt na Aktora",
         "TransferHintLegacy": "Po zaznaczeniu, ten Efekt będzie kopiowany do Aktora kiedy Obiekt-rodzic tego Efektu zostanie utworzony na Aktorze, oraz usuwany jeśli Obiekt-rodzic zostanie usunięty.",
-        "DurationSecs": "Czas Trwania Efektu (Sekundy)",
-        "StartTime": "Czas Rozpoczęcia Efektu",
-        "DurationTurns": "Czas Trwania Efektu (Tury)",
-        "Combat": "Starcie",
-        "StartTurns": "Tura Rozpoczęcia Efektu",
+        "DurationTurns": "Czas Trwania Efektu (Starcie)",
+        "StartTurns": "Początek Efektu",
         "ChangeKey": "Klucz Atrybutu",
         "ChangeMode": "Zmień Tryb",
-        "ChangeValue": "Wartość Efektu",
-        "Description": "Opis Efektu",
+        "ChangeValue": "Wartość",
         "Submit": "Zapisz Zmiany",
         "StatusAsleep": "Sen",
         "StatusDead": "Śmierć",
@@ -923,12 +1094,67 @@
         "StatusFireShield": "Ognista Tarcza",
         "StatusIceShield": "Lodowa Tarcza",
         "StatusMagicShield": "Magiczna Tarcza",
-        "StatusHolyShield": "Święta Tarcza"
+        "StatusHolyShield": "Święta Tarcza",
+        "ChangePriority": "Priorytet",
+        "FIELDS": {
+            "name": {
+                "label": "Nazwa Efektu"
+            },
+            "img": {
+                "label": "Ikona Efektu"
+            },
+            "tint": {
+                "label": "Kolor Zabarwienia Ikony"
+            },
+            "description": {
+                "label": "Opis Efektu"
+            },
+            "disabled": {
+                "label": "Efekt Zawieszony"
+            },
+            "origin": {
+                "label": "Źródło Efektu"
+            },
+            "transfer": {
+                "label": "Zastosuj Efekt do Aktora",
+                "hint": "Po zaznaczeniu, ten Efekt będzie aplikowany do każdego Aktora, który jest w posiadaniu jego Obiektu-rodzica."
+            },
+            "statuses": {
+                "label": "Warunki Statusu"
+            },
+            "duration": {
+                "seconds": {
+                    "label": "Czas Trwania Efektu (Sekundy)"
+                },
+                "rounds": {
+                    "label": "Rundy"
+                },
+                "turns": {
+                    "label": "Tury"
+                },
+                "startTime": {
+                    "label": "Czas Rozpoczęcia Efektu"
+                },
+                "startRound": {
+                    "label": "Runda"
+                },
+                "startTurn": {
+                    "label": "Tura"
+                },
+                "combat": {
+                    "label": "Starcie Bitewne"
+                }
+            }
+        },
+        "TABS": {
+            "details": "Szczegóły",
+            "duration": "Czas Trwania",
+            "changes": "Zmiany"
+        }
     },
     "ERROR": {
         "BrowserVersion": "Foundry Virtual Tabletop używa nowych funkcji JavaScript, które nie są wspierane w wersjach {browser} niższych niż {minimum}. Używasz {browser} w wersji {version}. Proszę zaktualizuj {browser} lub użyj innej przeglądarki.",
         "ElectronVersion": "Używasz starszej wersji klienta Elektron dla Foundry Virtual Tabletop. Dla najlepszej wydajności rekomendujemy abyś pobrał ponownie pożądaną wersję Foundry Virtual Tabletop i przeprowadził ponowną instalację oprogramowania.",
-        "LowResolution": "Foundry Virtual Tabletop wymaga ekranu o rozdzielczości co najmniej {reqWidth}px na {reqHeight}px. Twój ekran ma obecnie efektywną rozdzielczość {width}px na {height}px, w związku z czym wiele funkcji programu może działać niepoprawnie.",
         "NoWebGL": "Twoja przeglądarka nie wspiera obecnie renderowania z użyciem WebGL, wymaganego przez Foundry Virtual Tabletop. Upewnij się, że włączyłeś w przeglądarce opcje renderowania sprzętowego i WebGL.",
         "NoWebGL2": "Twoja przeglądarka nie wspiera renderowania WebGL 2, które zalecane jest przez Foundry Virtual Tabletop.",
         "BackgroundTextureSize": "Używasz jako tła sceny tekstury o wymiarach {width}px na {height}px. Co najmniej jeden z tych wymiarów przekracza maksymalny wymiar tekstury {max}px wspierany przez twoje urządzenie.",
@@ -938,7 +1164,14 @@
         "CantWhisper": "Nie posiadasz uprawnień do wysyłania innym graczom szeptanych wiadomości na czacie.",
         "RendererNotDetected": "Nie udało się zidentyfikować twojego GPU, mogą wystąpić nieoczekiwane problemy z wydajnością.",
         "NoHardwareAcceleration": "Twoja przeglądarka nie posiada włączonego przyspieszenia sprzętowego. To poważnie wpłynie na wydajność Foundry Virtual Tabletop. Upewnij się, że włączysz przyspieszenie sprzętowe w ustawieniach przeglądarki.",
-        "UpdateRequiresManualInstall": "Foundry Virtual Tabletop dostępne jest w wersji {version} ale nie można jej zainstalować z wewnątrz aplikacji Foundry Virtual Tabletop ponieważ wymaga ona aktualizacji dependencji rdzeniowych, co możliwe jest tylko przy reinstalacji oprogramowania bezpośrednio ze strony <a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a>."
+        "RequiresFullReinstall": "Foundry Virtual Tabletop dostępne jest w wersji {version} ale nie można jej zainstalować z wewnątrz aplikacji Foundry Virtual Tabletop ponieważ wymaga ona aktualizacji dependencji rdzeniowych, co możliwe jest tylko przy reinstalacji oprogramowania bezpośrednio ze strony <a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a>.",
+        "RequiresGenerationReinstall": "Wersja {version} Foundry Virtual Tabletop jest już dostępna, ale nie można jej zainstalować z poziomu aplikacji, ponieważ jest to aktualizacja nowej generacji, którą należy zainstalować ręcznie, ponownie instalując oprogramowanie ze strony <a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a>.",
+        "RequiresElectronReinstall": "Wersja {version} Foundry Virtual Tabletop jest już dostępna, ale nie można jej zainstalować z poziomu aplikacji, ponieważ zawiera nową wersję Electron, którą można zainstalować tylko ręcznie, ponownie instalując oprogramowanie ze strony <a href=\"https://foundryvtt.com/me/licenses\" target=\"_blank\">foundryvtt.com</a>.",
+        "RESOLUTION": {
+            "Screen": "Foundry Virtual Tabletop wymaga rozdzielczości ekranu co najmniej {reqWidth}px na {reqHeight}px. Twój wyświetlacz ma rozdzielczość {curWidth}px na {curHeight}px. Musisz zwiększyć rozdzielczość lub użyć innego urządzenia wyświetlającego, w przeciwnym razie niektóre funkcje oprogramowania nie będą działać poprawnie.",
+            "Scale": "Foundry Virtual Tabletop wymaga efektywnych wymiarów okna co najmniej {reqWidth}px na {reqHeight}px. Obecne wymiary tego okna to {curWidth}px na {curHeight}px. Obecnie masz zastosowany współczynnik powiększenia na poziomie systemu operacyjnego lub przeglądarki, co zmniejsza efektywny rozmiar okna. Musisz powiększyć rozmiar okna lub zmniejszyć współczynnik powiększenia zastosowany w przeglądarce, w przeciwnym razie niektóre funkcje oprogramowania nie będą działać poprawnie.",
+            "Window": "Foundry Virtual Tabletop wymaga efektywnych wymiarów okna co najmniej {reqWidth}px na {reqHeight}px. Obecne wymiary tego okna to {curWidth}px na {curHeight}px. Musisz powiększyć rozmiar okna, w przeciwnym razie niektóre funkcje oprogramowania nie będą działać poprawnie."
+        }
     },
     "WARNING": {
         "GridConfigNoBG": "Używasz narzędzia do konfiguracji siatki na scenie pozbawionej obrazu tła. Taka praktyka jest na obecną chwilę niezalecana i może powodować nieprzewidziane rezultaty.",
@@ -1038,8 +1271,8 @@
         }
     },
     "FILES": {
-        "CreateDirectory": "Nowy Folder",
-        "CreateSubfolder": "Stwórz Folder Zagnieżdżony",
+        "CreateDirectory": "Stwórz Folder",
+        "CreateSubfolder": "Stwórz Podfolder",
         "TogglePrivacy": "Przełącz Tryb Prywatności",
         "DisplayMode": "Tryb Wyświetlania",
         "DisplayModeList": "Widok Listy",
@@ -1060,10 +1293,10 @@
         "Search": "Szukaj",
         "ErrorTooLarge": "Plik, który próbowano wysłać, jest zbyt duży dla twojego serwera proxy.",
         "ErrorSomethingWrong": "Coś poszło nie tak z żądaniem przesyłania.",
-        "WarnUploadModules": "Przesłałeś pliki bezpośrednio do lokalizacji modułu lub systemu. To zazwyczaj <strong>niebezpieczna</strong> praktyka, ponieważ aktualizacja modułu lub systemu usunie zmiany.",
+        "WarnUploadModules": "Przesłałeś pliki bezpośrednio do folderu modułu lub systemu. To zazwyczaj <strong>niebezpieczna</strong> praktyka, ponieważ aktualizacja modułu lub systemu usunie zmiany.",
         "AlreadyFavorited": "{path} już znajduje się w ulubionych.",
         "TitleAny": "Przeglądarka Plików",
-        "TitleFolder": "Przeglądarka Plików",
+        "TitleFolder": "Przeglądarka Folderów",
         "TitleFont": "Przeglądarka Czcionek",
         "TitleImageVideo": "Przeglądarka Obrazów i Wideo",
         "TitleImage": "Przeglądarka Obrazów",
@@ -1071,26 +1304,40 @@
         "TitleAudio": "Przeglądarka Dźwięków",
         "TitleText": "Przeglądarka Dokumentów",
         "TitleGraphics": "Przeglądarka 3D",
-        "SourceUser": "Dane Użytkownika",
-        "SourceCore": "Dane Rdzeniowe",
-        "SourceS3": "Amazon S3",
         "BrowseTooltip": "Przeglądaj Pliki",
-        "InPixels": "W Pikselach",
-        "UnitPixels": "(piksele)",
-        "ErrorDisallowedExtension": "Plik \"{name}\" ma niewłaściwe rozszerzenie \"{ext}\", które nie jest dozwolone dla tego typu okna Wyboru Pliku.\nDostępne rozszerzenia to: {allowed}."
+        "ErrorDisallowedExtension": "Plik \"{name}\" ma niewłaściwe rozszerzenie \"{ext}\", które nie jest dozwolone dla tego typu okna Wyboru Pliku.\nDostępne rozszerzenia to: {allowed}.",
+        "DirectoryName": {
+            "Label": "Nazwa Folderu",
+            "Placeholder": "mój-folder"
+        },
+        "RemoveFavorite": "Usuń Folder z Ulubionych",
+        "DirectoryPathLabel": "Ścieżka Folderu",
+        "TraverseBack": "Wróć",
+        "CannotUpload": "Przesyłanie do tego folderu jest zabronione, ponieważ zawartość może zostać nadpisana podczas aktualizacji. Zamiast tego prześlij do folderu \"assets\" lub innej dozwolonej lokalizacji.",
+        "TABS": {
+            "data": "Dane Użytkownika",
+            "public": "Dane Rdzeniowe",
+            "s3": "Amazon S3"
+        }
     },
     "FONTS": {
         "AddFont": "Dodaj czcionkę",
         "Type": "Typ Czcionki",
         "TypeFile": "Plik",
         "TypeSystem": "Systemowa",
-        "TypeHint": "Czcionki typu 'Plik' ładowane są z twojego folderu danych i pobierane przez graczy. Czcionki typu 'Systemowa' ładowane są po stronie twojego systemu i każdy z graczy również musi posiadać je w swoim systemie operacyjnym aby je zobaczyć.",
+        "TypeHint": "Czcionki typu 'Plik' ładowane są z twojego folderu danych i pobierane przez graczy. Czcionki typu 'Systemowa' polegają na Systemie Operacyjnym każdego z użytkowników. Ze względów bezpieczeństwa przeglądarki nie mogą ich wymieniać, musisz więc wpisać ręcznie dokładną nazwę. Jeśli użytkownikowi brakuje tej czcionki, zobaczy zamiast tego czcionkę zapasową.",
         "Family": "Rodzina Czcionki",
         "File": "Plik Czcionki",
         "FontPreview": "Zażółć gęślą jaźń.",
         "RemoveFont": "Usuń czcionkę",
         "Style": "Styl Czcionki",
-        "Weight": "Waga Czcionki"
+        "Weight": "Waga Czcionki",
+        "WarnNoFamily": "Musisz podać nazwę rodziny czcionek.",
+        "WarnNoFile": "Musisz podać ścieżkę do pliku czcionki.",
+        "Styles": {
+            "Normal": "Normalny",
+            "Italic": "Kursywa"
+        }
     },
     "GAME": {
         "Paused": "Gra Wstrzymana",
@@ -1121,14 +1368,15 @@
         "OpenConfig": "Otwórz Konfigurację",
         "AssignStatusEffects": "Przypisz Efekty Statusu",
         "ToggleTargetState": "Przełącz Stan Celu",
-        "ToggleCombatState": "Zmień Stan Uczestnika Walki",
+        "ToggleCombatState": "Zmień Stan Uczestnika Starcia",
         "ToggleVis": "Przełącz Widoczność",
         "ToggleLock": "Przełącz Blokadę",
         "ToFront": "Przesuń na Wierzch",
         "ToBack": "Przesuń pod Spód",
         "TilePlay": "Odtwórz Wideo Pola",
         "TilePause": "Wstrzymaj Wideo Pola",
-        "WarningEffectNoActor": "Nie możesz dodać efektów statusowych do Żetonu, który nie ma przypisanego Aktora."
+        "WarningEffectNoActor": "Nie możesz dodać efektów statusowych do Żetonu, który nie ma przypisanego Aktora.",
+        "SelectMovementAction": "Select Movement Action"
     },
     "HTMLDocumentTagsElement": {
         "PLACEHOLDER": "Wprowadź UUID lub Upuść {type}"
@@ -1158,7 +1406,18 @@
         "ShowEntry": "Pokaż {name}",
         "ShowBadPermissions": "Możesz pokazywać jedynie Wpisy w Dzienniku albo Strony, których jesteś właścicielem.",
         "ShowNoPlayers": "Nie ma żadnych innych połączonych graczy, którym można by to pokazać.",
-        "ShowOwnershipHint": "Opcjonalnie, zaktualizuj uprawnienia do tego dokumentu dla graczy, który jest on pokazany. Jeśli gracz już posiada uprawnienia wyższej rangi, nie zostanie ona obniżona."
+        "ShowOwnershipHint": "Opcjonalnie, zaktualizuj uprawnienia do tego dokumentu dla graczy, którym jest on pokazywany. Jeśli gracz już posiada uprawnienia wyższej rangi, nie zostanie ona obniżona.",
+        "ImageOptions": "Opcje Obrazu",
+        "EditPage": "Edytuj Stronę",
+        "ModeMultiple": "Tryb Wielu Stron",
+        "ModeSingle": "Tryb Pojedynczej Strony",
+        "LockModeLocked": "Spis treści zablokowany. Kliknij, aby odblokować.",
+        "LockModeUnlocked": "Spis treści odblokowany. Kliknij, aby zablokować.",
+        "ConfigureCategories": "Konfiguruj Kategorie",
+        "ConfigureCategoriesTitle": "Kategorie {name}",
+        "CategoryName": "Nazwa kategorii",
+        "Uncategorized": "Bez kategorii",
+        "UnnamedCategory": "<Nienazwana Kategoria>"
     },
     "JOURNALENTRYPAGE": {
         "DefaultPageSheet": "Domyślna Karta dla Strony {page}",
@@ -1185,16 +1444,15 @@
         "ShowImageCaption": "Pokaż Podpis Obrazu",
         "ShowTitle": "Pokaż Tytuł Strony",
         "HeadingLevel": "Poziom Nagłówka",
-        "Level": "Poziom {level}"
+        "Level": "Poziom {level}",
+        "VideoAutoplay": "Automatyczne Odtwarzanie Wideo",
+        "VideoLoop": "Zapętl Wideo",
+        "VideoVolume": "Głośność Wideo",
+        "Category": "Kategoria Strony"
     },
     "KEYBINDINGS": {
-        "NavLabel": "Zakładki Konfiguracji Skrótów Klawiszowych",
         "ActionCategories": "Kategorie Akcji",
         "AllActions": "Wszystkie Akcje",
-        "AddBinding": "Dodaj Skrót",
-        "EditBinding": "Edytuj Skrót",
-        "SaveBinding": "Zapisz Skróty",
-        "DeleteBinding": "Usuń Skrót",
         "Uneditable": "Niezmienny Skrót",
         "ActionFilter": "Filtr Akcji",
         "ActionName": "Nazwa Akcji",
@@ -1207,9 +1465,8 @@
         "Restricted": "Tylko Mistrz Gry",
         "ReservedModifiers": "Modyfikatory Specjalne: {modifiers}",
         "HowToEdit": "Użyj {icon} lub kliknij dwukrotnie na skrót klawiszowy aby zmienić wartość.",
-        "CycleView": "Przewiń Widok Płótna",
+        "CycleView": "Przewiń Widok Płótna lub Akcje Ruchu",
         "Dismiss": "Przełącz Menu / Zamknij Wszystkie Okna",
-        "MoveAlongMeasuredRuler": "Przemieść się wzdłuż wymierzonej Linijki",
         "Pause": "Wstrzymaj Grę",
         "Delete": "Usuń Obiekty",
         "Highlight": "Podświetl Obiekty",
@@ -1230,15 +1487,27 @@
         "PanUpRight": "Przemieść Żeton lub Kamerę w Górę+Prawo",
         "PanDownLeft": "Przemieść Żeton lub Kamerę w Dół+Lewo",
         "PanDownRight": "Przemieść Żeton lub Kamerę w Dół+Prawo",
-        "ZoomIn": "Przybliż Płótno",
-        "ZoomOut": "Oddal Płótno",
+        "ZoomIn": "Wznieś Żeton w Pionie lub Przybliż Płótno",
+        "ZoomOut": "Opuść Żeton w Pionie lub Oddal Płótno",
         "ExecuteMacro": "Pasek Szybkiego Wyboru {number}",
         "SwapMacroPage": "Włącz {page}. stronę Paska Szybkiego Wyboru",
-        "MustBeArray": "Musi przekazywać Tablicę wartości",
-        "ErrorProtectedKey": "Nie można ustawić Chronionego Klawisza \"{key}\" jako skrótu",
-        "ErrorIllegalModifier": "Żądany klawisz modyfikatora \"{key}\" nie jest właściwą wartością w KeyboardManager.MODIFIER_KEYS",
-        "ErrorReservedModifier": "Nie można ustawić \"{key}\" jako skrótu, ponieważ jest już zarezerwowany jako modyfikator dla tej Akcji",
-        "FocusChat": "Zaznacz Czat"
+        "MustBeArray": "Musi przekazywać Tablicę wartości.",
+        "ErrorProtectedKey": "Nie można ustawić Chronionego Klawisza \"{key}\" jako skrótu.",
+        "ErrorIllegalModifier": "Żądany klawisz modyfikatora \"{key}\" nie jest właściwą wartością w KeyboardManager.MODIFIER_KEYS.",
+        "ErrorReservedModifier": "Nie można ustawić \"{key}\" jako skrótu, ponieważ jest już zarezerwowany jako modyfikator dla tej Akcji.",
+        "FocusChat": "Zaznacz Czat",
+        "Title": "Konfiguracja Sterowania",
+        "BoundKey": "Przypisany Klawisz",
+        "Cut": "Wytnij Obiekty",
+        "Ruler": "Przełącz Linijkę Odległości",
+        "RulerWaypoint": "Umieść Punkt Pomiarowy Linijki",
+        "ACTIONS": {
+            "AddBinding": "Dodaj Skrót",
+            "CancelEdit": "Anuluj Edycję",
+            "EditBinding": "Edytuj Skrót",
+            "SaveBinding": "Zapisz Skróty",
+            "DeleteBinding": "Usuń Skrót"
+        }
     },
     "LIGHT": {
         "FIELDS": {
@@ -1314,6 +1583,10 @@
                 "max": {
                     "label": "a"
                 }
+            },
+            "priority": {
+                "label": "Priorytet",
+                "hint": "Określa, w jaki sposób oddziałują na siebie źródła światła i ciemności. Światło o wyższym priorytecie odpycha ciemność o niższym priorytecie, ale jeśli priorytety są takie same, ciemność zwycięża."
             }
         },
         "LegacyColoration": "Stare Barwienie",
@@ -1351,7 +1624,9 @@
         "AnimationSmokePatch": "Kłąb Dymu",
         "AnimationRevolving": "Obrotowe Światło",
         "AnimationSiren": "Syrenie Światło",
-        "AnimationMagicalGloom": "Magiczny Mrok"
+        "AnimationMagicalGloom": "Magiczny Mrok",
+        "AnimationReactivePulse": "Pulsowanie Reagujące na Dźwięk",
+        "AnimationDenseSmoke": "Gęsty Dym"
     },
     "MACRO": {
         "Delete": "Usuń Makro",
@@ -1369,7 +1644,12 @@
         "LockBar": "Zablokuj Pasek Szybkiego Wyboru",
         "UnlockBar": "Odblokuj Pasek Szybkiego Wyboru",
         "EmptySlot": "Puste Miejsce {slot}",
-        "CannotOverwrite": "Nie można nadpisać tego Makra ponieważ pasek szybkiego wyboru jest zablokowany."
+        "CannotOverwrite": "Nie można nadpisać tego Makra ponieważ pasek szybkiego wyboru jest zablokowany.",
+        "FIELDS": {
+            "command": {
+                "label": "Komenda"
+            }
+        }
     },
     "MENU": {
         "NavLabel": "Menu Główne",
@@ -1391,8 +1671,8 @@
         "RequiredDepError": "Ten moduł nie może zostać wyłączony, ponieważ wymagają go: {dependents}",
         "RequiredDependencies": "Wymagane Dependencje",
         "RecommendedDependencies": "Zalecane Dependencje",
-        "DepRequiredEnable": "Do funkcjonowania tego modułu wymagane są następujące dependencje:",
-        "DepOptionalEnable": "Wybrane moduły wymieniają poniższe dependencje opcjonalne:",
+        "DepRequiredEnable": "Do funkcjonowania tego modułu wymagane są następujące dependencje",
+        "DepOptionalEnable": "Wybrane moduły wymieniają poniższe dependencje opcjonalne",
         "DepEnableCheck": "Aktywować moduł i zaznaczone dependencje?",
         "DepDisable": "Następujące dependencje staną się nieużywane i można je wyłączyć:",
         "DepDisableCheck": "Czy dezaktywować również zaznacze pakiety?",
@@ -1401,33 +1681,70 @@
         "FilterAll": "Wszystkie Moduły",
         "FilterActive": "Aktywne Moduły",
         "FilterInactive": "Nieaktywne Moduły",
-        "Build": "Build",
         "RequiredModule": "Ten Moduł musi pozostać aktywny",
         "DependencyIssues": "Nie można aktywować z powodu problemów z wymaganymi dependencjami",
         "SystemCompatibilityIssueMinimum": "Ten moduł wymaga minimalnej wersji systemu {minimum} a twoja wersja to {version}. Proszę zaktualizować system.",
         "SystemCompatibilityIssueMaximum": "Ten moduł wymaga maksymalnej wersji systemu {maximum} a twoja wersja to {version}.",
         "NavLabel": "Nawigacja Zarządzaniem Modułami",
         "UpstreamPackages": "{number} pakietów wymaga aby ten pakiet był aktywny. Wyłączenie go wyłączy również te pakiety.",
-        "UnavailableDocuments": "Po wyłączeniu tych modułów następujące dokumenty staną się niedostępne:"
+        "UnavailableDocuments": "Po wyłączeniu tych modułów następujące dokumenty staną się niedostępne:",
+        "OptionalDependencies": "Opcjonalne Zależności",
+        "DependencyResolution": "Rozwiązywanie Zależności"
     },
     "NOTE": {
-        "AnchorPoint": "Zakotwiczenie Tekstu",
-        "ConfigTitle": "Ustawienia Notatki na Mapie",
         "Create": "Utwórz Notatkę na Mapie",
         "CreateJournal": "Stworzyć odpowiadający Wpis w Dzienniku?",
         "Custom": "Własna",
         "CustomIcon": "Własna Ikona",
-        "EntryIcon": "Ikona Wpisu",
-        "FontSize": "Rozmiar Czcionki",
-        "FontFamily": "Rodzina Czcionki",
-        "Global": "Globalnie Widoczna",
-        "GlobalHint": "Zezwól aby ta notatka była widoczna dla uprawnionych graczy z dowolnego miejsca na mapie.",
-        "IconSize": "Rozmiar Ikony",
-        "IconTint": "Zabarwienie Ikony",
-        "TextLabel": "Podpis Notatki",
-        "TextColor": "Kolor Tekstu",
         "Unknown": "Nieznana",
-        "Update": "Aktualizuj Notatkę na Mapie"
+        "Update": "Aktualizuj Notatkę na Mapie",
+        "SECTIONS": {
+            "CONTENT": "Zawartość",
+            "POSITION": "Pozycja",
+            "ICON": "Ikona",
+            "LABEL": "Etykieta"
+        },
+        "FIELDS": {
+            "entryId": {
+                "label": "Wpis w Dzienniku"
+            },
+            "pageId": {
+                "label": "Strona"
+            },
+            "text": {
+                "label": "Etykieta Tekstowa"
+            },
+            "sort": {
+                "label": "Sortuj"
+            },
+            "global": {
+                "label": "Globalnie Widoczna",
+                "hint": "Zezwól aby ta notatka była widoczna dla uprawnionych graczy z dowolnego miejsca na mapie."
+            },
+            "texture": {
+                "src": {
+                    "label": "Ikona Wpisu"
+                },
+                "tint": {
+                    "label": "Zabarwienie Ikony"
+                }
+            },
+            "iconSize": {
+                "label": "Rozmiar Ikony"
+            },
+            "fontFamily": {
+                "label": "Rodzina Czcionki"
+            },
+            "fontSize": {
+                "label": "Rozmiar Czcionki"
+            },
+            "textColor": {
+                "label": "Kolor Tekstu"
+            },
+            "textAnchor": {
+                "label": "Zakotwiczenie Tekstu"
+            }
+        }
     },
     "NUE": {
         "FirstLaunchBody": "Wygląda na to, że to nowy Świat. Na dobry początek możesz dodać do niego niezbędnych graczy za pomocą menu <a class=\"nue-tab\" data-tab=\"settings\">Zarządzania Użytkownikami</a>. Następnie możesz <a class=\"nue-tab\" data-tab=\"actors\">Aktorów</a> dla każdego z graczy i wszelkich innych istotnych postaci, które chcesz przedstawiać. Mapy i wszelkie pomoce wizualne możesz stworzyć za pomocą <a class=\"nue-tab\" data-tab=\"scenes\">Scen</a> i rekwizytów oraz notatek, a inne informacje mogą być przechowywane w postaci <a class=\"nue-tab\" data-tab=\"journal\">Wpisów w Dzienniku</a>.",
@@ -1452,12 +1769,13 @@
         "ViewAvatar": "Pokaż Awatar Gracza",
         "Kick": "Wyrzuć Gracza",
         "Ban": "Zbanuj Gracza",
-        "UnBan": "Od-banuj Gracza"
+        "UnBan": "Od-banuj Gracza",
+        "LATENCY": "Opóźnienie",
+        "FPS": "FPS"
     },
     "PLAYLIST": {
         "Delete": "Usuń Listę Odtwarzania",
         "Edit": "Edytuj Listę Odtwarzania",
-        "Channel": "Kanały Audio",
         "CurrentlyPlaying": "Obecnie Odtwarzane",
         "ModeDisabled": "Tylko Soundboard",
         "ModeSequential": "Odtwarzaj Kolejno",
@@ -1470,160 +1788,51 @@
         "VolPlaylist": "Listy Odtwarzania",
         "VolAmbient": "Środowisko",
         "VolInterface": "Interfejs",
-        "Name": "Nazwa Listy Odtwarzania",
-        "Mode": "Tryb Odtwarzania",
-        "Fade": "Czas Przejścia (ms)",
-        "Description": "Opis Playlisty",
         "Update": "Aktualizuj Listę Odtwarzania",
-        "SortMode": "Tryb Sortowania",
         "SortAlphabetical": "Alfabetycznie",
         "SortManual": "Ręcznie",
         "SoundCreate": "Utwórz Dźwięk",
         "SoundEdit": "Edytuj Dźwięk",
         "SoundDelete": "Usuń Dźwięk",
         "SoundLoop": "Zapętl Dźwięk",
-        "SoundName": "Nazwa Ścieżki",
-        "SoundSrc": "Źródło Dźwięku",
-        "SoundDescription": "Opis Dźwięku",
-        "SoundRepeat": "Powtarzanie",
         "SoundStreaming": "Przesyłanie Dużych Plików",
-        "SoundUpdate": "Aktualizuj Ścieżkę",
         "SoundPlay": "Odtwórz Dźwięk",
         "SoundPause": "Pauzuj Dźwięk",
         "SoundPreload": "Wstępnie Załaduj Dźwięk",
         "SoundResume": "Wznów Dźwięk",
-        "SoundVolume": "Głośność Dźwięku",
         "SoundStop": "Zatrzymaj Dźwięk",
-        "BulkImport": "Grupowy Import",
-        "BulkImportWarning": "W podanym katalogu \"{path}\" nie odnaleziono żadnego poprawnego Dźwięku dla Playlisty.",
         "PinToTop": "Przypnij do Góry",
         "PinToBottom": "Przypnij do Dołu",
         "VOLUME": {
             "CONTROLS": "Ustawienia Dźwięku Użytkownika",
             "TOOLTIP": "Głośność: {volume}%"
-        }
-    },
-    "SCENES": {
-        "Accessibility": "Dostępność",
-        "AccessibilityGM": "Tylko MG",
-        "AccessibilityAll": "Wszyscy Gracze",
-        "Activate": "Aktywuj",
-        "AudioPlaylist": "Lista Odtwarzania",
-        "AudioPlaylistHint": "Lista Odtwarzania, która zostanie automatycznie uruchomiona przy aktywacji Sceny.",
-        "BackgroundColor": "Kolor Tła",
-        "BackgroundImage": "Obraz Tła",
-        "BackgroundImageHint": "Konfiguruj grafikę tła oraz wymiary dla głównej mapy sceny.",
-        "FogOverlay": "Obraz Mgły Wojny",
-        "FogOverlayHint": "Opcjonalny obraz Mgły wojny, rysowany nad nieodkrytymi częściami sceny.",
-        "ForegroundImage": "Obraz Pierwszoplanowy",
-        "ForegroundImageHint": "Opcjonalny obraz pierwszego planu, rysowany ponad wszystkimi obiektami sceny.",
-        "ForegroundElevation": "Uniesienie Warstwy Pierwszoplanowej",
-        "ForegroundElevationHint": "Wartość w jednostkach odległości, określająca uniesienie warstwy pierwszoplanowej i pół znajdujących się nad Żetonami.",
-        "BackgroundScale": "Skala Obrazu Tła",
-        "BackgroundScaleHint": "Użyj SHIFT+Gałka myszy lub SHIFT+Strzałka w Górę/w Dół aby dopasować wielkość obrazu tła.",
-        "CaptureInitialViewPosition": "Uchwycono pozycję płótna jako wstępny widok Sceny w ustawieniach.",
-        "Configure": "Konfiguruj",
-        "ConfigTitle": "Zarządzaj Sceną",
-        "Darkness": "Poziom Ciemności",
-        "DarknessHint": "Konfiguruj nakładkę ciemności, która ukrywa zawartość Sceny aby oddawać warunki panujące w nocy lub przy ograniczonej widoczności.",
-        "Dimensions": "Wymiary Sceny",
-        "DimensionsHint": "Wymiary tła są dobierane automatycznie kiedy po raz pierwszy ustawiany jest obrazek tła sceny.",
-        "DimensionChangeTitle": "Zmienić Wymiary Sceny?",
-        "DimensionChangeWarning": "Zmieniasz wymiary podstawowe sceny, jeśli umieściłeś już na scenie obiekty, ta operacja może przemieścić je względem grafiki tła.",
-        "DimensionLinked": "Wymiary sceny są obecnie powiązane, zmiana jednego zmieni drugi aby zachować te same proporcje wymiarów. Kliknij aby odwiązać.",
-        "DimensionUnlinked": "Wymiary sceny są obecnie niepowiązane, zmiana jednego nie będzie miała wpływu na drugi. Kliknij aby powiązać.",
-        "DistortedDimensionsTitle": "Zniekształcone Wymiary Sceny",
-        "DistortedDimensionsWarning": "Nowe wybrane wymiary mają inne proporcje niż oryginalne. Czy chcesz automatycznie przemieścić umieszczone obiekty, takie jak żetony? Rezultat może się okazać zniekształcony.",
-        "FogExplore": "Eksploracja Mgły Wojny",
-        "FogExploreHint": "Śledź postęp eksploracji mapy, stopniowo odkrywając mgłę wojny.",
-        "GenerateThumb": "Generuj Grafikę Miniatury",
-        "GenerateThumbNoCanvas": "Grafika miniatury nie może zostać wygenerowana, kiedy wyłączono Płótno Gry.",
-        "GenerateThumbSuccess": "Wygenerowana miniaturka dla Sceny {name}.",
-        "GlobalIllum": "Globalne Oświetlenie",
-        "GlobalIllumHint": "Oświetl wszystkie obszary na Scenie, które znajdują się w bezpośredniej linii wzroku kontrolowanego żetonu. Wyłącz, aby ograniczyć widoczność do obszarów posiadających oświetlenie.",
-        "GlobalLightThreshold": "Próg Globalnego Oświetlenia",
-        "GlobalLightThresholdHint": "Automatycznie wyłącz Oświetlenie Globalne kiedy Poziom Ciemności przekroczy daną wartość progową.",
-        "GridColor": "Kolor Siatki",
-        "GridConfigTool": "Narzędzie Konfiguracji Siatki",
-        "GridConfigToolHint": "Ustaw pozycję obrazu tła oraz siatki używając gałki myszy lub strzałek, albo ręcznie wypełniając poniższe pola.",
-        "GridOpacity": "Przezroczystość Siatki",
-        "GridType": "Rodzaj Siatki",
-        "GridGridless": "Bez Siatki",
-        "GridSquare": "Kwadraty",
-        "GridHexOddR": "Sześciokątne Rzędy - Nieparzyste",
-        "GridHexEvenR": "Sześciokątne Rzędy - Parzyste",
-        "GridHexOddQ": "Sześciokątne Kolumny - Nieparzyste",
-        "GridHexEvenQ": "Sześciokątne Kolumny - Parzyste",
-        "GridSize": "Rozmiar Siatki",
-        "GridSizeHint": "Użyj ALT+Gałka myszy lub ALT+Strzałka w Górę/w Dół by dopasować rozmiar siatki.",
-        "GridSizeError": "Zmiana rozmiaru zredukowała by rozmiar siatki poniżej minimalnego progu 50px. Jeśli chcesz zredukować scenę do tego rozmiaru, najpierw ustaw ją jako scenę bez siatki a potem ponownie skonfiguruj siatkę na zmniejszonej scenie.",
-        "GridResizeHint": "Użyj ALT+Gałka Myszy albo ALT+Strzałka w Górę / ALT+Strzałka w Dół aby dostosować rozmiar siatki.",
-        "GridPosition": "Korekta Pozycji Siatki",
-        "GridPositionHint": "Użyj Klawiszy Strzałek aby zmienić przesunięcie siatki.",
-        "GridScale": "Skala Siatki",
-        "GridDistance": "Odległości",
-        "GridUnits": "Jednostki Siatki",
-        "GridReset": "Resetuj Zmiany",
-        "GridStyle": "Rodzaj Siatki",
-        "GridThickness": "Grubość Siatki",
-        "HeaderAmbience": "Środowisko i Atmosfera",
-        "HeaderAmbienceBasic": "Opcje Podstawowe",
-        "HeaderDetails": "Szczegóły i Wymiary",
-        "HeaderGrid": "Konfiguracja Siatki",
-        "HeaderVision": "Wizja i Oświetlenie",
-        "InitialView": "Domyślny Widok Sceny",
-        "InitialViewButton": "Uchwyć Obecny Widok",
-        "InitialViewHint": "Ustal domyślną pozycję kamery, używaną kiedy ta scena jest wyświetlana po raz pierwszy.",
-        "InvalidDimension": "Podany wymiar zastukotałby zmiennoprzecinkową wartością dla drugiego z wymiarów sceny. Wprowadź inną wartość albo odwiąż wymiary sceny.",
-        "Loading": "Wczytywanie {name}",
-        "NavName": "Nazwa w Nawigacji",
-        "NavNameHint": "Alternatywna nazwa sceny, wyświetlana dla graczy w Pasku Nawigacji.",
-        "Notes": "Notatki Sceny",
-        "Padding": "Odsetek dodatkowego marginesu sceny",
-        "PaddingHint": "Ilość dodatkowego odstępu od tła Sceny, zapewniająca dodatkową przestrzeń Płótna.",
-        "Pixels": "piksele",
-        "Preload": "Wstępnie Ładuj Scenę",
-        "SceneName": "Nazwa Sceny",
-        "View": "Pokaż Scenę",
-        "JournalEntry": "Wpis w Dzienniku",
-        "JournalEntryHint": "Powiązany wpis w dzienniku zapewniający Mistrzowi Gry informacje o tej Scenie.",
-        "NavLabel": "Nawigacja Płótna Gry",
-        "PlaylistSound": "Dźwięk Playlisty",
-        "PlaylistSoundHint": "Możesz wybrać konkretny Dźwięk Playlisty, który ma zostać odtworzony kiedy ta Scena jest aktywna. W przeciwnym razie odtworzona zostanie cała Playlista.",
-        "ShowNav": "Pokaż w Nawigacji",
-        "ShiftBG": "Przesunięcie Tła",
-        "ShiftHorizontal": "Poziomo",
-        "ShiftVertical": "Pionowo",
-        "TokenVision": "Wzrok Żetonów",
-        "TokenVisionHint": "Ogranicz widoczność sceny w oparciu o wspólną wizję wszystkich kontrolowanych Żetonów. Jeśli dezaktywowane, widoczna jest cała Scena.",
-        "ToggleNav": "Przełącz Nawigację",
-        "Units": "jednostki",
-        "WeatherEffect": "Efekt Pogodowy",
-        "WeatherEffectHint": "Zarządzaj efektem pogodowym obecnym na tej scenie.",
-        "ZoomLower": "Zoom",
-        "FogExploredColor": "Kolor zbadanej Mgły Wojny",
-        "FogExploredColorHint": "Kolor stosowany dla obszarów, które zostały odkryte, ale znajdują się poza obecnym zakresem wzroku.",
-        "FogUnexploredColor": "Kolor Nieodkrytej Mgły Wojny",
-        "FogUnexploredColorHint": "Nieprzezroczysty kolor, pokrywający wszystkie niezbadane obszary Sceny.",
-        "ENVIRONMENT": {
-            "HeaderLabel": "Światło Środowiskowe",
-            "Luminosity": "Jasność",
-            "LuminosityHint": "Określa jak jasna wydaje się scena. Wyższa jasność sprawia, że scena jest rozświetlona jak za dnia, podczas gdy niższa jasność czyni ją ciemniejszą i bardziej ponurą.",
-            "Saturation": "Nasycenie",
-            "SaturationHint": "Określ czystość kolorów na scenie. Ustawienia powyżej zera sprawiają, że kolory są bardziej nasycone (intensywne i wyraziste) podczas gdy negatywne wartość wytłumiają i spłaszczają barwy.",
-            "Shadows": "Cienie",
-            "ShadowsHint": "Zwiększenie wartości tego suwaka sprawia, że cienie i ciemne obszary sceny są głębsze i bardziej mroczne.",
-            "Hue": "Zabarwienie",
-            "HueHint": "Wybierz odcień (kolor) nakładany na całą scenę. Aby aktywować suwak koloru wartość intensywności zabarwienia musi być wyższa od 0.",
-            "Intensity": "Intensywność Zabarwienia",
-            "IntensityHint": "Określ jak intensywnie wybrany odcień ma być nakładany na scenę. Wysoka intensywność zabarwienia nasyca scenę kolorem, potencjalnie przytłaczając inne barwy. Mniejsza wartość intensywności nakłada wybrany odcień w bardziej subtelnym stopniu.",
-            "ResetEnvironment": "Zresetuj do Opcji Domyślnych",
-            "BlendAmbience": "Mieszaj Środowisko",
-            "BlendAmbienceHint": "Kiedy ta opcja jest zaznaczona, wartości podstawowego środowiska są mieszane ze środowiskiem ciemności zależnie od poziomu ciemności.",
-            "BaseAmbience": "Środowisko Podstawowe",
-            "DarkAmbience": "Środowisko Ciemności",
-            "DarknessLock": "Zablokuj Poziom Ciemności",
-            "DarknessLockHint": "Kiedy ta opcja jest zaznaczona, poziom ciemności nie może zostać zmieniony."
+        },
+        "DefaultChannel": "Domyślny Kanał Audio Playlisty",
+        "BulkImport": {
+            "Title": "Grupowy Import Dźwięków",
+            "Hint": "Wybierz folder zawierający dźwięki do zaimportowania.",
+            "Button": "Grupowy Import",
+            "Warning": "W podanym katalogu \"{path}\" nie odnaleziono żadnego poprawnego Dźwięku dla Playlisty."
+        },
+        "FIELDS": {
+            "name": {
+                "label": "Nazwa Listy Odtwarzania"
+            },
+            "mode": {
+                "label": "Tryb Odtwarzania"
+            },
+            "channel": {
+                "label": "Kanał Audio"
+            },
+            "sorting": {
+                "label": "Tryb Sortowania"
+            },
+            "fade": {
+                "label": "Czas Zanikania"
+            },
+            "description": {
+                "label": "Opis Playlisty"
+            }
         }
     },
     "GRID": {
@@ -1637,24 +1846,14 @@
         }
     },
     "SETTINGS": {
-        "Configure": "Konfiguruj Ustawienia",
         "CombatConfigN": "Okno Walki",
         "CombatConfigL": "Zarządzaj Oknem Walki",
         "CombatConfigH": "Ustawienia dotyczące Walki i jej Okna",
         "CombatThemeN": "Muzyka Bitewna",
         "CombatThemeL": "Ustaw dźwięki, które odegrają się kiedy zaczyna się walka, kiedy nadchodzi twoja tura i kiedy zaczyna się twoja tura.",
-        "Keybindings": "Zarządzaj Sterowaniem",
-        "DemoMode": "Tryb Demonstracyjny",
-        "Docs": "Wyświetl Dokumentację",
-        "Invite": "Linki z Zaproszeniem",
         "Issues": "Problemy",
-        "ManageModules": "Zarządzaj Modułami",
-        "ViewModules": "Wyświetl Aktywne Moduły",
-        "Title": "Zarządzaj Ustawieniami Gry",
-        "Tours": "Zarządzanie Przewodnikiem",
+        "Title": "Ustawienia Gry",
         "Update": "Aktualizacja",
-        "Logout": "Wyloguj",
-        "Players": "Zarządzaj Użytkownikami",
         "Reset": "Przywróć Ustawienia Domyślne",
         "ResetInfo": "Resetuj wszystkie ustawienia do domyślnych wartości. Kliknij \"Zapisz Zmiany\" aby potwierdzić.",
         "Save": "Zapisz Zmiany",
@@ -1662,11 +1861,6 @@
         "ShowToolclips": "Pokaż Klipy Narzędzi po Najechaniu",
         "ShowToolclipsH": "Określa czy Klipy Narzędzi powinny się pojawiać po najechaniu na ikony narzędzi na pasku bocznym.",
         "None": "Brak",
-        "InfoHeader": "Informacje Ogólne",
-        "SettingsHeader": "Ustawienia Gry",
-        "DocsHeader": "Dokumentacja Pomocy",
-        "AccessHeader": "Dostęp do Gry",
-        "Wiki": "Wiki Społeczności",
         "AnimVisionN": "Animuj Wzroku Żetonu",
         "AnimVisionL": "Animuj wizję Żetonu i zmiany światła w trakcie ruchu Żetonu. Wyłączenie tej opcji może poprawić wydajność na słabszych maszynach.",
         "AnimLightN": "Animuj Źródła Światła",
@@ -1693,8 +1887,6 @@
         "FontConfigN": "Dodatkowe Czcionki",
         "FontConfigL": "Zarządzaj Dodatkowymi Czcionkami",
         "FontConfigH": "Zarządzaj dodatkowymi czcionkami, które będą dostępne do użytku w tym Świecie.",
-        "FontSizeN": "Rozmiar Czcionki",
-        "FontSizeL": "Zwiększ lub zmniejsz rozmiar czcionki używanej przez aplikację.",
         "PhotosensitiveModeN": "Tryb Nadwrażliwości na Bodźce Wzrokowe",
         "PhotosensitiveModeL": "Włącznie tego trybu redukuje częstotliwość i czas trwania efektów i animacji zawierających błyski, gwałtowne ruchy i powtarzalne wzory.",
         "MipMapN": "Wygładzanie Przybliżonych Tekstur",
@@ -1709,15 +1901,11 @@
         "ScrollStatusL": "Nad Żetonami lub innymi obiektami płótna może pojawić się przewijany opis statusu, dostarczający dodatkowych informacji o stanie obiektu.",
         "SoftSN": "Włącz Miękkie Cienie",
         "SoftSL": "Włącz miękkie cieniowanie dla ładniejszego dynamicznego światła, lub wyłącz aby poprawić wydajność na maszynach o mniej wydajnych podzespołach.",
-        "Support": "Wsparcie i Problemy",
         "TabCore": "Ustawienia Główne",
         "TabModule": "Ustawienia Modułów",
         "TabSystem": "Ustawienia Systemu",
         "TokenDragPreviewN": "Wizja Żetonu Przy Przemieszczaniu",
         "TokenDragPreviewL": "Przy włączeniu, podgląd wizji i światła Żetonu jest generowany w czasie rzeczywistym podczas przeciągania myszą. Domyślnie wyłączone, jako że może prowokować niepożądane meta-rozumowanie u graczy.",
-        "DefaultTokenN": "Domyślna Konfiguracja Żetonów",
-        "DefaultTokenL": "Zarządzaj Domyślnymi Ustawieniami Żetonów",
-        "DefaultTokenH": "Zarządzaj wartościami domyślnymi Żetonów tworzonych dla nowo powstałych Aktorów.",
         "PermissionReset": "Resetuj ustawienia uprawnień roli Użytkownika do wartości domyślnych.",
         "PermissionUpdate": "Zaktualizowano ustawienia uprawnień roli Użytkownika.",
         "EditorAutosaveN": "Częstość Autozapisów Edytora",
@@ -1726,8 +1914,8 @@
         "EnableHighlightDocumentMatchesH": "Włącz dopasowania łącz do zawartości podczas zaznaczania tekstów w edytorze ProseMirror. Po włączeniu, zaznaczony tekst będzie używany aby znaleźć w świecie gry i jego kompendiach pasujące Dokumenty oraz zaoferować podmianę go na łącza.",
         "ReloadPromptTitle": "Przeładować Aplikację?",
         "ReloadPromptBody": "Niektóre ze zmienionych ustawień wymagają przeładowania aplikacji do ich wprowadzenia. Czy chcesz przeładować teraz?",
-        "GridDiagonalsN": "Przekątne Siatki Kwadratowej",
-        "GridDiagonalsL": "Określ jak obliczane są przekątne na kwadratowej siatce. Wartość w nawiasach określa dla każdej opcji sposób kalkulacji odległości na przekątnej.",
+        "GridDiagonalsN": "Przekątne Siatki",
+        "GridDiagonalsL": "Określ jak obliczane są przekątne na siatce kwadratowej i sześciokątnej. Wartość w nawiasach określa dla każdej opcji sposób kalkulacji odległości na przekątnej.",
         "GridDiagonalsEquidistant": "Równomierna (1)",
         "GridDiagonalsExact": "Dokładna (√2)",
         "GridDiagonalsApproximate": "Przybliżona (1.5)",
@@ -1735,11 +1923,83 @@
         "GridDiagonalsAlternating1": "Naprzemienna (1/2/1)",
         "GridDiagonalsAlternating2": "Naprzemienna (2/1/2)",
         "GridDiagonalsIllegal": "Niedozwolona (∞)",
-        "ColorSchemeN": "Preferowany Schemat Kolorów",
-        "ColorSchemeH": "Określ czy wolisz aby elementy interfejsu użytkownika renderowały się w motywie jasnym czy ciemnym. Nie wszystkie elementy interfejsu użytkownika wspierają tę opcję.",
-        "ColorSchemeDefault": "Domyślny dla Przeglądarki",
-        "ColorSchemeDark": "Ciemny",
-        "ColorSchemeLight": "Jasny"
+        "TokenAutoRotateN": "Automatyczna Rotacja Żetonów",
+        "TokenAutoRotateL": "Gdy włączone, Żetony są domyślnie automatycznie obracane w kierunku ruchu. Niezależnie od tego ustawienia, ustawienie Blokady Obrotu na poszczególnych żetonach nadal uniemożliwi wizualne obracanie ich grafiki.",
+        "PrototypeTokenOverrides": {
+            "Name": "Nadpisania Prototypu Żetonu",
+            "Label": "Konfiguruj Nadpisania Prototypu",
+            "Hint": "Skonfiguruj nadpisania danych Prototypu Żetonu dla wszystkich Aktorów.",
+            "Reset": {
+                "Label": "Resetuj Domyślne",
+                "Warning": "Ta akcja usunie wszystkie skonfigurowane nadpisania."
+            },
+            "Disabled": "Wyłączone",
+            "Submit": "Zapisz Nadpisania",
+            "TABS": {
+                "AllTypes": {
+                    "Label": "[Wszystkie Typy]",
+                    "Hint": "Te nadpisania mają zastosowanie do wszystkich Prototypów Żetonów, niezależnie od typu Aktora-rodzica. Mogą one same być nadpisywane dla każdego typu Aktora w kolejnych zakładkach. Pusty wybór dla pola oznacza brak nadpisania."
+                },
+                "Basics": "Podstawy",
+                "Marker": "Znacznik Tury"
+            }
+        },
+        "UniversalKeybindingsN": "Uniwersalne Skróty Klawiszowe (eksperymentalne)",
+        "UniversalKeybindingsL": "Dopasuj skróty do wpisywanego znaku zamiast do fizycznej pozycji klawisza. Poprawia wsparcie dla układów AZERTY, QWERTZ, Kana i innych. Jest to funkcja eksperymentalna. Wymagane jest ponowne uruchomienie.",
+        "UI": {
+            "MENU": {
+                "name": "Konfiguracja Interfejsu Użytkownika",
+                "label": "Konfiguruj Interfejs",
+                "hint": "Ustawienia, które wpływają na wygląd lub zachowanie interfejsu użytkownika Foundry Virtual Tabletop."
+            },
+            "HEADERS": {
+                "theme": "Motyw i Schemat Kolorów",
+                "size": "Rozmiar Interfejsu",
+                "fade": "Zanikanie Interfejsu",
+                "other": "Inne Ustawienia"
+            },
+            "FIELDS": {
+                "uiScale": {
+                    "label": "Skala Interfejsu",
+                    "hint": "Zastosuj globalny współczynnik skalowania do całego interfejsu użytkownika, aby go powiększyć lub zmniejszyć."
+                },
+                "fontScale": {
+                    "label": "Rozmiar Czcionki",
+                    "hint": "Powiększ lub zmniejsz domyślny rozmiar czcionki używany w aplikacji."
+                },
+                "colorScheme": {
+                    "applications": {
+                        "label": "Aplikacje",
+                        "hint": "Określ, czy wolisz, aby aplikacje okienkowe, takie jak karty postaci, renderowały się przy użyciu jasnego czy ciemnego motywu. Nie wszystkie karty obsługują tę preferencję."
+                    },
+                    "choices": {
+                        "default": "Domyślny dla Przeglądarki",
+                        "dark": "Ciemny",
+                        "light": "Jasny"
+                    },
+                    "interface": {
+                        "label": "Interfejs",
+                        "hint": "Określ, czy wolisz, aby elementy interfejsu użytkownika renderowały się przy użyciu jasnego czy ciemnego motywu."
+                    }
+                },
+                "chatNotifications": {
+                    "label": "Powiadomienia Czatu",
+                    "hint": "Wybierz, czy powiadomienia o nowych wiadomościach na czacie mają pojawiać się jako pełne karty czatu, czy tylko jako kropka na karcie czatu.",
+                    "cards": "Karty Czatu",
+                    "pip": "Kropka Powiadomienia"
+                },
+                "fade": {
+                    "opacity": {
+                        "label": "Nieaktywna Nieprzezroczystość",
+                        "hint": "Nieprzezroczystość zanikających elementów interfejsu użytkownika, gdy nie są aktywne. Niższe wartości są bardziej przezroczyste."
+                    },
+                    "speed": {
+                        "label": "Prędkość Zanikania",
+                        "hint": "Jak szybko elementy interfejsu zanikają lub pojawiają się, gdy mysz wchodzi lub opuszcza ich obszar. Niższe wartości są szybsze."
+                    }
+                }
+            }
+        }
     },
     "SETUP": {
         "NavLabel": "Karty Zarządzania Konfiguracją",
@@ -1749,7 +2009,6 @@
         "YouMustInstallASystem": "Przed utworzeniem nowego świata musisz zainstalować System Gry.",
         "UpdateAvailable": "Dostępna jest aktualizacja do wersji {channel} {version}!",
         "Configuration": "Ustawienia",
-        "ConfigurationWarning": "Poniższe opcje zarządzają działaniem serwera Foundry Virtual Tabletop. Dokonując zmian zachowaj ostrożność. Aby zmiany zaczęły obowiązywać, będziesz musiał zresetować oprogramowanie.",
         "MinifyFiles": "Optymalizuj Pliki Statyczne",
         "MinifyFilesHint": "Zmniejsza ruch sieciowy poprzez stosowanie zminimalizowanych plików statycznych JavaScript i CSS. Włączenie tej opcji jest zalecane dla większości użytkowników, ale deweloperzy mogą chcieć ją wyłączyć.",
         "Modules": "Moduły Dodatkowe",
@@ -1762,11 +2021,7 @@
         "Title": "Konfiguracja i Ustawienia",
         "Update": "Aktualizacja",
         "UpdateNewGeneration": "Wymagana Manualna Instalacja",
-        "UpdateNewGenerationHint": "Rozważ utworzenie snapshotu wszystkich zainstalowanych pakietów przed kontynuowaniem, na wypadek gdyby konieczne było cofnięcie.",
-        "UpdatePreviewCompatibilityHint": "Using the 'preview compatibility' button below, you can check if all your Worlds, Systems, and Modules are supported in Foundry Virtual Tabletop Version {version}.",
         "PreviewCompatibility": "Podgląd kompatybilności",
-        "PreviewCompatibilityVersion": "Podgląd Kompatybilności z {version}",
-        "PreviewingCompatibility": "Podglądanie Kompatybilności",
         "SystemUpdate": "Aktualizuj System",
         "CoreUpdateInstructions": "Dostępna jest aktualizacja dla Oprogramowania Rdzeniowego, powróć do Ekranu Konfiguracyjnego aby ją przeprowadzić!",
         "SystemUpdateInstructions": "Dostępna jest aktualizacja Systemu Rozgrywki, powróć do Ekranu Konfiguracyjnego aby ją przeprowadzić!",
@@ -1809,11 +2064,7 @@
         "RequireCoreDowngrade": "Niewspierana Wersja Rdzeniowa",
         "LockHint": "Blokowanie Pakietu uniemożliwia jego dezinstalację lub aktualizację.",
         "FavoritePackage": "Ulubione",
-        "BeginDownload": "Rozpocznij Pobieranie",
-        "FullListOfReleaseNotes": "Dla pełnej listy zmian, sięgnij pod adres {url}",
         "Verified": "Pakiet został zweryfikowany dla tej wersji Foundry",
-        "CSSTheme": "Motyw Ekranu Konfiguracyjnego",
-        "CSSThemeHint": "Wybierz wygląd menu konfiguracyjnego aplikacji spośród kilku motywów wizualnych.",
         "ErrorTimeout": "Zapytanie do {url} przekroczyło czas oczekiwania po {timeout}s",
         "WarningsTitle": "Ostrzeżenia Dotyczące Pakietów",
         "WarningsNone": "Nie ma ostrzeżeń!",
@@ -1823,10 +2074,6 @@
         "PriorManifestUrl": "Poprzedni URL Manifestu (Wersja {version})",
         "UpdatedManifestUrl": "Zaktualizowany URL Manifestu (Wersja {version})",
         "SwapToTheUpdatedManifest": "Czy chcesz skorzystać z nowego adresu URL manifestu? (jest to zalecane)",
-        "ConfigTitle": "Konfiguruj Aplikację",
-        "ConfigSave": "Zapisz Konfigurację Aplikacji",
-        "ConfigSaveWarning": "Zmiana tych ustawień sprawi, że serwer zostanie wyłączony i konieczne będzie jego manualne uruchomienie. Czy chcesz kontynuować?",
-        "ConfigSaveRestart": "Serwer Foundry Virtual Tabletop został zamknięty aby wprowadzić zmiany. Musisz manualnie uruchomić go ponownie.",
         "CurrentVersion": "Obecna Wersja",
         "ForceUpdate": "Wymusić Aktualizację?",
         "DependencyNotInstalled": "Ta dependencja nie jest zainstalowana",
@@ -1852,7 +2099,6 @@
         "WorldFilter": "Filtruj Światy",
         "SystemFilter": "Filtruj Systemy",
         "ModuleFilter": "Filtruj Moduły",
-        "PackageFilterHint": "Możesz filtrować dostępne pakiety po nazwie.",
         "PackageCategories": "Kategorie Pakietów",
         "PackageInstalled": "Zainstalowane",
         "PackageNotOwned": "Nieposiadane",
@@ -1883,9 +2129,9 @@
         "PackageDependenciesCouldInstallPlural": "{number} dependencji może zostać zainstalowanych automatycznie.",
         "PackageDependenciesDecline": "Odmówiono instalacji wymaganych dependencji dla pakietu {title}. Konieczna będzie ich manualna instalacja.",
         "PackageDependenciesSuccess": "Pomyślnie zainstalowano {title} i {number} dependencji.",
-        "PackageUpdateCoreUpdateNeeded": "Dla {id} dostępna jest aktualizacja, ale nie może zostać zainstalowana ponieważ wymaga aktualizacji oprogramowania rdzeniowego do przynajmniej {vmin}. Obecnie używasz wersji {vcur}.",
-        "PackageUpdateCoreUnstable": "Dla {id} dostępna jest aktualizacja, ale nie może zostać zainstalowana ponieważ wymaga oprogramowania rdzeniowego w wersji {vmin}, która nie jest jeszcze stabilna.",
-        "PackageUpdateCoreInsufficient": "Dostępna jest aktualizacja, ale wymaga ona do działania starszej wersji rdzeniowej oprogramowania {vmax}.",
+        "PackageUpdateCoreUpdateNeeded": "Dla {title} dostępna jest aktualizacja, ale nie może zostać zainstalowana ponieważ wymaga aktualizacji oprogramowania rdzeniowego do przynajmniej {vmin}. Obecnie używasz wersji {vcur}.",
+        "PackageUpdateCoreUnstable": "Dla {title} dostępna jest aktualizacja, ale nie może zostać zainstalowana ponieważ wymaga oprogramowania rdzeniowego w wersji {vmin}, która nie jest jeszcze stabilna.",
+        "PackageUpdateCoreInsufficient": "Dla {title} dostępna jest aktualizacja, ale wymaga ona do działania starszej wersji rdzeniowej oprogramowania {vmax}. Obecnie korzystasz z wersji {vcur}.",
         "PackageDeleteTitle": "Usuń {type}: {title}",
         "PackageDeleteConfirm": "Czy na pewno chcesz usunąć {type}\"{title}\"?",
         "WorldDeleteConfirmCode": "Wpisz ten kod w poniższe okno aby kontynuować: ",
@@ -1898,7 +2144,7 @@
         "PackageStatusCheck": "Aktualizuj",
         "PackageStatusBlocked": "Zablokowano",
         "PackageStatusUpdate": "Aktualizacja",
-        "PackageStatusCurrent": "Obecny",
+        "PackageStatusCurrent": "Aktualny",
         "PackageStatusUpdating": "Aktualizacja",
         "PackageStatusUpdated": "Zaktualizowano",
         "PackageProgressDownload": "Pobieranie Pakietu",
@@ -1931,8 +2177,7 @@
         "UpdateWebsiteSlowWarning": "https://foundryvtt.com zdaje się być obecnie pod dużym obciążeniem, zalecamy spróbować ponownie później.",
         "UpdateWarningWillDisable": "Ta aktualizacja wprowadza istotne zmiany w Foundry Virual Tabletop. Instalacja tej aktualizacji może wymagać dezaktywacji niektórych zainstalowanych modułów jeśli nie posiadają odpowiedniej kompatybilności.",
         "UpdateButtonDownload": "Pobierz Aktualizację {display}",
-        "UpdateInfoAvailable": "Dostępna aktualizacja Foundry Virtual Tabletop do wersji {display}!",
-        "UpdateNoUpdateMode": "Nie możesz zaktualizować tej instancji Foundry Virtual Tabletop bo została uruchomiona w trybie --noupdate.",
+        "UpdateInfoAvailable": "Dostępna aktualizacja do Foundry Virtual Tabletop {display}!",
         "UpdateNotAvailable": "Na wybranym kanale aktualizacji nie jest obecnie dostępna nowsza wersja Foundry.",
         "UpdateNoArchive": "Nie istnieje żadne archiwum instalacyjne",
         "UpdateLicenseInvalid": "Twój klucz licencyjny Foundry Virtual Tabletop jest nieważny.",
@@ -1943,48 +2188,17 @@
         "WorldCoreMigrationRequired": "<p>Uruchomienie świata <strong>{world}</strong> dokona migracji jego modelu z wersji oprogramowania rdzeniowego (<code>{oldVersion}</code>) do zainstalowanej obecnie <strong>{newVersion}</strong>.</p>",
         "WorldSystemMigrationRequired": "<p>Ten Świat był ostatnio uruchamiany na wersji starszej (<code>{oldVersion}</code>) od obecnie zainstalowanej wersji systemu <strong>{newVersion}</strong> i może wymagać migracji systemu.</p>",
         "WorldMigrationSystemUnavailable": "<p>Zainstalowana wersja systemu <strong>{system}</strong> (<code>{systemVersion}</code>) nie posiada potwierdzonej kompatybilności z tą wersją oprogramowania rdzeniowego. Nie można zagwarantować skutecznej migracji.</p>",
-        "WorldMigrationDisableModules": "<p>Przed migrowaniem świata, upewnij się, że zaktualizowano wszystkie moduły oraz system gry. W ramach migracji na nową wersję oprogramowania wszystkie moduły zostaną wyłączone. Po zakończeniu migracji możesz włączyć je ponownie.</p>",
+        "WorldMigrationDisableModules": "<p>Przed migrowaniem świata, upewnij się, że zaktualizowano system gry oraz wszystkie moduły. W ramach procesu migracji na nową wersję oprogramowania wszystkie moduły oraz aktywne sceny zostaną wyłączone a wszelka odtwarzana muzyka zatrzymana. Po zakończeniu migracji możesz włączyć je ponownie.</p>",
         "WorldMigrationBackupPrompt": "<p><strong>Tego procesu nie da się odwrócić</strong>. Zaleca się utworzenie kopii zapasowej danych Świata przed kontynuowaniem. Będzie ona niezbędna w wypadku powracania do poprzedniej wersji.</p>",
         "WorldMigrationCreateBackup": "Czy utworzyć kopię zapasową przed migracją?",
         "WorldMigrationBegin": "Rozpocznij Migrację",
         "WorldMigrationInProcess": "Dane twojego świata są migrowane do kompatybilności z wersją {version}. Może to zająć chwilę. Proszę zachowaj cierpliwość i nie zamykaj oprogramowania.",
         "AdminAccess": "Wymagany Dostęp Administratorski",
-        "AdminPasswordLabel": "Hasło Administratora",
-        "AdminPasswordHint": "Hasło administratorskie jest używane aby chronić przed nieuprawnionym do Ekranu Konfiguracyjnego Foundry Virtual Tabletop. Ustawienie hasła administratorskiego dla swojego serwera jest wysoce zalecane.",
         "AdminPasswordPrompt": "Na serwerze nie trwa obecnie żadna aktywna gra. Aby uzyskać dostęp do ekranu konfiguracyjnego musisz podać hasło administratora.",
         "AdminPasswordForgot": "Jeśli zapomniałeś swojego hasła, możesz je zresetować podążając za <a href='https://foundryvtt.com/article/reset-admin-password/' target='_blank'>poniższymi instrukcjami</a>.",
         "AdminLogIn": "Zaloguj Się",
         "AdminLogout": "Wyloguj Administratora",
-        "AWSLabel": "Ścieżka Konfiguracji AWS",
-        "AWSHint": "Możesz podać plik konfiguracyjny AWS aby zintegrować z Amazon S3. Ścieżka może być bezwzględna lub podkatalogiem lokalizacji \"Config\" danych użytkownika.",
-        "CompressStaticLabel": "Kompresuj Pliki Statyczne",
-        "CompressStaticHint": "Kompresuj dane wysyłane przez serwer Foundry Virtual Tabletop przed wysyłaniem ich do klientów, aby zminimalizować przesył danych.",
-        "CompressSocketLabel": "Kompresuj Dane Websocketów",
-        "CompressSocketHint": "Włącz kompresję danych wysyłanych przez serwer do klientów przez websocket. Rekomendowane dla zachowania wydajności łącza.",
-        "DefaultLanguageLabel": "Język Domyślny",
-        "DefaultLanguageHint": "Możesz wybrać domyślny język aplikacji precyzując moduł dostarczający tłumaczenia rdzeniowych plików aplikacji dla danego języka.",
-        "DeleteNEDBLabel": "Usuń Zmigrowane Pliki NEDB",
-        "DeleteNEDBHint": "W wersji 11, nasze oprogramowanie przeszło ze starej technologii bazodanowej (NEDB) na nową (LevelDB). Automatycznie migrujemy stare pliki bazodanowe na nowy format i zachowujemy stare pliki NEDB na wypadek, gdybyś musiał wrócić do poprzednich wersji lub zdiagnozować problem. To zabezpieczenie zwiększa ilość miejsca zajmowanego na dysku przez Foundry VTT. Włączenie tej opcji zaskutkuje automatycznym usunięciem plików NEDB po ich migracji. W wersji 12 będzie to zachowanie domyślne.",
-        "PortLabel": "Port",
-        "PortHint": "Możesz określić port którego Foundry Virtual Tabletop używa do połączeń TCP oraz włączyć lub wyłączyć protokół UPnP (Universal Plug and Play).",
         "UPNPLabel": "Włącz UPnP",
-        "DataPathLabel": "Katalog Danych Użytkownika",
-        "DataPathHint": "Określ lokalizację gdzie przechowywane będą twoje dane, takie jak światy, systemy i moduły.",
-        "WorldLabel": "Domyślny Świat",
-        "WorldHint": "Możesz automatycznie uruchamiać jeden z dostępnych światów przy uruchomieniu aplikacji.",
-        "SSLCert": "Certyfikat SSL",
-        "SSLCertLabel": "Certyfikat",
-        "SSLCertHint": "Możesz skonfigurować serwer aby używał szyfrowania secure socket layer (SSL) zapewniając ścieżkę do plików certyfikatu i klucza. Ścieżki mogą być bezwzględne, lub podane względem folderu Config w lokalizacji danych użytkownika.",
-        "SSLKeyLabel": "Klucz",
-        "Telemetry": "Udostępniaj Dane Użytkowania",
-        "TelemetryHint": "Zezwól na udostępnianie danych użytkowania, które pozwolą nam usprawnić Foundry Virtual Tabletop. Dane zbierane po włączeniu tej opcji są wyszczególnione w naszej <a href=\"https://foundryvtt.com/article/privacy-policy/\" target=\"_blank\">Polityce Prywatności</a> i nie zawierają żadnych informacji identyfikujących cię jako osobę ani nie są współdzielone z żadnym organem trzecim. Udostępnianie danych użytkowania daje nam odpowiedzi na pytania takie jak \"które wersje Foundry VTT są najintensywniej używane\", \"które Systemy Gry są najczęściej ogrywane\" czy \"które wersje Modułów są instalowane najczęściej\". Używamy tych danych aby poprawiać kompatybilność oprogramowania, zapewniać lepszą obsługę klienta oraz aby dzielić się wnioskami ze statystyk z naszą społecznością. Jeśli ta opcja będzie wyłączona, żadne dane nie będą udostępniane.",
-        "TelemetryRequestTitle": "Zezwól na Udostępnianie Danych Użytkowania",
-        "TelemetryRequest1": "Jeśli udzielona zostanie zgoda, Foundry Virtual Tabletop będzie udostępniał niewielką ilość anonimowych danych użytkowania stronie foundryvtt.com, co pozwoli naszemu zespołowi lepiej zrozumieć sposoby, na jakie Foundry VTT jest wykorzystywane i poprawić program.",
-        "TelemetryRequest2": "To okno zostanie wyświetlone tylko raz, ale możesz zmienić swoje preferencje w zakresie udostępniania danych w menu Konfiguracji Aplikacji klikając ikonę <i class=\"fas fa-cogs\"></i> w prawym górnym rogu tego ekranu.",
-        "TelemetryAllow": "Zezwól na Udostępnianie",
-        "TelemetryDecline": "Odmów Udostępniania",
-        "HotReloadLabel": "Przeładuj Pliki Pakietów na Gorąco",
-        "HotReloadHint": "Pozwala Pakietom na przeładowywanie na gorąco niektórych assetów, takich jak CSS, HTML i Lokalizacja bez konieczności pełnego odświeżenia. Ustawienie to jest zalecane jedynie dla deweloperów.",
         "News": "Nowości",
         "FeaturedContent": "Wyróżnione Treści",
         "NoFeaturedContent": "Nie uzyskano żadnych rekomendacji zawartości z serwera foundryvtt.com",
@@ -2068,7 +2282,7 @@
                 "module": "Tworzenie Snapshotu Modułów",
                 "system": "Tworzenie Snapshotu Systemów"
             },
-            "CannotRestoreUnusable": "Ta kopia zapasowa nie może zostać przywrócona, ponieważ uczyniła by pakiet niemożliwym do użycia."
+            "CannotRestoreUnusable": "Ta kopia zapasowa nie może zostać przywrócona, ponieważ uczyniłaby pakiet niemożliwym do użycia."
         },
         "COMPAT": {
             "Compatible": "Kompatybilne: {count}",
@@ -2091,9 +2305,41 @@
             "RISK": {
                 "Latest": "Najnowsza wersja tego pakietu była ostatni raz weryfikowana dla oprogramowania rdzeniowego w wersji {verified}",
                 "World": "System tego świata był ostatni raz weryfikowany dla oprogramowania rdzeniowego w wersji {verified}"
-            }
+            },
+            "Title": "Podgląd Kompatybilności: {release}",
+            "Previewing": "Wczytywanie Podglądu"
         },
-        "UpdatePerformIfAvailable": "Przeprowadź Aktualizację Jeśli Jest Dostępna"
+        "UpdatePerformIfAvailable": "Przeprowadź Aktualizację Jeśli Jest Dostępna",
+        "UpdateCheckFor": "Sprawdź Aktualizacje",
+        "PackageProtected": "Chroniony",
+        "PackageRequiresDowngradeHint": "Musisz obniżyć wersję Foundry VTT do {vmax}, aby zainstalować ten pakiet.",
+        "PackageRequiresDowngradeLabel": "Wymaga Obniżenia Wersji",
+        "PackageRequiresUpgradeHint": "Musisz zaktualizować Foundry VTT do wersji {vmin}, aby zainstalować ten pakiet.",
+        "PackageRequiresUpgradeLabel": "Wymaga Aktualizacji",
+        "ViewPackageWebsite": "Zobacz Stronę Pakietu",
+        "WorldLaunchCleanWorld": "Czyszczenie Danych Świata",
+        "WorldLaunchExtractDemo": "Wypakowywanie Danych Demo",
+        "NoUpdateMode": {
+            "Label": "Aktualizacje Wyłączone",
+            "Hint": "Nie możesz zaktualizować tej instancji Foundry Virtual Tabletop, ponieważ została uruchomiona w trybie --noupdate."
+        },
+        "INSTALL_PACKAGE": {
+            "ManifestIncompatible": {
+                "Title": "Ostrzeżenie o Kompatybilności",
+                "Warning": [
+                    "{packageType} pod podanym adresem URL nie jest kompatybilny z bieżącą wersją Foundry Virtual Tabletop.",
+                    "Czy na pewno chcesz kontynuować instalację?"
+                ]
+            },
+            "ManifestWrongPackageType": "Podany URL nie wskazuje na {packageType}."
+        },
+        "UPDATE_NOTES": {
+            "Title": "Informacje o Wydaniu: {release}",
+            "FullList": "Zobacz <a href=\"{url}\" target=\"_blank\">pełną listę</a> Informacji o Wydaniu.",
+            "BeginDownload": "Rozpocznij Pobieranie",
+            "NewGenerationHint": "Rozważ utworzenie migawki wszystkich zainstalowanych pakietów przed kontynuowaniem, na wypadek gdyby konieczne było cofnięcie.",
+            "PreviewCompatibilityHint": "Używając przycisku \"Podgląd Kompatybilności\" poniżej, możesz sprawdzić, czy wszystkie Twoje Światy, Systemy i Moduły są wspierane w Foundry Virtual Tabletop w wersji {version}."
+        }
     },
     "THEME": {
         "foundry": "Foundry Virtual Tabletop",
@@ -2110,46 +2356,7 @@
             "modulePl": "Moduły",
             "allPl": "Wszystkie"
         },
-        "Id": "Identyfikator Pakietu",
-        "IdHint": "Identyfikator musi być unikalnym alfanumerycznym ciągiem znaków bez jakichkolwiek innych znaków specjalnych poza myślnikami.",
-        "Title": "Tytuł Pakietu",
-        "TitleHint": "Ten tytuł jest przeznaczony dla użytkowników i może zawierać znaki specjalne.",
-        "Version": "Wersja Pakietu",
-        "VersionHint": "Pole wersji identyfikuje konkretną iterację tego pakietu. Schematy wspieranych wersji pozwalają na wpisy całkowitoliczbowe lub liczby oddzielone kropkami.",
-        "Description": "Opis Pakietu",
-        "DescriptionHint": "Opis zawartości i zastosowania tego pakietu. Może być podany prostym tekstem lub jako HTML.",
-        "URL": "Adres Pakietu",
-        "URLHint": "Adres URL strony, na której można znaleźć więcej informacji o pakiecie.",
-        "Author": {
-            "Name": "Nazwa Autora",
-            "Discord": "Nazwa Użytkownika na Discordzie",
-            "Email": "Adres Email",
-            "URL": "Adres Strony",
-            "Add": "Dodaj Autora",
-            "Remove": "Usuń Autora"
-        },
-        "Compendium": {
-            "Add": "Dodaj Paczkę Kompendium",
-            "Remove": "Usuń Paczkę Kompendium",
-            "Name": "Nazwa",
-            "NameHint": "Unikalny alfanumeryczny ciąg znaków nie zawierający znaków specjalnych, identyfikujący jednoznacznie paczkę kompendium.",
-            "NameDisabledHint": "Nie możesz zmienić nazwy tej paczki kompendium, bo już została stworzona.",
-            "Label": "Podpis",
-            "Type": "Typ Dokumentu",
-            "System": "Wymagany System",
-            "SystemHint": "Kompendia Aktorów, Przedmiotów lub Przygód (które zawierają Przedmioty i Aktorów) muszą określać konkretny system gry dla którego są przeznaczone."
-        },
-        "TabBasics": "Podstawowe Detale",
-        "TabAuthors": "Autorzy",
-        "TabPacks": "Paczki Kompendium",
-        "TabRelationships": "Zależności",
         "Create": "Utwórz Pakiet",
-        "CompatibilityHint": "Opcjonalnie możesz określić, że ten pakiet kompatybilny jest tylko z określonymi wersjami Foundry Virtual Tabletop. Kompatybilność może być określana zarówno dla konkretnych buildów takich jak \"11.294\" oraz dla całego zakresu generacji takiego jak \"11\".",
-        "Compatibility": {
-            "Minimum": "Minimalna Wersja",
-            "Verified": "Zweryfikowana Wersja",
-            "Maximum": "Maksymalna Wersja"
-        },
         "TagJavaScript": "JavaScript",
         "TagCSS": "CSS",
         "TagCompendium": "Kompendium",
@@ -2161,8 +2368,6 @@
         "PackageInstallTimedOut": "Przekroczono limit czasu oczekiwania na instalację Pakietu",
         "UpdateCheckTimedOut": "Przekroczono Czas Oczekiwania",
         "WarmCacheTimedOut": "Przekroczono limit czasu oczekiwania na rozgrzanie cache pakietu",
-        "SetupErrors": "Napotkano {number} krytycznych błędów z zainstalowanymi Pakietami. Otwórz konsolę (F12) aby sprawdzić szczegóły.",
-        "SetupWarnings": "Wykryto {number} ostrzeżeń dotyczących kompatybilności w zainstalowanych Pakietach. Otwórz konsolę (F12) aby sprawdzić szczegóły.",
         "Lock": "Zablokuj {type}",
         "Locked": "Zablokowano",
         "Unlock": "Odblokuj {type}",
@@ -2177,7 +2382,7 @@
         "UpdateAllInProgress": "Operacja \"Aktualizuj Wszystkie\" już trwa. Musisz zaczekać na jej zakończenie zanim zaktualizujesz inny rodzaj pakietu.",
         "ModuleCreate": "Utwórz Moduł",
         "ModuleCreateHint": "Możesz użyć tego formularza aby stworzyć Moduł, który będzie współdzielony pomiędzy wieloma Światami i pakowany do dystrybucji dla innych użytkowników. Formularz wspiera wiele różnych rodzajów konfiguracji pakietu. Możesz dodatkowo zarządzać pakietem i edytować szczegóły poprzez modyfikowanie pliku manifestu JSON.",
-        "ModuleCreateSuccess": "Stworzono moduł \"{id}\" i jest on gotowy do użytku!",
+        "ModuleCreateSuccess": "Moduł \"{id}\" został stworzony i jest gotowy do użytku!",
         "ModuleCreateErrorAlreadyExists": "Moduł \"{id}\" już istnieje! Wybierz inny identyfikator pakietu.",
         "ModuleEdit": "Edytuj Moduł",
         "ModuleEditHint": "Możesz użyć tego formularza aby zaktualizować dane manifestu Modułu.",
@@ -2185,9 +2390,7 @@
         "ModuleEditSuccess": "Zmodyfikowano dane manifestu Modułu \"{id}\".",
         "Relationship": {
             "Package": "Powiązany Pakiet",
-            "Category": "Rodzaj Zależności",
-            "Add": "Dodaj Zależność",
-            "Remove": "Usuń Zależność"
+            "Category": "Rodzaj Zależności"
         },
         "Relationships": {
             "Systems": "System Gry",
@@ -2199,6 +2402,97 @@
             "GALLERY": "Widok Galerii",
             "TILES": "Widok Kafelków",
             "DETAILS": "Widok Szczegółowy"
+        },
+        "Compatibility": {
+            "Label": "Kompatybilność",
+            "Hint": "Możesz opcjonalnie wskazać, że ten pakiet jest kompatybilny tylko z określonym zakresem wersji oprogramowania Foundry Virtual Tabletop. Kompatybilność można zadeklarować dla konkretnej wersji kompilacji, np. \"13.339\", lub dla szerokiej generacji, np. \"13\"."
+        },
+        "ConfigTitle": "Moduł: {module}",
+        "NewModuleTitle": "Mój Nowy Moduł",
+        "ACTIONS": {
+            "AddAuthor": "Dodaj Autora",
+            "RemoveAuthor": "Usuń Autora",
+            "AddPack": "Dodaj Paczkę Kompendium",
+            "RemovePack": "Usuń Paczkę Kompendium",
+            "AddRelationship": "Dodaj Zależność",
+            "RemoveRelationship": "Usuń Zależność"
+        },
+        "TABS": {
+            "basics": "Podstawowe Detale",
+            "authors": "Autorzy",
+            "packs": "Paczki Kompendium",
+            "relationships": "Zależności"
+        },
+        "FIELDS": {
+            "id": {
+                "label": "Identyfikator Pakietu",
+                "hint": "Identyfikator musi być unikalnym alfanumerycznym ciągiem znaków bez jakichkolwiek innych znaków specjalnych poza myślnikami."
+            },
+            "title": {
+                "label": "Tytuł Pakietu",
+                "hint": "Ten tytuł jest przeznaczony dla użytkowników i może zawierać znaki specjalne."
+            },
+            "version": {
+                "label": "Wersja Pakietu",
+                "hint": "Pole wersji identyfikuje konkretną iterację tego pakietu. Schematy wspieranych wersji pozwalają na wpisy całkowitoliczbowe lub liczby oddzielone kropkami."
+            },
+            "description": {
+                "label": "Opis Pakietu",
+                "hint": "Opis zawartości i zastosowania tego pakietu. Może być podany prostym tekstem lub jako HTML."
+            },
+            "url": {
+                "label": "Adres Pakietu",
+                "hint": "Adres URL strony, na której można znaleźć więcej informacji o pakiecie."
+            },
+            "authors": {
+                "element": {
+                    "name": {
+                        "label": "Nazwa Autora"
+                    },
+                    "discord": {
+                        "label": "Nazwa Użytkownika na Discordzie"
+                    },
+                    "email": {
+                        "label": "Adres Email"
+                    },
+                    "url": {
+                        "label": "Adres Strony"
+                    }
+                }
+            },
+            "packs": {
+                "element": {
+                    "name": {
+                        "label": "Nazwa",
+                        "hint": "Unikalny alfanumeryczny ciąg znaków nie zawierający znaków specjalnych, identyfikujący jednoznacznie paczkę kompendium.",
+                        "disabledHint": "Nie możesz zmienić nazwy tej paczki kompendium, bo już została stworzona."
+                    },
+                    "label": {
+                        "label": "Etykieta"
+                    },
+                    "type": {
+                        "label": "Typ Dokumentu"
+                    },
+                    "system": {
+                        "label": "Wymagany System",
+                        "hint": "Kompendia Aktorów, Przedmiotów lub Przygód (które zawierają Przedmioty i Aktorów) muszą określać konkretny system gry dla którego są przeznaczone."
+                    }
+                }
+            },
+            "compatibility": {
+                "minimum": {
+                    "label": "Minimalna Wersja"
+                },
+                "verified": {
+                    "label": "Zweryfikowana Wersja"
+                },
+                "maximum": {
+                    "label": "Maksymalna Wersja"
+                }
+            },
+            "dataPath": {
+                "label": "Ścieżka Danych"
+            }
         }
     },
     "PACKAGECONFIG": {
@@ -2206,7 +2500,11 @@
         "Reset": "Przywróć Domyślne",
         "Filter": "Filtruj",
         "Core": "Rdzeniowe",
-        "Unmapped": "Niezmapowane"
+        "Unmapped": "Niezmapowane",
+        "TABS": {
+            "core": "Rdzeniowe",
+            "unmapped": "Niezmapowane"
+        }
     },
     "JOIN": {
         "CurrentPlayers": "Obecni Gracze",
@@ -2233,7 +2531,11 @@
         "DocumentSheetPrivate": "Nie masz dostatecznych uprawnień aby wyświetlić kartę dla {type}.",
         "Save": "Zapisz Konfigurację Karty",
         "FormNavLabel": "Nawigacja Zakładek Formy",
-        "CopyUuid": "Kopiuj UUID Dokumentu"
+        "CopyUuid": "Kopiuj UUID Dokumentu",
+        "ConfigureTitle": "{prefix}: Sheet Configuration",
+        "Defaults": "Defaults",
+        "Theme": "Theme",
+        "ThemeHint": "Not all themes are available for each sheet."
     },
     "SOUND": {
         "ConfigTitle": "Konfiguracja Dźwięku Środowiskowego",
@@ -2247,19 +2549,15 @@
     },
     "FOLDER": {
         "Clear": "Wyczyść Folder",
-        "Color": "Kolor Folderu",
-        "Create": "Stwórz Folder",
         "Collapse": "Zwiń Wszystkie Foldery",
         "Delete": "Usuń Wszystko",
         "DeleteWarning": "Ten folder oraz cała jego zawartość zostaną permanentnie usunięte i nie będą mogły zostać przywrócone.",
         "Edit": "Edytuj Folder",
         "Export": "Eksportuj do Kompendium",
-        "Name": "Nazwa Folderu",
         "Remove": "Usuń Folder",
         "RemoveWarning": "Ten folder zostanie permanentnie usunięty a cała jego zawartość zostanie przeniesiona do folderu-rodzica.",
         "SortAlphabetical": "Alfabetycznie",
         "SortManual": "Ręcznie",
-        "SortMode": "Tryb Sortowania",
         "Update": "Aktualizuj Folder",
         "ExportTitle": "Eksportuj Dane",
         "ExportHint": "Możesz wyeksportować zawarte w tym folderze Dokumenty do odblokowanej paczki Kompendium odpowiedniego typu.",
@@ -2274,14 +2572,28 @@
         "Exporting": "Eksportowanie dokumentów typu {type} do Kompendium {compendium}.",
         "ExportDone": "Ukończono eksportowanie {type} do Kompendium {compendium}.",
         "CreateTable": "Utwórz Tabelę Rzutów",
-        "CreateTableConfirm": "Utworzyć nową Tabelę Rzutów używając zawartości tego Folderu jako wyników?",
         "InvalidDocumentType": "Dla tego Folderu podano nieprawidłowy typ Dokumentu \"{type}\".",
         "ExceededMaxDepth": "Nie można zagnieżdżać Folderów bardziej niż na {depth} poziomy.",
-        "DocumentSort": "Kolejność Sortowania",
-        "DocumentSortHint": "Ustal kolejność sortowania tego Dokumentu w stosunku do innych w tej samej kolekcji. Niższa wartość będzie sortowana w pierwszej kolejności."
+        "DeleteName": "Delete All: {name}",
+        "RemoveName": "Remove Folder: {name}",
+        "CreateTableConfirm": {
+            "Title": "Create Rollable Table: {folder}",
+            "Question": "Utworzyć nową Tabelę Rzutów używając zawartości tego Folderu jako wyników?"
+        },
+        "FIELDS": {
+            "name": {
+                "label": "Folder Name"
+            },
+            "color": {
+                "label": "Kolor Folderu"
+            },
+            "sorting": {
+                "label": "Tryb Sortowania"
+            }
+        }
     },
     "OWNERSHIP": {
-        "Title": "Zarządzanie Uprawnieniami",
+        "Title": "Zarządzanie Uprawnieniami: {object}",
         "NONE": "Brak",
         "LIMITED": "Ograniczone",
         "OBSERVER": "Obserwator",
@@ -2293,7 +2605,9 @@
         "HintFolder": "Zarządzaj dostępem do wszystkich Dokumentów w tym Folderze. Zmiany zastosowane zostaną dla zawartych tu Dokumentów, ale nie dla zawartości pod-folderów.",
         "HintDocument": "Zarządzaj dostępem do tego konkretnego Dokumentu, zezwalając każdemu Użytkownikowi na inny poziom widoczności.",
         "Configure": "Zarządzaj Uprawnieniami",
-        "ShowGM": "Pokaż Użytkowników MG"
+        "ShowGM": "Pokaż Użytkowników MG",
+        "Legend": "Ownership",
+        "Save": "Save Changes"
     },
     "PERMISSION": {
         "Title": "Konfiguracja Uprawnień Użytkowników",
@@ -2315,35 +2629,35 @@
         "CardsCreateHint": "Uprawnia użytkowników z tą rolą do tworzenia nowych dokumentów typu Karty w świecie gry.",
         "DrawingCreate": "Używanie Narzędzi Rysowania",
         "DrawingCreateHint": "Zezwala użytkownikom z tą rolą na rysowanie z użyciem narzędzi.",
-        "ItemCreate": "Tworzenie Nowych Przedmiotów",
+        "ItemCreate": "Tworzenie Przedmiotów",
         "ItemCreateHint": "Zezwala użytkownikom z tą rolą na tworzenie nowych Przedmiotów w Świecie Gry.",
         "FilesBrowse": "Przeglądanie Plików",
         "FilesBrowseHint": "Zezwala użytkownikom z tą rolą na przeglądanie dostępnych plików w Narzędziu Wybierania Pliku.",
-        "FilesUpload": "Wysyłanie Nowych Plików",
+        "FilesUpload": "Wysyłanie Plików",
         "FilesUploadHint": "Zezwala użytkownikom z tą rolą na przesyłanie nowych plików na serwer przy użyciu Narzędzia Wybierania Plików.",
         "JournalCreate": "Tworzenie Wpisów w Dzienniku",
         "JournalCreateHint": "Zezwala użytkownikom z tą rolą na tworzenie nowych Wpisów w Dzienniku z pomocą paska bocznego Dziennika.",
-        "MacroScript": "Używanie Skryptowanych Makro oraz Uruchamianie Skryptowych Zachowań Regionów",
-        "MacroScriptHint": "Zezwala użytkownikom z tą rolą na używanie makr w JavaScript, posiadających dostęp do API, oraz na Uruchamianie Skryptowych Zachowań Regionów.",
+        "MacroScript": "Modyfikowanie Skryptowanych Makro oraz Uruchamianie Skryptowych Zachowań Regionów",
+        "MacroScriptHint": "Zezwala użytkownikom z tą rolą na używanie makr JavaScript, mających dostęp do API Foundry, oraz na uruchamianie Skryptowych Zachowań w Regionach Sceny.",
         "ManualRolls": "Wykonywanie Rzutów Ręcznych",
         "ManualRollsHint": "Zezwala użytkownikom z tą rolą na opcjonalne manualne wprowadzanie wyników rzutów.",
         "MessageWhisper": "Szeptanie Wiadomości Prywatnych",
-        "MessageWhisperHint": "Zezwala użytkownikom z tą rolą na szeptanie wiadomości prywatnych, niewidocznych dla Mistrza Gry.",
+        "MessageWhisperHint": "Zezwala użytkownikom z tą rolą na używanie komendy czatu /whisper, aby wysyłać wiadomości prywatne.",
         "NoteCreate": "Tworzenie Notatek na Mapie",
         "NoteCreateHint": "Zezwala użytkownikom z tą rolą na tworzenie Notatek z Wpisów w Dzienniku będących ich własnością.",
         "PingCanvas": "Wskazywanie Płótna",
         "PingCanvasHint": "Zezwala użytkownikom z tą rolą na zwracanie uwagi na określony punkt płótna poprzez animację wskazywania.",
-        "PlaylistCreate": "Tworzenie Playlist",
-        "PlaylistCreateHint": "Zezwala użytkownikom z tą rolą na tworzenie nowych Playlist w świecie gry.",
+        "PlaylistCreate": "Tworzenie i Kontrolowanie Playlist",
+        "PlaylistCreateHint": "Zezwala użytkownikom z tą rolą na tworzenie nowych Playlist w Świecie gry oraz na kontrolowanie należących do nich Playlist.",
         "SettingsModify": "Modyfikacja Ustawień Konfiguracyjnych",
         "SettingsModifyHint": "Zezwala użytkownikom z tą rolą na modyfikację ustawień gry i włączanie lub wyłączanie modułów.",
         "ShowCursor": "Wyświetl Kursor Myszy",
-        "ShowCursorHint": "Wyświetla pozycję kursora gracza, obrazującą które miejsce płótna obserwuje dany użytkownik.",
-        "ShowRuler": "Wyświetlaj Wyniki Pomiaru Linijką",
-        "ShowRulerHint": "Wyświetlaj wyniki pomiarów dokonywanych linijką dla innych graczy.",
+        "ShowCursorHint": "Wyświetla pozycję kursora gracza wszystkim innym użytkownikom.",
+        "ShowRuler": "Wyświetlaj Pomiary Linijką",
+        "ShowRulerHint": "Wyświetla pomiary żetonami oraz narzędziem Odmierzania Odległości wszystkim innym użytkownikom.",
         "TemplateCreate": "Tworzenie Szablonów Miarek",
         "TemplateCreateHint": "Zezwala użytkownikom z tą rolą na tworzenie szablonów do pomiaru efektów obszarowych.",
-        "TokenCreate": "Tworzenie Nowych Żetonów",
+        "TokenCreate": "Tworzenie Żetonów",
         "TokenCreateHint": "Zezwala użytkownikom z tą rolą na umieszczanie na płótnie Żetonów lub Aktorów, do których mają dostęp.",
         "TokenDelete": "Usuń Żetony",
         "TokenDeleteHint": "Zezwala użytkownikom z tą rolą na usuwanie z Płótna gry Żetonów Aktorów, których są właścicielami.",
@@ -2351,14 +2665,11 @@
         "TokenConfigureHint": "Zezwala użytkownikom z tą rolą na zmienianie ustawień posiadanych przez nich Żetonów.",
         "WallDoors": "Otwieranie i Zamykanie Drzwi",
         "WallDoorsHint": "Zezwala użytkownikom z tą rolą na podejmowanie interakcji z drzwiami określonymi na Warstwie Ścian.",
-        "WarningNoCreate": "Nie posiadasz wystarczających uprawnień aby utworzyć {document}."
+        "WarningNoCreate": "Nie posiadasz wystarczających uprawnień aby utworzyć {document}.",
+        "QueryUser": "Wysyłanie Zapytań do Użytkowników",
+        "QueryUserHint": "Zezwala użytkownikom z tą rolą na wysyłanie zapytań do innych użytkowników."
     },
     "REGION": {
-        "SECTIONS": {
-            "identity": "Tożsamość",
-            "shapes": "Kształty",
-            "behaviors": "Zachowania"
-        },
         "FIELDS": {
             "color": {
                 "label": "Kolor",
@@ -2371,15 +2682,13 @@
             "elevation": {
                 "label": "Uniesienie",
                 "hint": "Zakres uniesienia Regionu.",
-                "FIELDS": {
-                    "bottom": {
-                        "label": "Dolny",
-                        "hint": "Dolny zakres uniesienia regionu."
-                    },
-                    "top": {
-                        "label": "Górny",
-                        "hint": "Górny zakres uniesienia regionu."
-                    }
+                "bottom": {
+                    "label": "Dół",
+                    "hint": "Dolny zakres uniesienia regionu."
+                },
+                "top": {
+                    "label": "Góra",
+                    "hint": "Górny zakres uniesienia regionu."
                 }
             },
             "behaviors": {
@@ -2422,26 +2731,17 @@
             "regionBoundary": {
                 "label": "Zmieniono Granice Regionu"
             },
-            "behaviorStatus": {
-                "label": "Zmieniono Status Zachowania Regionu"
-            },
             "tokenEnter": {
                 "label": "Żeton Wkracza na Region"
             },
             "tokenExit": {
                 "label": "Żeton Opuszcza Region"
             },
-            "tokenPreMove": {
-                "label": "Przed Ruchem Żetonu"
-            },
-            "tokenMove": {
-                "label": "Po Ruchu Żetonu"
-            },
             "tokenMoveIn": {
-                "label": "Żeton Wciągnięty na Region"
+                "label": "Żeton Przemieszcza się na Region"
             },
             "tokenMoveOut": {
-                "label": "Żeton Wyciągnięty z Regionu"
+                "label": "Żeton Przemieszcza się z Regionu"
             },
             "tokenTurnStart": {
                 "label": "Żeton Rozpoczyna Turę"
@@ -2454,6 +2754,27 @@
             },
             "tokenRoundEnd": {
                 "label": "Kończy Się Runda Żetonu"
+            },
+            "behaviorActivated": {
+                "label": "Zachowanie Aktywowane"
+            },
+            "behaviorDeactivated": {
+                "label": "Zachowanie Deaktywowane"
+            },
+            "behaviorViewed": {
+                "label": "Zachowanie Wyświetlone"
+            },
+            "behaviorUnviewed": {
+                "label": "Zachowanie Ukryte"
+            },
+            "tokenMoveWithin": {
+                "label": "Żeton Porusza Się Wewnątrz"
+            },
+            "tokenAnimateIn": {
+                "label": "Żeton Wchodzi z Animacją"
+            },
+            "tokenAnimateOut": {
+                "label": "Żeton Wychodzi z Animacją"
             }
         },
         "SHAPES": {
@@ -2485,6 +2806,11 @@
             "DrawingMultipleRegionsControlled": "Kiedy rysujesz Kształt musisz kontrolować tylko jeden Region lub nie kontrolować żadnego!",
             "EmptyEnclosedArea": "Obszar wyznaczany przez kontrolowane ściany jest pusty! Upewnij się, że ściany zewnętrzne stanowią zamkniętą pętlę i są połączone krańcami.",
             "NoControlledWalls": "Nie kontrolujesz żadnych ścian!"
+        },
+        "TABS": {
+            "identity": "Tożsamość",
+            "shapes": "Kształty",
+            "behaviors": "Zachowania"
         }
     },
     "BEHAVIOR": {
@@ -2495,7 +2821,7 @@
         "FIELDS": {
             "disabled": {
                 "label": "Wyłączone",
-                "hint": "Określ, czy to zachowanie ma być tymczasowo wyłączone."
+                "hint": "Określ, czy to Zachowanie ma być tymczasowo wyłączone."
             }
         },
         "ACTIONS": {
@@ -2515,7 +2841,7 @@
                     },
                     "once": {
                         "label": "Jednorazowe",
-                        "hint": "Wyłącz to zachowanie po tym jak pierwszy raz zostanie uruchomione."
+                        "hint": "Wyłącz to Zachowanie po tym jak pierwszy raz zostanie uruchomione."
                     }
                 }
             },
@@ -2523,7 +2849,7 @@
                 "FIELDS": {
                     "mode": {
                         "label": "Tryb",
-                        "hint": "Jak modyfikowany jest poziom ciemności w tym regionie. To Zachowanie bierze pod uwagę Próg Globalnego Oświetlenia Sceny. Jeśli całkowity poziom ciemności w tym regionie przekracza wartość progową, Globalne Oświetlenie jest na tym obszarze wyłączane."
+                        "hint": "Jak modyfikowany jest poziom ciemności w Regionie. To Zachowanie bierze pod uwagę Próg Globalnego Oświetlenia Sceny. Jeśli całkowity poziom ciemności w tym regionie przekracza wartość progową, Globalne Oświetlenie jest na tym obszarze wyłączane."
                     },
                     "modifier": {
                         "label": "Modyfikator",
@@ -2554,7 +2880,7 @@
                     },
                     "text": {
                         "label": "Tekst",
-                        "hint": "Tekst wyświetlany kiedy uruchomione zostanie Zachowanie."
+                        "hint": "Tekst wyświetlany kiedy uruchomione zostanie to Zachowanie."
                     },
                     "visibility": {
                         "label": "Widoczność",
@@ -2618,6 +2944,13 @@
                         "hint": "Zachowania, które zostaną wyłączone, kiedy wystąpi jedno z wydarzeń."
                     }
                 }
+            },
+            "modifyMovementCost": {
+                "FIELDS": {
+                    "difficulties": {
+                        "hint": "Skonfiguruj mnożnik kosztu ruchu dla każdej akcji ruchu. Nakładające się modyfikacje kosztu ruchu mnożą się."
+                    }
+                }
             }
         }
     },
@@ -2651,14 +2984,59 @@
         "Search": "Wyszukaj {types}",
         "DirectoryTitle": "Lokalizacja {type}",
         "Documentation": "Dokumentacja Foundry VTT",
-        "Wiki": "Wiki Społeczności Foundry VTT"
+        "Wiki": "Wiki Społeczności Foundry VTT",
+        "ACTIONS": {
+            "CREATE": {
+                "Actor": "Stwórz Aktora",
+                "Adventure": "Stwórz Przygodę",
+                "Cards": "Stwórz Zestaw Kart",
+                "Compendium": "Stwórz Kompendium",
+                "Folder": "Stwórz Folder",
+                "Item": "Stwórz Przedmiot",
+                "JournalEntry": "Stwórz Wpis",
+                "Macro": "Stwórz Makro",
+                "Playlist": "Stwórz Playlistę",
+                "RollTable": "Stwórz Tabelę",
+                "Scene": "Stwórz Scenę"
+            }
+        },
+        "COMPENDIUM": {
+            "LABELS": {
+                "Ownership": "Własność",
+                "Locked": "Zablokowane"
+            }
+        },
+        "SETTINGS": {
+            "LABELS": {
+                "Build": "Wersja Kompilacji",
+                "Demo": "Tryb Demonstracyjny",
+                "Modules": "Aktywne Moduły"
+            },
+            "HEADERS": {
+                "Settings": "Ustawienia Gry",
+                "Docs": "Dokumentacja Pomocy",
+                "Access": "Dostęp do Gry"
+            },
+            "ACTIONS": {
+                "Configure": "Konfiguruj Ustawienia",
+                "Docs": "Wyświetl Dokumentację",
+                "Invite": "Linki z Zaproszeniem",
+                "Keybindings": "Zarządzaj Sterowaniem",
+                "Logout": "Wyloguj Się",
+                "ManageModules": "Zarządzaj Modułami",
+                "Players": "Zarządzanie Użytkownikami",
+                "Support": "Wsparcie i Problemy",
+                "Tours": "Zarządzanie Przewodnikami",
+                "ViewModules": "Wyświetl Aktywne Moduły",
+                "Wiki": "Wiki Społeczności"
+            }
+        }
     },
     "SUPPORT": {
         "Title": "Szczegóły Pomocy",
         "Places": "Skąd Otrzymasz Pomoc",
-        "Discord": "Aby dołączyć do innych używających Foundry VTT, albo uzyskać wsparcie od naszych wspaniałych Pomocników Społeczności, dołącz no naszego serwera Discord:",
-        "BugReporting": "Jeśli chcesz zgłosić błąd, użyj proszę kategorii Zgłoszenia Błędów dostępnej na naszej Stronie Kontaktowej:",
-        "Details": "Szczegóły Wsparcia",
+        "Discord": "Aby dołączyć do innych używających Foundry VTT, albo uzyskać wsparcie od naszych wspaniałych Pomocników Społeczności, dołącz no naszego <a href=\"https://discord.gg/foundryvtt\" target=\"_blank\" rel=\"nofollow\">Discorda</a>.",
+        "BugReporting": "Jeśli chcesz zgłosić błąd, użyj proszę kategorii Zgłoszenia Błędów dostępnej na naszej <a href=\"https://foundryvtt.com/contact-us?category=bug\" target=\"_blank\" rel=\"nofollow\">Stronie Kontaktowej</a>.",
         "ReportPrelude": "Kiedy prosisz o pomoc na serwerze Discord lub Github, przydadzą się nam informacje o tym co dzieje się w twoim Świecie. Poniżej jest umieszczony raport, który powinieneś skopiować i dołączyć do zgłoszenia.",
         "CopyReport": "Kopiuj Raport do Schowka",
         "ReportCopied": "Skopiowano Raport",
@@ -2668,18 +3046,30 @@
         "MaxTextureSize": "Maksymalny Rozmiar Tekstur",
         "LargestTexture": "Tekstura Docelowa",
         "NoViewedScene": "Brak wyświetlanej sceny",
-        "DocumentIssues": "Problemy z Dokumentami",
-        "ClientIssues": "Problemy Klienta",
-        "ModuleIssues": "Problemy z Modułami",
         "ModuleSubTypesUnavailableName": "<strong>{count}</strong> dokumentów typu {document} jest niedostępnych ponieważ moduł '{name}' jest nieaktywny",
         "ModuleSubTypesUnavailableNoName": "<strong>{count}</strong> dokumentów typu {document} jest niedostępnych ponieważ moduł o ID '{name}' jest nieaktywny",
-        "UnavailableDocuments": "{count} niedostępnych dokumentów typu {document}",
         "WorldScripts": "Skrypty Świata",
         "GenerateFullReport": "Generuj Pełny Raport",
         "GenerateFullReportHint": "Pełny raport zawiera bardziej szczegółowe informacje na temat zainstalowanych przez ciebie modułów i kompendiów i jego tworzenie może zająć trochę czasu.",
         "WorldData": "Dane Świata",
         "CompendiumData": "Dane Kompendium",
-        "ActiveModules": "Aktywne Moduły"
+        "ActiveModules": "Aktywne Moduły",
+        "Screen": "Wymiary Ekranu",
+        "Viewport": "Wymiary Obszaru Widoku",
+        "Dimensions": "{width} × {height}",
+        "NoDocumentIssues": "Nie znaleziono problemów z dokumentami.",
+        "NoClientIssues": "Nie znaleziono problemów z klientem.",
+        "NoModuleIssues": "Nie znaleziono problemów z modułami.",
+        "UnavailableDocuments": {
+            "one": "1 niedostępny dokument typu {document}",
+            "other": "{count} niedostępnych dokumentów typu {document}"
+        },
+        "TABS": {
+            "support": "Szczegóły Pomocy",
+            "documents": "Problemy z Dokumentami",
+            "client": "Problemy Klienta",
+            "modules": "Problemy z Modułami"
+        }
     },
     "TABLE": {
         "AnimateSetting": "Animować Tabele Rzutów?",
@@ -2687,160 +3077,216 @@
         "DrawFlavor": "Losuje wynik z tabeli {name}",
         "DrawFlavorPlural": "Losuje {number} wyników z tabeli {name}",
         "NoAvailableResults": "Nie ma żadnych dostępnych rezultatów, które można by wylosować z tej tabeli.",
-        "Description": "Opis Tabeli",
-        "DisplayRoll": "Wyświetlaj Formułę Rzutu na Czacie",
-        "Formula": "Formuła Rzutu Tabeli",
-        "SheetTitle": "Konfiguracja Tabeli",
-        "Normalize": "Normalizuj Wynikową Wagę",
-        "Replacement": "Uzupełniaj Zasób po Rzucie",
-        "Reset": "Resetuj",
         "Result": "Wynik",
-        "ResultCreate": "Dodaj Nowy Wynik",
-        "ResultType": "Typ Wyniku",
-        "ResultDetails": "Szczegóły Wyniku",
         "ResultDescription": "Opis Wyniku",
-        "ResultDelete": "Usuń Wynik",
-        "ResultWeight": "Waga",
-        "ResultRange": "Zakres",
-        "Roll": "Rzuć",
-        "ToggleDrawn": "Przełącz Dostępność",
-        "Update": "Aktualizuj",
-        "RESULT_TYPES": {
-            "TEXT": {
-                "label": "Tekst"
+        "SHEETS": {
+            "Config": "Karta Konfiguracji",
+            "View": "Karta Widoku"
+        },
+        "ACTIONS": {
+            "ChangeMode": {
+                "Edit": "Edytuj",
+                "View": "Pokaż"
             },
-            "DOCUMENT": {
-                "label": "Dokument"
+            "OpenResultConfig": "Otwórz Konfigurację Wyniku",
+            "DrawResult": "Losuj Wynik",
+            "DrawSpecificResult": "Losuj Ten Wynik",
+            "NormalizeResults": "Normalizuj Zakresy Wyników",
+            "ResetResults": "Resetuj Wyniki",
+            "CreateResult": "Dodaj Nowy Wynik",
+            "DeleteResult": "Usuń Wynik",
+            "ToggleDrawn": "Przełącz Dostępność",
+            "Submit": "Aktualizuj Tabelę Rzutów"
+        },
+        "TABS": {
+            "summary": "Podsumowanie",
+            "results": "Wyniki"
+        },
+        "FIELDS": {
+            "description": {
+                "label": "Opis Tabeli"
             },
-            "COMPENDIUM": {
-                "label": "Kompendium"
+            "formula": {
+                "label": "Formuła Rzutu"
+            },
+            "replacement": {
+                "label": "Uzupełniaj Zasób po Rzucie"
+            },
+            "displayRoll": {
+                "label": "Wyświetlaj Formułę Rzutu na Czacie"
             }
         }
     },
     "TEMPLATE": {
-        "BorderColor": "Kolor Ramki",
         "ConeTypeSetting": "Kształt Szablonu Stożka",
         "ConeTypeSettingHint": "Wybierz sposób definiowania obszaru stożka. To ustawienie nie ma wpływu na oparte o Siatkę kształty szablonów, jeśli są one włączone.",
         "ConeTypeFlat": "Płaski",
         "ConeTypeRound": "Zaokrąglony",
-        "MeasuredConfig": "Konfiguracja Szablonu Miarki",
-        "FillColor": "Kolor Wypełnienia",
-        "FillTexture": "Tekstura Wypełnienia",
         "SubmitCreate": "Utwórz Szablon Miarki",
         "SubmitUpdate": "Aktualizuj Szablon Miarki",
         "GridTemplatesSetting": "Kształty Szablonów Oparte o Siatkę",
-        "GridTemplatesSettingHint": "Określ, czy obszar działania szablonów powinien być oparty o siatkę zamiast Euklidesowego."
+        "GridTemplatesSettingHint": "Określ, czy obszar działania szablonów powinien być oparty o siatkę zamiast Euklidesowego.",
+        "TYPES": {
+            "circle": "Okrąg",
+            "cone": "Stożek",
+            "ray": "Promień",
+            "rect": "Prostokąt"
+        },
+        "FIELDS": {
+            "sort": {
+                "label": "Sortuj"
+            },
+            "t": {
+                "label": "Typ"
+            },
+            "direction": {
+                "label": "Kierunek"
+            },
+            "angle": {
+                "label": "Kąt"
+            },
+            "distance": {
+                "label": "Odległość"
+            },
+            "borderColor": {
+                "label": "Kolor Ramki"
+            },
+            "fillColor": {
+                "label": "Kolor Wypełnienia"
+            },
+            "texture": {
+                "label": "Tekstura Wypełnienia"
+            }
+        }
     },
     "TILE": {
         "ConfigTitle": "Konfiguracja Pól",
-        "SubmitCreate": "Stwórz Pole",
-        "SubmitUpdate": "Aktualizuj Pole",
-        "BasicHeader": "Podstawowe",
-        "BasicHint": "Zarządzaj grafiką tego pola wyświetlaną nad tłem Sceny.",
-        "OverheadHeader": "Nad Żetonami",
-        "OverheadHint": "Dodatkowe parametry aplikowane gdy Pole jest nad żetonami na Pierwszym Planie.",
-        "AnimationHeader": "Animacja",
-        "AnimationHint": "Dodatkowe parametry aplikowane gdy Pole używa animowanej tekstury wideo.",
-        "Image": "Obrazek lub Wideo Pola",
-        "Opacity": "Nieprzezroczystość Pola",
-        "Tint": "Kolor Zabarwienia",
         "Scale": "Skala Pola",
         "ScaleHint": "Dopasuj skalę obrazu w osi X i Y. Obraz może wypływać poza granice pola. Wartości ujemne odbiją obraz lustrzane.",
-        "ScaleX": "Pozioma",
-        "ScaleY": "Pionowa",
-        "RestrictsLight": "Ogranicza Światło",
-        "RestrictsWeather": "Ogranicza Pogodę",
-        "RestrictsLightHint": "Czy źródła światła są blokowane w oparciu o ich uniesienie względem uniesienia tego Pola?",
-        "RestrictsWeatherHint": "Czy efekty pogodowe są blokowane w oparciu o ich uniesienie względem uniesienia tego pola?",
-        "OcclusionMode": "Zanikanie Pola",
         "OcclusionModeNone": "Brak (Zawsze Widoczne)",
         "OcclusionModeFade": "Zanikanie (Całe Pole)",
         "OcclusionModeRoof": "Sklepienie (Blokuje Wizję i Światło)",
         "OcclusionModeRadial": "Promieniste (Wokół Żetonu)",
         "OcclusionModeVision": "Wizja (Pole Widzenia Żetonu)",
-        "OcclusionAlpha": "Przezroczystość Zanikania",
-        "VideoLoop": "Powtarzaj Wideo",
-        "VideoAutoplay": "Automatycznie odtwarzaj Wideo",
-        "VideoVolume": "Głośność Wideo"
+        "Dimensions": "Wymiary",
+        "VideoOptions": "Opcje Wideo",
+        "ACTIONS": {
+            "CREATE": "Stwórz Pole",
+            "UPDATE": "Aktualizuj Pole"
+        },
+        "SECTIONS": {
+            "position": "Dostosuj pozycję i wymiary Pola.",
+            "overhead": "Dodatkowe atrybuty, które mają zastosowanie, jeśli Pole znajduje się na pierwszym planie."
+        },
+        "TABS": {
+            "position": "Pozycja",
+            "appearance": "Wygląd",
+            "overhead": "Nad Żetonami"
+        },
+        "FIELDS": {
+            "sort": {
+                "label": "Sortuj"
+            },
+            "texture": {
+                "src": {
+                    "label": "Obrazek lub Wideo Pola"
+                },
+                "scaleX": {
+                    "label": "Pozioma"
+                },
+                "scaleY": {
+                    "label": "Pionowa"
+                },
+                "tint": {
+                    "label": "Kolor Zabarwienia"
+                }
+            },
+            "alpha": {
+                "label": "Nieprzezroczystość Pola"
+            },
+            "occlusion": {
+                "mode": {
+                    "label": "Zanikanie Pola"
+                },
+                "alpha": {
+                    "label": "Przezroczystość Zanikania"
+                }
+            },
+            "restrictions": {
+                "light": {
+                    "label": "Ogranicza Światło",
+                    "hint": "Czy źródła światła są blokowane w oparciu o ich uniesienie względem uniesienia tego Pola?"
+                },
+                "weather": {
+                    "label": "Ogranicza Pogodę",
+                    "hint": "Czy efekty pogodowe są blokowane w oparciu o ich uniesienie względem uniesienia tego pola?"
+                }
+            },
+            "video": {
+                "loop": {
+                    "label": "Zapętl Wideo"
+                },
+                "autoplay": {
+                    "label": "Autoodtwarzanie Wideo"
+                },
+                "volume": {
+                    "label": "Głośność Wideo"
+                }
+            }
+        }
     },
     "TIME": {
         "Now": "Obecnie",
-        "Seconds": "Sekundy",
-        "SecondsAbbreviation": "s",
-        "Minutes": "Minuty",
-        "MinutesAbbreviation": "m",
-        "Hours": "Godzin",
-        "HoursAbbreviation": "g",
-        "DaysAbbreviation": "d",
-        "Since": "{since} temu"
+        "Since": "{since} temu",
+        "Day": {
+            "one": "Dzień",
+            "other": "Dni",
+            "abbr": "d"
+        },
+        "Hour": {
+            "one": "Godzina",
+            "other": "Godzin",
+            "abbr": "g"
+        },
+        "Millisecond": {
+            "one": "Milisekunda",
+            "other": "Milisekundy",
+            "abbr": "ms"
+        },
+        "Minute": {
+            "one": "Minuta",
+            "other": "Minuty",
+            "abbr": "m"
+        },
+        "Second": {
+            "one": "Sekunda",
+            "other": "Sekundy",
+            "abbr": "s"
+        },
+        "Year": {
+            "one": "Rok",
+            "other": "Lata",
+            "abbr": "y"
+        }
     },
     "TOKEN": {
-        "HeaderIdentity": "Tożsamość",
-        "HeaderAppearance": "Wygląd",
-        "HeaderVision": "Wzrok",
-        "HeaderLight": "Światło",
-        "HeaderResources": "Zasoby",
         "Assign": "Przypisz Żeton",
         "AssignWarn": "Musisz wybrać istniejący Żeton aby zdefiniować go jako nowy prototyp.",
         "AssignSuccess": "Pomyślnie zaktualizowano konfigurację prototypu Żetonu dla {name}",
         "BarAttributes": "Paski Atrybutów",
         "BarValues": "Pojedyncze Wartości",
-        "CharActor": "Reprezentowany Aktor",
-        "CharLink": "Powiąż Aktora",
-        "CharNameplate": "Nazwa Żetonu",
-        "CharShowNameplate": "Pokaż Nazwę",
-        "Coordinates": "Współrzędne",
-        "Disposition": "Usposobienie Żetonu",
         "Dimensions": "Wymiary",
-        "DimensionsHint": "Wymiary Żetonu są zaokrąglane do najbliższego 0.5 odstępu siatki.",
-        "HexagonalShape": "Kształt Sześciokątny",
-        "HexagonalShapeHint": "Kształt Żetonu na siatce Sześciokątnej.",
         "AnchorHint": "Domyślne zakotwiczenie (0.5, 0.5) to centrum grafiki Żetonu.",
         "ImageAlts": "Przełączaj Żetony Aktora",
-        "ImagePath": "Ścieżka do Grafiki Żetonu ",
-        "ImageFitMode": "Tryb Dopasowania Grafiki",
-        "ImageFitModeHint": "Określ jak dopasowywana jest grafika do kształtu Żetonu.",
-        "LockRotation": "Zablokuj Rotację",
-        "Lock": "Zablokuj",
-        "AppendNumber": "Dodaj Numery do Niepowiązanych Żetonów",
-        "AppendNumberHint": "Przykład: \"{name} (3)\"",
-        "PrependAdjective": "Dołączać Przymiotnik do nazw Niepowiązanych Tokenów?",
-        "PrependAdjectiveHint": "Przykład: \"Zły {name}\"",
         "Mirror": "Odbij Obraz",
         "MirrorX": "Odbij Grafikę w Poziomie",
         "MirrorY": "Odbij Grafikę w Pionie",
-        "Opacity": "Nieprzezroczystość Żetonu",
-        "OcclusionRadius": "Promień Zanikania",
-        "OcclusionRadiusHint": "Kiedy ten Żeton jest pod Polem, które korzysta z Zanikania Promienistego, wartość ta określa rozmiar otworu wycinanego w Polu aby pozwolić na obserwację Żetonu znajdującego się pod nim.",
-        "RandomImg": "Losuj Grafikę z Puli",
-        "ResourceBar1A": "Atrybut Paska 1",
         "ResourceBar1D": "Dane Paska 1",
-        "ResourceBar2A": "Atrybut Paska 2",
         "ResourceBar2D": "Dane Paska 2",
-        "ResourceDisplay": "Wyświetlanie Pasków",
-        "Title": "Konfiguracja Żetonu",
         "TitlePrototype": "Prototyp Żetonu",
-        "TintColor": "Kolor Zabarwienia",
         "Update": "Aktualizuj Żeton",
-        "VisionEnabled": "Wizja Włączona",
-        "VisionEnabledHint": "Pozwala Żetonowi na widzenie oświetlonych przestrzeni w jego linii wzroku.",
-        "VisionRange": "Zasięg Wizji",
-        "VisionRangeHint": "Dystans, na który Żeton może widzieć bez żadnego światła.",
-        "VisionAngle": "Kąt Widzenia",
-        "VisionAngleHint": "Kąt stożka wizji żetonu (domyślnie 360 stopni)",
-        "VisionColor": "Kolor Wizji",
-        "VisionAttenuation": "Osłabienie",
-        "VisionAttenuationHint": "Dopasuj siłę osłabienia źródła wizji żetonu (domyślnie 0).",
-        "VisionContrast": "Kontrast",
-        "VisionContrastHint": "Dostosuj kontrast tła, znajdującego się w zasięgu wizji Żetonu (domyślnie 0).",
-        "VisionSaturation": "Nasycenie",
-        "VisionSaturationHint": "Dostosuj nasycenie tła, znajdującego się w zasięgu wizji Żetonu (domyślnie 0).",
-        "VisionBrightness": "Jasność Wizji",
-        "VisionBrightnessHint": "Dostosuj jasność tego źródła wizji. Im większa jasność tym lepiej postać widzi w ciemności (domyślnie 0).",
         "WarningNoActor": "Ten Żeton odnosi się do Aktora, który nie istnieje już w Świecie.",
-        "WarningNoVision": "Nie posiadasz na tej Scenie żadnego Żetonum, który zapewniałby ci widoczność obszaru.",
-        "VisionMode": "Tryb Wizji",
-        "VisionModeHint": "Stosuje efekty wizualne do wizji żetonu aby odzwierciedlić specjalny zmysły (domyślnie Podstawowa Wizja).",
+        "WarningNoVision": "Nie posiadasz na tej Scenie żadnego Żetonu, który zapewniałby ci widoczność obszaru.",
         "DISPOSITION": {
             "HOSTILE": "Wrogi",
             "NEUTRAL": "Neutralny",
@@ -2853,12 +3299,6 @@
         "DISPLAY_HOVER": "Najechany przez kogokolwiek",
         "DISPLAY_OWNER": "Zawsze dla właściciela",
         "DISPLAY_ALWAYS": "Zawsze dla wszystkich",
-        "HEXAGONAL_SHAPE_ELLIPSE_1": "Elipsa (Wariant 1)",
-        "HEXAGONAL_SHAPE_ELLIPSE_2": "Elipsa (Wariant 2)",
-        "HEXAGONAL_SHAPE_TRAPEZOID_1": "Trapezoid (Wariant 1)",
-        "HEXAGONAL_SHAPE_TRAPEZOID_2": "Trapezoid (Wariant 2)",
-        "HEXAGONAL_SHAPE_RECTANGLE_1": "Prostokąt (Wariant 1)",
-        "HEXAGONAL_SHAPE_RECTANGLE_2": "Prostokąt (Wariant 2)",
         "Adjectives": {
             "ambitious": "Ambitny",
             "angry": "Zły",
@@ -2996,6 +3436,141 @@
                         "hint": "Określ ścieżkę do tekstury umieszczanej nad dynamicznym pierścieniem Żetonu. Jeśli nie zostanie sprecyzowana, podmiotem pierścienia jest standardowa tekstura żetonu."
                     }
                 }
+            },
+            "name": {
+                "label": "Nazwa Żetonu"
+            },
+            "sort": {
+                "label": "Sortuj"
+            },
+            "movementAction": {
+                "label": "Akcja Ruchu"
+            },
+            "actorId": {
+                "label": "Reprezentowany Aktor"
+            },
+            "actorLink": {
+                "label": "Powiąż Aktora"
+            },
+            "displayName": {
+                "label": "Pokaż Nazwę"
+            },
+            "appendNumber": {
+                "label": "Dołącz Inkrementowany Numer",
+                "hint": "Dołączaj automatycznie inkrementowany numer do nazwy niepowiązanych żetonów. Np. \"Goblin 3\"."
+            },
+            "prependAdjective": {
+                "label": "Dołącz Losowy Przymiotnik",
+                "hint": "Dołączaj losowy przymiotnik do nazwy niepowiązanych żetonów. Np. \"Zły Goblin\"."
+            },
+            "occludable": {
+                "radius": {
+                    "label": "Promień Zanikania",
+                    "hint": "Kiedy ten Żeton jest pod Polem, które korzysta z Zanikania Promienistego, wartość ta określa rozmiar otworu wycinanego w Polu aby pozwolić na obserwację Żetonu znajdującego się pod nim."
+                }
+            },
+            "disposition": {
+                "label": "Usposobienie Żetonu"
+            },
+            "lockRotation": {
+                "label": "Zablokuj Rotację Grafiki",
+                "hint": "Uniemożliwia renderowanie kąta obrotu tego Żetonu na Płótnie."
+            },
+            "texture": {
+                "src": {
+                    "label": "Ścieżka Obrazu"
+                },
+                "fit": {
+                    "label": "Tryb Dopasowania Grafiki",
+                    "hint": "Określ jak dopasowywana jest grafika do kształtu Żetonu."
+                },
+                "anchorX": {
+                    "label": "X"
+                },
+                "anchorY": {
+                    "label": "Y"
+                },
+                "tint": {
+                    "label": "Kolor Zabarwienia"
+                }
+            },
+            "randomImg": {
+                "label": "Losuj Grafikę z Puli"
+            },
+            "shape": {
+                "label": "Kształt",
+                "hint": "Kształt Żetonu."
+            },
+            "alpha": {
+                "label": "Nieprzezroczystość Żetonu"
+            },
+            "sight": {
+                "enabled": {
+                    "label": "Wizja Włączona",
+                    "hint": "Pozwala Żetonowi na widzenie oświetlonych przestrzeni w jego linii wzroku."
+                },
+                "range": {
+                    "label": "Zasięg Wizji",
+                    "hint": "Dystans, na który Żeton może widzieć bez żadnego światła."
+                },
+                "angle": {
+                    "label": "Kąt Widzenia",
+                    "hint": "Kąt stożka wizji żetonu (domyślnie 360 stopni)"
+                },
+                "visionMode": {
+                    "label": "Tryb Wizji",
+                    "hint": "Stosuje efekty wizualne do wizji żetonu aby odzwierciedlić specjalny zmysły (domyślnie Podstawowa Wizja)."
+                },
+                "color": {
+                    "label": "Kolor Wizji"
+                },
+                "attenuation": {
+                    "label": "Tłumienie",
+                    "hint": "Dopasuj siłę osłabienia źródła wizji żetonu (domyślnie 0)."
+                },
+                "brightness": {
+                    "label": "Jasność Wizji",
+                    "hint": "Dostosuj jasność tego źródła wizji. Im większa jasność tym lepiej postać widzi w ciemności (domyślnie 0)."
+                },
+                "saturation": {
+                    "label": "Nasycenie",
+                    "hint": "Dostosuj nasycenie tła, znajdującego się w zasięgu wizji Żetonu (domyślnie 0)."
+                },
+                "contrast": {
+                    "label": "Kontrast",
+                    "hint": "Dostosuj kontrast tła, znajdującego się w zasięgu wizji Żetonu (domyślnie 0)."
+                }
+            },
+            "turnMarker": {
+                "mode": {
+                    "label": "Tryb",
+                    "hint": "Wybierz Domyślne, aby użyć domyślnych ustawień Walki, Wyłączone, aby ukryć znacznik tury, lub Niestandardowe, aby uzyskać unikalne zachowanie znacznika tury."
+                },
+                "animation": {
+                    "label": "Animacja",
+                    "hint": "Wybierz styl animacji dla znacznika tury tego Żetonu."
+                },
+                "src": {
+                    "label": "Źródło Mediów",
+                    "hint": "Wybierz plik obrazu lub wideo używany dla znacznika tury tego Żetonu."
+                },
+                "disposition": {
+                    "label": "Zabarwienie Usposobienia",
+                    "hint": "Zabarwiaj znacznik tury tego Żetonu zgodnie z jego usposobieniem."
+                }
+            },
+            "displayBars": {
+                "label": "Wyświetlanie Pasków"
+            },
+            "bar1": {
+                "attribute": {
+                    "label": "Atrybut Paska 1"
+                }
+            },
+            "bar2": {
+                "attribute": {
+                    "label": "Atrybut Paska 2"
+                }
             }
         },
         "RING": {
@@ -3003,7 +3578,8 @@
                 "BKG_WAVE": "Falowanie Tła",
                 "RING_GRADIENT": "Gradient Pierścienia",
                 "RING_PULSE": "Pulsowanie Pierścienia",
-                "INVISIBILITY": "Spektralne Pulsowanie"
+                "INVISIBILITY": "Spektralne Pulsowanie",
+                "COLOR_OVER_SUBJECT": "Kolor nad Podmiotem"
             },
             "SHEET": {
                 "legend": "Dynamiczny Pierścień Żetonu"
@@ -3018,6 +3594,89 @@
                     "hint": "Wybierz tryb dopasowywania dla Dynamicznych Pierścieni.",
                     "subject": "Standardowy",
                     "grid": "Siatka"
+                }
+            }
+        },
+        "DeleteCombatantWarning": "Usuwasz Żeton, który jest w Walce. Jego Uczestnik zostanie trwale usunięty.",
+        "TABS": {
+            "identity": "Tożsamość",
+            "appearance": "Wygląd",
+            "vision": "Wizja",
+            "light": "Światło",
+            "resources": "Zasoby"
+        },
+        "SECTIONS": {
+            "basic": "Konfiguracja Podstawowa",
+            "animation": "Animacja Światła",
+            "advanced": "Opcje Zaawansowane"
+        },
+        "SHAPES": {
+            "ELLIPSE": {
+                "label": "Elipsa"
+            },
+            "ELLIPSE_1": {
+                "label": "Elipsa (Wariant 1)"
+            },
+            "ELLIPSE_2": {
+                "label": "Elipsa (Wariant 2)"
+            },
+            "TRAPEZOID": {
+                "label": "Trapezoid"
+            },
+            "TRAPEZOID_1": {
+                "label": "Trapezoid (Wariant 1)"
+            },
+            "TRAPEZOID_2": {
+                "label": "Trapezoid (Wariant 2)"
+            },
+            "RECTANGLE": {
+                "label": "Prostokąt"
+            },
+            "RECTANGLE_1": {
+                "label": "Prostokąt (Wariant 1)"
+            },
+            "RECTANGLE_2": {
+                "label": "Prostokąt (Wariant 2)"
+            }
+        },
+        "TURNMARKER": {
+            "SHEET": {
+                "legend": "Znacznik Tury Starcia"
+            },
+            "MODES": {
+                "DISABLED": "Wyłączony",
+                "DEFAULT": "Domyślny",
+                "CUSTOM": "Niestandardowy"
+            }
+        },
+        "MOVEMENT": {
+            "ACTIONS": {
+                "blink": {
+                    "label": "Teleportacja (Mignięcie)"
+                },
+                "burrow": {
+                    "label": "Rycie"
+                },
+                "climb": {
+                    "label": "Wspinaczka"
+                },
+                "crawl": {
+                    "label": "Pełzanie"
+                },
+                "displace": {
+                    "label": "Teleport (Przemieszczenie)"
+                },
+                "jump": {
+                    "label": "Skok"
+                },
+                "fly": {
+                    "label": "Lot"
+                },
+                "swim": {
+                    "label": "Pływanie"
+                },
+                "walk": {
+                    "label": "Chodzenie"
                 }
             }
         }
@@ -3047,7 +3706,12 @@
             "pauseGame": "Wstrzymaj Grę",
             "suppressWeather": "Nadpisz Pogodę",
             "teleportToken": "Teleportuj Żeton",
-            "toggleBehavior": "Przełącz Zachowanie"
+            "toggleBehavior": "Przełącz Zachowanie",
+            "modifyMovementCost": "Modyfikuj Koszt Ruchu"
+        },
+        "TableResult": {
+            "document": "Dokument",
+            "text": "Tekst"
         }
     },
     "DETECTION": {
@@ -3068,9 +3732,6 @@
             "height": "Pełna Wysokość"
         }
     },
-    "Tours": {
-        "NavLabel": "Zakładki Zarządzania Przewodnikami"
-    },
     "TOURS": {
         "ShowMeHow": "Pokaż mi jak",
         "TourCategories": "Kategorie Przewodników",
@@ -3089,7 +3750,8 @@
         "ResetWarning": "Czy na pewno chcesz zresetować postęp wszystkich przewodników?",
         "ResetSuccess": "Zresetowano status ukonczenia wszystkich przewodników.",
         "SuggestedTitle": "Zasugeruj Następny Przewodnik",
-        "SuggestedDescription": "<p>Ukończyłeś Przewodnik <strong>{currentTitle}</strong>.</p><p>Zalecamy kontynuowanie do Przewodnika <strong>{nextTitle}</strong>. Czy chcesz kontynuować?</p>"
+        "SuggestedDescription": "<p>Ukończyłeś Przewodnik <strong>{currentTitle}</strong>.</p><p>Zalecamy kontynuowanie do Przewodnika <strong>{nextTitle}</strong>. Czy chcesz kontynuować?</p>",
+        "NavLabel": "Zakładki Zarządzania Przewodnikami"
     },
     "USER": {
         "FIELDS": {
@@ -3127,9 +3789,14 @@
         "RoleNone": "Brak",
         "RolePlayer": "Gracz",
         "RoleTrusted": "Zaufany Gracz",
-        "RoleAssistant": "Asystujący MG",
+        "RoleAssistant": "Asystujący Mistrz Gry",
         "RoleGamemaster": "Mistrz Gry",
-        "GM": "MG"
+        "GM": "MG",
+        "MESSAGES": {
+            "KICKED": "Użytkownik {user} został <strong>wyrzucony</strong> ze Świata.",
+            "BANNED": "Użytkownik {user} został <strong>zbanowany</strong> w Świecie.",
+            "UNBANNED": "Użytkownik {user} został <strong>odbanowany</strong> ze Świata."
+        }
     },
     "USERS": {
         "AccessKey": "Hasło",
@@ -3143,7 +3810,8 @@
         "UpdateSuccess": "Pomyślnie zaktualizowano użytkowników, powracanie do Świata gry.",
         "NoGMError": "W twoim świecie musi być obecny co najmniej jeden Mistrz Gry.",
         "DeleteWarning": "Ten użytkownik zostanie permanentnie usunięty z tego Świata Gry.",
-        "DeleteGMWarning": "Zamierzasz usunąć użytkownika będącego Mistrzem Gry!"
+        "DeleteGMWarning": "Zamierzasz usunąć użytkownika będącego Mistrzem Gry!",
+        "DeleteName": "Usuń Użytkownika: {name}"
     },
     "VISION": {
         "ModeBlindness": "Ślepota",
@@ -3154,114 +3822,62 @@
         "ModeTremorsense": "Wyczucie Drgań",
         "ModeLightAmplification": "Wzmacnianie Światła"
     },
-    "WALLS": {
-        "Title": "Konfiguracja Ściany",
-        "TitleMany": "Konfiguracja Wielu Ścian",
-        "Instructions": "Zarządzaj wpływem ścian na zmysły i poruszanie się.",
-        "Coordinates": "Współrzędne ściany",
-        "Light": "Ograniczenie Światła",
-        "Movement": "Ograniczenie Ruchu",
-        "Sight": "Ograniczenie Widoczności",
-        "Sound": "Ograniczenie Dźwięku",
-        "ThresholdAttenuation": "Tolerancja Progu Odległości",
-        "ThresholdAttenuationHint": "Odległość, na której zmysły mogą przejrzeć tę ścianę jest adaptywna i zależna od odległości obserwatora do progu aktywacji. Ma zastosowanie tylko kiedy zdefiniowano próg.",
-        "Direction": "Skierowanie ściany",
-        "Door": "Konfiguracja Drzwi",
-        "DoorOptions": "Opcje Drzwi",
-        "Submit": "Aktualizuj Ścianę",
-        "SenseTypes": {
-            "NONE": "Brak",
-            "LIMITED": "Ograniczony",
-            "NORMAL": "Normalny",
-            "PROXIMITY": "Próg Odległości",
-            "DISTANCE": "Odwrócony Próg Odległości"
-        },
-        "Directions": {
-            "BOTH": "Oba",
-            "LEFT": "Lewo",
-            "RIGHT": "Prawo"
-        },
-        "DoorTypes": {
-            "NONE": "Brak",
-            "DOOR": "Drzwi",
-            "SECRET": "Sekretne Drzwi"
-        },
-        "DoorState": "Stan Drzwi",
-        "DoorStates": {
-            "CLOSED": "Zamknięte",
-            "OPEN": "Otwarte",
-            "LOCKED": "Zablokowane"
-        },
-        "DoorSoundLabel": "Dźwięk Drzwi",
-        "DoorSound": {
-            "FuturisticFast": "Futurystyczne, Szybkie",
-            "FuturisticHydraulic": "Futurystyczne, Hydrauliczne",
-            "FuturisticForcefield": "Futurystyczne, Pole Siłowe",
-            "Industrial": "Industrialne",
-            "IndustrialCreaky": "Industrialne, Skrzypiące",
-            "Jail": "Więzienne",
-            "MagicDoor": "Magiczne Drzwi",
-            "MagicWall": "Magiczna Ściana",
-            "Metal": "Metalowe",
-            "SlidingMetal": "Suwane, Metalowe",
-            "SlidingModern": "Suwane, Nowoczesne",
-            "SlidingWood": "Suwane, Drewniane",
-            "StoneBasic": "Kamienne",
-            "StoneRocky": "Kamienne, Skalne",
-            "StoneSandy": "Kamienne, Piaszczyste",
-            "WoodBasic": "Drewniane, Podstawowe",
-            "WoodCreaky": "Drewniane, Skrzypiące",
-            "WoodHeavy": "Drewniane, Ciężkie"
-        }
-    },
     "WORLD": {
-        "TitleCreate": "Stwórz Świat",
-        "TitleEdit": "Edytuj Świat",
-        "SubmitEdit": "Aktualizuj Świat",
-        "DetailTab": "Szczegóły Świata",
-        "DescTab": "Opis Świata",
-        "Title": "Tytuł Świata",
-        "DataPath": "Ścieżka do Danych",
-        "GameSystem": "System Rozgrywki",
-        "BackgroundImage": "Obraz Tła",
-        "NextSession": "Następna Sesja",
         "ResetModules": "Zresetuj Aktywne Moduły",
-        "ResetKeys": "Zresetuj Hasła Użytkowników",
-        "LaunchSafeMode": "Uruchom w Konfiguracji Bezpiecznej",
-        "SafeModeHint": "Dezaktywuje wszystkie moduły i aktywne sceny, oraz wstrzymuje wszystkie odtwarzane dźwięki.",
-        "Description": "Opis Świata",
-        "JoinTheme": "Motyw Strony Dołączania",
-        "JoinThemeDefault": "Domyślny",
-        "JoinThemeMinimal": "Minimalistyczny"
+        "JOIN_THEMES": {
+            "default": "Domyślny",
+            "minimal": "Minimalistyczny"
+        },
+        "Title": {
+            "Create": "Stwórz Świat",
+            "Update": "Edytuj Świat: {world}"
+        },
+        "SubmitUpdate": "Aktualizuj Świat",
+        "FIELDS": {
+            "title": {
+                "label": "Tytuł Świata"
+            },
+            "id": {
+                "label": "Ścieżka Danych"
+            },
+            "system": {
+                "label": "System Gry"
+            },
+            "background": {
+                "label": "Obraz Tła"
+            },
+            "joinTheme": {
+                "label": "Motyw Strony Dołączania"
+            },
+            "nextSession": {
+                "label": "Następna Sesja"
+            },
+            "resetKeys": {
+                "label": "Zresetuj Hasła Użytkowników"
+            },
+            "safeMode": {
+                "label": "Uruchom w Konfiguracji Bezpiecznej",
+                "hint": "Dezaktywuje wszystkie moduły i aktywne sceny, oraz wstrzymuje wszystkie odtwarzane dźwięki."
+            },
+            "description": {
+                "label": "Opis Świata"
+            }
+        }
     },
     "WEBRTC": {
         "Title": "Konfiguracja Audio/Wideo",
         "MenuLabel": "Konfiguruj Audio/Wideo",
         "MenuHint": "Zarządzaj ustawieniami zintegrowanego komponentu Audio/Wideo - WebRTC.",
         "UnknownDevice": "<Nieznane Urządzenie>",
-        "VideoDevice": "Urządzenie Przechwytywania Obrazu",
-        "VideoDeviceNotes": "Wybierz, którego urządzenia do przechwytywania obrazu chcesz używać, jeżeli w ogóle.",
-        "AudioDevice": "Urządzenie Przechwytywania Dźwięku",
-        "AudioDeviceNotes": "Wybierz, którego, jeżeli w ogóle, urządzenia do przechwytywania dźwięku chcesz używać, jeżeli w ogóle.",
-        "AudioOutput": "Urządzenie Wyjściowe Dźwięku",
-        "AudioOutputNotes": "Wybierz, którego urządzenia wyjściowego dźwięku chcesz używać.",
         "DeviceUnavailableWarning": "Nie udało się rozpocząć komunikacji Audio/Wideo ponieważ jedno ze skonfigurowanych urządzeń wejściowych było niedostępne.",
         "DisableVideoSource": "Wyłącz Przesyłanie Obrazu",
         "DisableAudioSource": "Wyłącz Przesyłanie Dźwięku",
         "DisableAudioOutput": "Wyłącz Odtwarzanie Dźwięku ",
         "DefaultSource": "Urządzenie Domyślne",
         "UnavailableDevice": "Urządzenie niedostępne (wykorzystane zostanie Urządzenie Domyślne)",
-        "WebRTCTurnServer": "Konfiguracja Serwera Przekaźnikowego",
         "TURNServerProvisioned": "Dostarczona przez Serwer Sygnalizujący ",
         "CustomTURNServer": "Niestandardowy Serwer Przekaźnikowy",
-        "WebRTCTURNURL": "Adres Serwera Przekaźnikowego",
-        "WebRTCTurnUsername": "Nazwa Użytkownika Serwera",
-        "WebRTCTurnPassword": "Hasło Serwera",
-        "GeneralTab": "Główne",
-        "DevicesTab": "Urządzenia",
-        "ServerTab": "Serwer",
         "GeneralTabNotGM": "Główne Ustawienia Konferencji Audio/Wideo mogą być modyfikowane tylko przez MG",
-        "AVMode": "Tryb Konferencji Audio/Wideo",
         "AVModeNotes": "Tylko Mistrz Gry może zmienić te ustawienia, ich zmiana wymusi przeładowanie serwera Foundry VTT.",
         "ModeDisabled": "Wyłączona",
         "ModeAudioOnly": "Tylko Dźwięk",
@@ -3272,14 +3888,10 @@
         "TooltipConfigure": "Zarządzaj Ustawieniami",
         "TooltipDock": "Wyślij do Doku",
         "TooltipPopout": "Pokaż",
-        "PTTKeyWarn": "Twój klawisz Naciśnij-by-Mówić używa starej wartości i może nie działać poprawnie, proszę ustaw go ponownie.",
-        "VoiceMode": "Tryb Transmisji Głosu",
-        "VoiceModeNotes": "Ustal jak ma przebiegać transmisja dźwięku w rozmowach Audio/Wideo.",
+        "PTTKeyWarn": "Twój klawisz Naciśnij-by-Mówić używa starej wartości i może nie działać poprawnie. Ustaw go, proszę, ponownie.",
         "VoiceModeAlways": "Zawsze Włączona",
         "VoiceModeActivity": "Aktywacja Głosowa",
         "VoiceModePtt": "Naciśnij-by-Mówić",
-        "BorderColors": "Używaj kolorów ramek graczy",
-        "DockPosition": "Zakotwicz",
         "DockPositionTop": "Góra",
         "DockPositionRight": "Prawo",
         "DockPositionBottom": "Dół",
@@ -3302,7 +3914,6 @@
         "TooltipHidePlayers": "Ukryj Listę Graczy",
         "TooltipExpandDock": "Rozwiń Panel",
         "TooltipMinimizeDock": "Zminimalizuj Panel",
-        "Nameplates": "Podpisy",
         "NameplatesOff": "Brak",
         "NameplatesPlayer": "Tylko imię gracza",
         "NameplatesCharacter": "Tylko imię postaci",
@@ -3317,7 +3928,71 @@
         "GenericError": "Błąd WebRTC: ",
         "NoSSLError": "Nie możesz korzystać z rozmów Audio/Wideo dopóki twój serwer Foundry VTT nie stosuje certyfikatów SSL. Instrukcje zajedziesz w dokumentacji online.",
         "WarningCannotEnableVideo": "Nie możesz włączyć kamery ponieważ nie posiadasz uprawnień do przesyłania obrazu wideo.",
-        "WarningCannotEnableAudio": "Nie możesz włączyć mikrofonu ponieważ nie posiadasz uprawnień do przesyłania dźwięku."
+        "WarningCannotEnableAudio": "Nie możesz włączyć mikrofonu ponieważ nie posiadasz uprawnień do przesyłania dźwięku.",
+        "DevicesSubsections": {
+            "Video": "Wideo",
+            "Audio": "Audio"
+        },
+        "TURNServerConfiguration": "Niestandardowa Konfiguracja Serwera",
+        "Volume": "Głośność",
+        "WorldSettings": {
+            "FIELDS": {
+                "mode": {
+                    "label": "Tryb Konferencji",
+                    "hint": "Konfiguruj ustawienia specyficzne dla zintegrowanego komponentu Audio/Wideo WebRTC."
+                },
+                "turn": {
+                    "type": {
+                        "label": "Serwer Przekaźnikowy"
+                    },
+                    "url": {
+                        "label": "URL"
+                    },
+                    "username": {
+                        "label": "Nazwa użytkownika"
+                    },
+                    "password": {
+                        "label": "Hasło"
+                    }
+                }
+            }
+        },
+        "ClientSettings": {
+            "FIELDS": {
+                "voice": {
+                    "mode": {
+                        "label": "Transmisja Głosu",
+                        "hint": "Ustal jak ma przebiegać transmisja dźwięku w rozmowach Audio/Wideo."
+                    }
+                },
+                "dockPosition": {
+                    "label": "Zakotwicz"
+                },
+                "nameplates": {
+                    "label": "Podpisy"
+                },
+                "borderColors": {
+                    "label": "Użyj kolorów ramek graczy"
+                },
+                "videoSrc": {
+                    "label": "Przechwytywanie Wideo",
+                    "hint": "Wybierz, którego urządzenia do przechwytywania wideo chcesz używać, jeśli w ogóle."
+                },
+                "audioSrc": {
+                    "label": "Przechwytywanie Audio",
+                    "hint": "Wybierz, którego urządzenia do przechwytywania dźwięku chcesz używać, jeśli w ogóle."
+                },
+                "audioSink": {
+                    "label": "Wyjście Audio",
+                    "hint": "Wybierz, którego urządzenia wyjściowego dźwięku chcesz używać."
+                }
+            }
+        },
+        "TABS": {
+            "general": "Główne",
+            "devices": "Urządzenia",
+            "server": "Serwer"
+        }
     },
     "WEATHER": {
         "Rain": "Deszcz",
@@ -3326,5 +4001,568 @@
         "Blizzard": "Zamieć",
         "AutumnLeaves": "Jesienne Liście",
         "Fog": "Mgła"
+    },
+    "Information": "Informacja",
+    "CALENDAR": {
+        "GREGORIAN": {
+            "January": "Styczeń",
+            "JanuaryAbbr": "Sty",
+            "February": "Luty",
+            "FebruaryAbbr": "Lut",
+            "March": "Marzec",
+            "MarchAbbr": "Mar",
+            "April": "Kwiecień",
+            "AprilAbbr": "Kwi",
+            "May": "Maj",
+            "MayAbbr": "Maj",
+            "June": "Czerwiec",
+            "JuneAbbr": "Cze",
+            "July": "Lipiec",
+            "JulyAbbr": "Lip",
+            "August": "Sierpień",
+            "AugustAbbr": "Sie",
+            "September": "Wrzesień",
+            "SeptemberAbbr": "Wrz",
+            "October": "Październik",
+            "OctoberAbbr": "Paź",
+            "November": "Listopad",
+            "NovemberAbbr": "Lis",
+            "December": "Grudzień",
+            "DecemberAbbr": "Gru",
+            "Monday": "Poniedziałek",
+            "MondayAbbr": "Pon",
+            "Tuesday": "Wtorek",
+            "TuesdayAbbr": "Wt",
+            "Wednesday": "Środa",
+            "WednesdayAbbr": "Śr",
+            "Thursday": "Czwartek",
+            "ThursdayAbbr": "Czw",
+            "Friday": "Piątek",
+            "FridayAbbr": "Pt",
+            "Saturday": "Sobota",
+            "SaturdayAbbr": "Sob",
+            "Sunday": "Niedziela",
+            "SundayAbbr": "Nd",
+            "Spring": "Wiosna",
+            "Summer": "Lato",
+            "Fall": "Jesień",
+            "Winter": "Zima"
+        }
+    },
+    "HOTBAR": {
+        "LABEL": "Pasek Akcji",
+        "MUTE": "Wycisz Głośność",
+        "UNMUTE": "Wyłącz Wyciszenie",
+        "MENU": "Menu Główne",
+        "LOCK": "Zablokuj Pasek",
+        "UNLOCK": "Odblokuj Pasek",
+        "PAGE_NEXT": "Następna Strona",
+        "PAGE_PREV": "Poprzednia Strona",
+        "CLEAR": "Wyczyść Pasek",
+        "CLEAR_CONFIRM": "Wyczyścić wszystkie przypisane Makra z paska szybkiego dostępu?"
+    },
+    "PLAYLIST_SOUND": {
+        "Update": "Aktualizuj Ścieżkę",
+        "FIELDS": {
+            "name": {
+                "label": "Nazwa Ścieżki"
+            },
+            "path": {
+                "label": "Źródło Dźwięku"
+            },
+            "channel": {
+                "label": "Kanał Audio"
+            },
+            "volume": {
+                "label": "Głośność Dźwięku"
+            },
+            "repeat": {
+                "label": "Powtarzanie"
+            },
+            "fade": {
+                "label": "Czas Zanikania"
+            },
+            "description": {
+                "label": "Opis Dźwięku"
+            }
+        }
+    },
+    "SCENE": {
+        "Accessibility": "Uprawnienia",
+        "AccessibilityGM": "Tylko MG",
+        "AccessibilityAll": "Wszyscy Gracze",
+        "Activate": "Aktywuj",
+        "BackgroundScale": "Skala Obrazu Tła",
+        "BackgroundScaleHint": "Użyj SHIFT+Gałka myszy lub SHIFT+Strzałka w Górę/w Dół aby dopasować wielkość obrazu tła.",
+        "CaptureInitialViewPosition": "Uchwycono pozycję płótna jako wstępny widok Sceny w ustawieniach.",
+        "Configure": "Konfiguruj",
+        "Dimensions": "Wymiary Sceny",
+        "DimensionsHint": "Wymiary tła są dobierane automatycznie kiedy po raz pierwszy ustawiany jest obrazek tła sceny.",
+        "DimensionChangeTitle": "Zmienić Wymiary Sceny?",
+        "DimensionChangeWarning": "Zmieniasz wymiary podstawowe sceny, jeśli umieściłeś już na scenie obiekty, ta operacja może przemieścić je względem grafiki tła.",
+        "DimensionLinked": "Wymiary sceny są obecnie połączone: zmiana jednego zmieni drugi, aby zachować proporcje. Kliknij, aby rozłączyć.",
+        "DimensionUnlinked": "Wymiary sceny są obecnie niepowiązane, zmiana jednego nie będzie miała wpływu na drugi. Kliknij aby powiązać.",
+        "DistortedDimensionsTitle": "Zniekształcone Wymiary Sceny",
+        "DistortedDimensionsWarning": "Nowe wybrane wymiary mają inne proporcje niż oryginalne. Czy chcesz automatycznie przemieścić umieszczone obiekty, takie jak żetony? Rezultat może się okazać zniekształcony.",
+        "GenerateThumb": "Generuj Grafikę Miniatury",
+        "GenerateThumbNoCanvas": "Grafika miniatury nie może zostać wygenerowana, kiedy wyłączono Płótno Gry.",
+        "GenerateThumbUploadDenied": "Miniaturka sceny nie mogła zostać wygenerowana, ponieważ użytkownik nie ma uprawnień do przesyłania plików.",
+        "GenerateThumbProgress": "Generowanie miniaturki dla Sceny {name}.",
+        "GenerateThumbSuccess": "Wygenerowana miniaturka dla Sceny {name}.",
+        "GridConfigTool": "Narzędzie Konfiguracji Siatki",
+        "GridConfigToolHint": "Ustaw pozycję obrazu tła oraz siatki używając gałki myszy lub strzałek, albo ręcznie wypełniając poniższe pola.",
+        "GridGridless": "Bez Siatki",
+        "GridSquare": "Kwadraty",
+        "GridHexOddR": "Sześciokątne Rzędy - Nieparzyste",
+        "GridHexEvenR": "Sześciokątne Rzędy - Parzyste",
+        "GridHexOddQ": "Sześciokątne Kolumny - Nieparzyste",
+        "GridHexEvenQ": "Sześciokątne Kolumny - Parzyste",
+        "GridSizeError": "Zmiana rozmiaru zredukowała by rozmiar siatki poniżej minimalnego progu 50px. Jeśli chcesz zredukować scenę do tego rozmiaru, najpierw ustaw ją jako scenę bez siatki a potem ponownie skonfiguruj siatkę na zmniejszonej scenie.",
+        "GridResizeHint": "Użyj ALT+Gałka Myszy albo ALT+Strzałka w Górę / ALT+Strzałka w Dół aby dostosować rozmiar siatki.",
+        "GridPosition": "Korekta Pozycji Siatki",
+        "GridPositionHint": "Użyj Klawiszy Strzałek aby zmienić przesunięcie siatki.",
+        "GridScale": "Skala Siatki",
+        "GridReset": "Resetuj Zmiany",
+        "InitialView": "Domyślny Widok Sceny",
+        "InitialViewButton": "Uchwyć Obecny Widok",
+        "InitialViewHint": "Ustal domyślną pozycję kamery, używaną kiedy ta scena jest wyświetlana po raz pierwszy.",
+        "InvalidDimension": "Podany wymiar zastukotałby zmiennoprzecinkową wartością dla drugiego z wymiarów sceny. Wprowadź inną wartość albo odwiąż wymiary sceny.",
+        "Loading": "Wczytywanie {name}",
+        "Notes": "Notatki Sceny",
+        "Pixels": "Piksele",
+        "Preload": "Wstępnie Ładuj Scenę",
+        "View": "Pokaż Scenę",
+        "ShiftBG": "Przesunięcie Tła",
+        "ToggleNav": "Przełącz Nawigację",
+        "Ambience": {
+            "Base": "Środowisko Podstawowe",
+            "Dark": "Środowisko Ciemności",
+            "ResetEnvironment": "Zresetuj do Opcji Domyślnych"
+        },
+        "FIELDS": {
+            "name": {
+                "label": "Nazwa Sceny"
+            },
+            "navigation": {
+                "label": "Pokaż w Nawigacji"
+            },
+            "navName": {
+                "label": "Nazwa w Nawigacji",
+                "hint": "Alternatywna nazwa sceny, wyświetlana dla graczy w Pasku Nawigacji."
+            },
+            "background": {
+                "src": {
+                    "label": "Obraz Tła",
+                    "hint": "Konfiguruj grafikę tła oraz wymiary dla głównej mapy sceny."
+                },
+                "offsetX": {
+                    "label": "Poziomo"
+                },
+                "offsetY": {
+                    "label": "Pionowo"
+                }
+            },
+            "backgroundColor": {
+                "label": "Kolor Tła"
+            },
+            "foreground": {
+                "label": "Obraz Pierwszoplanowy",
+                "hint": "Opcjonalny obraz pierwszego planu, rysowany ponad wszystkimi obiektami sceny."
+            },
+            "foregroundElevation": {
+                "label": "Uniesienie Warstwy Pierwszoplanowej",
+                "hint": "Wartość w jednostkach odległości, określająca uniesienie warstwy pierwszoplanowej i pół znajdujących się nad Żetonami."
+            },
+            "initial": {
+                "scale": {
+                    "label": "Przybliżenie"
+                }
+            },
+            "grid": {
+                "type": {
+                    "label": "Rodzaj Siatki"
+                },
+                "size": {
+                    "label": "Rozmiar Siatki",
+                    "hint": "Użyj ALT+Gałka myszy lub ALT+Strzałka w Górę/w Dół by dopasować rozmiar siatki."
+                },
+                "thickness": {
+                    "label": "Grubość Siatki"
+                },
+                "color": {
+                    "label": "Kolor Siatki"
+                },
+                "alpha": {
+                    "label": "Przezroczystość Siatki"
+                },
+                "distance": {
+                    "label": "Odległość"
+                },
+                "units": {
+                    "label": "Jednostki Siatki"
+                },
+                "style": {
+                    "label": "Styl Siatki"
+                }
+            },
+            "padding": {
+                "label": "Odsetek dodatkowego marginesu sceny",
+                "hint": "Ilość dodatkowego odstępu od tła Sceny, zapewniająca dodatkową przestrzeń Płótna."
+            },
+            "tokenVision": {
+                "label": "Wzrok Żetonów",
+                "hint": "Ogranicz widoczność sceny w oparciu o wspólną wizję wszystkich kontrolowanych Żetonów. Jeśli dezaktywowane, widoczna jest cała Scena."
+            },
+            "fog": {
+                "exploration": {
+                    "label": "Eksploracja Mgły Wojny",
+                    "hint": "Jeśli to ustawienie jest włączone, eksploracja mgły wojny będzie śledzona dla każdego Użytkownika i zapisywana w bazie danych w miarę eksploracji Sceny. W przeciwnym razie eksploracja mgły nie występuje, a Żetony są ograniczone tylko do tego, co aktualnie widzą."
+                },
+                "overlay": {
+                    "label": "Obraz Mgły Wojny",
+                    "hint": "Opcjonalny obraz mgły wojny do rysowania nad nieodkrytymi częściami sceny."
+                },
+                "colors": {
+                    "explored": {
+                        "label": "Kolor Odkrytej Mgły",
+                        "hint": "Kolor stosowany dla obszarów, które zostały odkryte, ale znajdują się poza obecnym zakresem wzroku."
+                    },
+                    "unexplored": {
+                        "label": "Kolor Nieodkrytej Mgły",
+                        "hint": "Nieprzezroczysty kolor, pokrywający wszystkie niezbadane obszary Sceny."
+                    }
+                }
+            },
+            "environment": {
+                "globalLight": {
+                    "enabled": {
+                        "label": "Globalne Oświetlenie",
+                        "hint": "Ta Scena zawiera globalne źródło światła, które zapewnia wszystkim obszarom Sceny podstawowy poziom oświetlenia."
+                    },
+                    "darkness": {
+                        "max": {
+                            "label": "Próg Globalnego Oświetlenia",
+                            "hint": "Automatycznie wyłącz Oświetlenie Globalne kiedy Poziom Ciemności przekroczy daną wartość progową."
+                        }
+                    }
+                },
+                "darknessLevel": {
+                    "label": "Poziom Ciemności",
+                    "hint": "Zastosuj nakładkę, która przyciemnia Scenę i osłabia źródła światła, aby symulować warunki nocne lub słabo oświetlone."
+                },
+                "darknessLock": {
+                    "label": "Zablokuj Poziom Ciemności",
+                    "hint": "Kiedy ta opcja jest zaznaczona, poziom ciemności nie może zostać zmieniony."
+                },
+                "cycle": {
+                    "label": "Mieszaj Środowisko",
+                    "hint": "Kiedy ta opcja jest zaznaczona, wartości podstawowego środowiska są mieszane ze środowiskiem ciemności zależnie od poziomu ciemności."
+                },
+                "base": {
+                    "luminosity": {
+                        "label": "Jasność",
+                        "hint": "Określa jak jasna wydaje się scena. Wyższa jasność sprawia, że scena jest rozświetlona jak za dnia, podczas gdy niższa jasność czyni ją ciemniejszą i bardziej ponurą."
+                    },
+                    "saturation": {
+                        "label": "Nasycenie",
+                        "hint": "Określ czystość kolorów na scenie. Ustawienia powyżej zera sprawiają, że kolory są bardziej nasycone (intensywne i wyraziste) podczas gdy negatywne wartość wytłumiają i spłaszczają barwy."
+                    },
+                    "shadows": {
+                        "label": "Cienie",
+                        "hint": "Zwiększenie wartości tego suwaka sprawia, że cienie i ciemne obszary sceny są głębsze i bardziej mroczne."
+                    },
+                    "hue": {
+                        "label": "Barwa",
+                        "hint": "Wybierz odcień (kolor) nakładany na całą scenę. Aby aktywować suwak koloru wartość intensywności zabarwienia musi być wyższa od 0."
+                    },
+                    "intensity": {
+                        "label": "Intensywność Barwy",
+                        "hint": "Określ jak intensywnie wybrany odcień ma być nakładany na scenę. Wysoka intensywność zabarwienia nasyca scenę kolorem, potencjalnie przytłaczając inne barwy. Mniejsza wartość intensywności nakłada wybrany odcień w bardziej subtelnym stopniu."
+                    }
+                }
+            },
+            "journal": {
+                "label": "Wpis w Dzienniku",
+                "hint": "Powiązany Wpis Dziennika dostarczający notatek dla Mistrza Gry o tej Scenie."
+            },
+            "journalEntryPage": {
+                "label": "Strona Wpisu w Dzienniku",
+                "hint": "Konkretna strona z powiązanego Wpisu Dziennika."
+            },
+            "playlist": {
+                "label": "Playlista",
+                "hint": "Playlista, która powinna automatycznie zacząć odtwarzanie po aktywacji tej Sceny."
+            },
+            "playlistSound": {
+                "label": "Dźwięk Playlisty",
+                "hint": "Konkretny Dźwięk wewnątrz Playlisty Audio, który powinien być odtwarzany, gdy ta Scena jest aktywna."
+            },
+            "weather": {
+                "label": "Efekt Pogodowy",
+                "hint": "Zarządzaj efektem pogodowym obecnym na tej scenie."
+            }
+        },
+        "TABS": {
+            "SHEET": {
+                "basics": "Podstawy",
+                "grid": "Siatka",
+                "lighting": "Wizja i Oświetlenie",
+                "ambience": "Środowisko i Atmosfera"
+            },
+            "AMBIENCE": {
+                "basic": "Opcje Podstawowe",
+                "environment": "Światło Środowiskowe"
+            }
+        }
+    },
+    "SCENE_NAVIGATION": {
+        "COLLAPSE": "Zwiń Nawigację",
+        "EXPAND": "Rozwiń Nawigację",
+        "LABEL": "Nawigacja Sceny"
+    },
+    "SERVER_SETTINGS": {
+        "Title": "Konfiguruj Aplikację",
+        "Warning": "Poniższe opcje zarządzają działaniem serwera Foundry Virtual Tabletop. Dokonując zmian zachowaj ostrożność. Aby zmiany zaczęły obowiązywać, będziesz musiał zresetować oprogramowanie.",
+        "Save": {
+            "label": "Zapisz Konfigurację Aplikacji",
+            "warning": "Zmiana tych ustawień sprawi, że serwer zostanie wyłączony i konieczne będzie jego manualne uruchomienie. Czy chcesz kontynuować?",
+            "restart": "Serwer Foundry Virtual Tabletop został zamknięty aby wprowadzić zmiany. Musisz manualnie uruchomić go ponownie."
+        },
+        "SSLCert": "Certyfikat SSL",
+        "Telemetry": {
+            "request1": "Jeśli udzielona zostanie zgoda, Foundry Virtual Tabletop będzie udostępniał niewielką ilość anonimowych danych użytkowania stronie foundryvtt.com, co pozwoli naszemu zespołowi lepiej zrozumieć sposoby, na jakie Foundry VTT jest wykorzystywane i poprawić program.",
+            "request2": "To okno zostanie wyświetlone tylko raz, ale możesz zmienić swoje preferencje w zakresie udostępniania danych w menu Konfiguracji Aplikacji klikając ikonę <i class=\"fas fa-cogs\"></i> w prawym górnym rogu tego ekranu.",
+            "yes": "Zezwól na Udostępnianie",
+            "no": "Odmów Udostępniania"
+        },
+        "ChangePassword": {
+            "label": "Zmień Hasło",
+            "hint": "Wprowadź istniejące hasło administratora.",
+            "title": "Wprowadź Istniejące Hasło"
+        },
+        "SECTIONS": {
+            "FVTTConfig": "Konfiguracja Foundry VTT",
+            "ServerConfig": "Konfiguracja Serwera",
+            "ElectronApp": "Aplikacja Electron",
+            "OtherSettings": "Inne Ustawienia"
+        },
+        "FIELDS": {
+            "adminPassword": {
+                "label": "Hasło Administratora",
+                "hint": "Hasło administratorskie jest używane aby chronić przed nieuprawnionym do Ekranu Konfiguracyjnego Foundry Virtual Tabletop. Ustawienie hasła administratorskiego dla swojego serwera jest wysoce zalecane."
+            },
+            "dataPath": {
+                "label": "Katalog Danych Użytkownika",
+                "hint": "Określ lokalizację gdzie przechowywane będą twoje dane, takie jak światy, systemy i moduły."
+            },
+            "telemetry": {
+                "label": "Zezwól na Udostępnianie Danych Użytkowania",
+                "hint": "Zezwól na udostępnianie danych użytkowania, które pozwolą nam usprawnić Foundry Virtual Tabletop. Dane zbierane po włączeniu tej opcji są wyszczególnione w naszej <a href=\"https://foundryvtt.com/article/privacy-policy/\" target=\"_blank\">Polityce Prywatności</a> i nie zawierają żadnych informacji identyfikujących cię jako osobę ani nie są współdzielone z żadnym organem trzecim. Udostępnianie danych użytkowania daje nam odpowiedzi na pytania takie jak \"które wersje Foundry VTT są najintensywniej używane\", \"które Systemy Gry są najczęściej ogrywane\" czy \"które wersje Modułów są instalowane najczęściej\". Używamy tych danych aby poprawiać kompatybilność oprogramowania, zapewniać lepszą obsługę klienta oraz aby dzielić się wnioskami ze statystyk z naszą społecznością. Jeśli ta opcja będzie wyłączona, żadne dane nie będą udostępniane."
+            },
+            "cssTheme": {
+                "label": "Motyw Ekranu Konfiguracyjnego",
+                "hint": "Wybierz wygląd menu konfiguracyjnego aplikacji spośród kilku motywów wizualnych."
+            },
+            "world": {
+                "label": "Domyślny Świat",
+                "hint": "Możesz automatycznie uruchamiać jeden z dostępnych światów przy uruchomieniu aplikacji."
+            },
+            "language": {
+                "label": "Język Domyślny",
+                "hint": "Możesz wybrać domyślny język aplikacji precyzując moduł dostarczający tłumaczenia rdzeniowych plików aplikacji dla danego języka."
+            },
+            "upnp": {
+                "label": "Włącz UPnP"
+            },
+            "port": {
+                "label": "Port",
+                "hint": "Wybierz port, którego Foundry Virtual Tabletop używa do ruchu połączeń TCP i włącz lub wyłącz Universal Plug and Play (UPnP)."
+            },
+            "compressStatic": {
+                "label": "Kompresuj Pliki Statyczne",
+                "hint": "Kompresuj dane wysyłane przez serwer Foundry Virtual Tabletop przed wysyłaniem ich do klientów, aby zminimalizować przesył danych."
+            },
+            "compressSocket": {
+                "label": "Kompresuj Dane Websocketów",
+                "hint": "Włącz kompresję danych wysyłanych przez serwer do klientów przez websocket. Rekomendowane dla zachowania wydajności łącza."
+            },
+            "deleteNEDB": {
+                "label": "Usuń Zmigrowane Pliki NEDB",
+                "hint": "W wersji 11, nasze oprogramowanie przeszło ze starej technologii bazodanowej (NEDB) na nową (LevelDB). Automatycznie migrujemy stare pliki bazodanowe na nowy format i zachowujemy stare pliki NEDB na wypadek, gdybyś musiał wrócić do poprzednich wersji lub zdiagnozować problem. To zabezpieczenie zwiększa ilość miejsca zajmowanego na dysku przez Foundry VTT. Włączenie tej opcji zaskutkuje automatycznym usunięciem plików NEDB po ich migracji. W wersji 12 będzie to zachowanie domyślne."
+            },
+            "hotReload": {
+                "label": "Przeładuj Pliki Pakietów na Gorąco",
+                "hint": "Pozwala Pakietom na przeładowywanie na gorąco niektórych assetów, takich jak CSS, HTML i Lokalizacja bez konieczności pełnego odświeżenia. Ustawienie to jest zalecane jedynie dla deweloperów."
+            },
+            "sslCert": {
+                "label": "Certyfikat",
+                "hint": "Możesz uruchomić serwer przy użyciu szyfrowania SSL, podając ścieżki do plików certyfikatu i klucza. Ścieżki są bezwzględne lub względne dla podfolderu Config w danych użytkownika."
+            },
+            "sslKey": {
+                "label": "Klucz"
+            },
+            "awsConfig": {
+                "label": "Ścieżka Konfiguracji AWS",
+                "hint": "Możesz podać plik konfiguracyjny AWS do integracji z S3. Ścieżka jest bezwzględna lub względna do podfolderu Config w danych użytkownika."
+            },
+            "fullscreen": {
+                "label": "Tryb Pełnoekranowy",
+                "hint": "Otwórz aplikację w widoku pełnoekranowym, bez pasków narzędzi i innych elementów interfejsu użytkownika."
+            }
+        }
+    },
+    "TABLE_RESULT": {
+        "Details": "Szczegóły",
+        "ACTIONS": {
+            "Submit": "Aktualizuj Wynik Tabeli"
+        },
+        "TYPES": {
+            "text": "Tekst",
+            "document": "Dokument"
+        },
+        "FIELDS": {
+            "name": {
+                "label": "Nazwa Wyniku"
+            },
+            "type": {
+                "label": "Typ Wyniku"
+            },
+            "img": {
+                "label": "Ikona Wyniku"
+            },
+            "documentUuid": {
+                "label": "Powiązany Dokument"
+            },
+            "weight": {
+                "label": "Waga"
+            },
+            "range": {
+                "label": "Zakres"
+            }
+        }
+    },
+    "WALL": {
+        "FIELDS": {
+            "c": {
+                "label": "Współrzędne ściany"
+            },
+            "light": {
+                "label": "Światło"
+            },
+            "move": {
+                "label": "Ruch"
+            },
+            "sight": {
+                "label": "Wzrok"
+            },
+            "sound": {
+                "label": "Dźwięk"
+            },
+            "dir": {
+                "label": "Kierunek Ograniczenia"
+            },
+            "door": {
+                "label": "Typ Drzwi"
+            },
+            "ds": {
+                "label": "Stan Drzwi"
+            },
+            "doorSound": {
+                "label": "Dźwięk Drzwi"
+            },
+            "threshold": {
+                "attenuation": {
+                    "hint": "Odległość, na której zmysły mogą przejrzeć tę ścianę jest adaptywna i zależna od odległości obserwatora do progu aktywacji. Ma zastosowanie tylko kiedy zdefiniowano próg.",
+                    "label": "Tolerancja Progu Odległości"
+                }
+            },
+            "animation": {
+                "strength": {
+                    "label": "Siła Animacji",
+                    "hint": "Mnożnik od 0 do 2, który modyfikuje, jak bardzo drzwi poruszają się podczas animacji. Na przykład dla drzwi odchylanych większa siła powoduje szerszy kąt otwarcia. Dla drzwi suwanych większa siła powoduje, że drzwi przesuwają się dalej."
+                },
+                "direction": {
+                    "label": "Kierunek Otwarcia"
+                },
+                "double": {
+                    "label": "Drzwi Podwójne"
+                },
+                "duration": {
+                    "label": "Czas Trwania Animacji (ms)"
+                },
+                "flip": {
+                    "label": "Odwróć Teksturę Drzwi"
+                },
+                "texture": {
+                    "label": "Tekstura Drzwi"
+                },
+                "type": {
+                    "label": "Typ Animacji"
+                }
+            }
+        },
+        "ANIMATION_TYPES": {
+            "ASCEND": "Wznoszenie",
+            "DESCEND": "Opadanie",
+            "SLIDE": "Suwanie",
+            "SWING": "Odchylanie",
+            "SWIVEL": "Obracanie"
+        },
+        "ANIMATION_DIRECTIONS": {
+            "DEFAULT": "Domyślny",
+            "REVERSE": "Odwrócony"
+        },
+        "Title": "Konfiguracja Ściany",
+        "TitleMany": "Konfiguracja Wielu Ścian",
+        "Instructions": "Zarządzaj wpływem ścian na zmysły i poruszanie się.",
+        "CoordinateRange": "({p0X}, {p0Y}) to ({p1X}, {p1Y})",
+        "DoorAnimation": "Animacja Drzwi",
+        "DoorConfiguration": "Konfiguracja Drzwi",
+        "NWalls": "[{n} Ścian]",
+        "Restrictions": "Ograniczenia Ściany",
+        "Submit": "Aktualizuj Ścianę",
+        "SenseTypes": {
+            "NONE": "Brak",
+            "LIMITED": "Ograniczony",
+            "NORMAL": "Normalny",
+            "PROXIMITY": "Próg Odległości",
+            "DISTANCE": "Odwrócony Próg Odległości"
+        },
+        "Directions": {
+            "BOTH": "Oba",
+            "LEFT": "Lewo",
+            "RIGHT": "Prawo"
+        },
+        "DoorTypes": {
+            "NONE": "Brak",
+            "DOOR": "Drzwi",
+            "SECRET": "Sekretne Drzwi"
+        },
+        "DoorStates": {
+            "CLOSED": "Zamknięte",
+            "OPEN": "Otwarte",
+            "LOCKED": "Zablokowane"
+        },
+        "DoorSounds": {
+            "FuturisticFast": "Futurystyczne, Szybkie",
+            "FuturisticHydraulic": "Futurystyczne, Hydrauliczne",
+            "FuturisticForcefield": "Futurystyczne, Pole Siłowe",
+            "Industrial": "Industrialne",
+            "IndustrialCreaky": "Industrialne, Skrzypiące",
+            "Jail": "Więzienne",
+            "MagicDoor": "Magiczne Drzwi",
+            "MagicWall": "Magiczna Ściana",
+            "Metal": "Metalowe",
+            "SlidingMetal": "Suwane, Metalowe (Lekkie)",
+            "SlidingMetalHeavy": "Suwane, Metalowe (Ciężkie)",
+            "SlidingModern": "Suwane, Nowoczesne",
+            "SlidingWood": "Suwane, Drewniane",
+            "StoneBasic": "Kamienne",
+            "StoneRocky": "Kamienne, Skalne",
+            "StoneSandy": "Kamienne, Piaszczyste",
+            "WoodBasic": "Drewniane, Podstawowe",
+            "WoodCreaky": "Drewniane, Skrzypiące",
+            "WoodHeavy": "Drewniane, Ciężkie"
+        }
     }
 }
