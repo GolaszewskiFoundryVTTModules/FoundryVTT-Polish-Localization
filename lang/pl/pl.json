@@ -2532,10 +2532,10 @@
         "Save": "Zapisz Konfigurację Karty",
         "FormNavLabel": "Nawigacja Zakładek Formy",
         "CopyUuid": "Kopiuj UUID Dokumentu",
-        "ConfigureTitle": "{prefix}: Sheet Configuration",
-        "Defaults": "Defaults",
-        "Theme": "Theme",
-        "ThemeHint": "Not all themes are available for each sheet."
+        "ConfigureTitle": "{prefix}: Konfiguracja Karty",
+        "Defaults": "Domyślne",
+        "Theme": "Motyw",
+        "ThemeHint": "Nie wszystkie motywy są dostępne dla każdej karty."
     },
     "SOUND": {
         "ConfigTitle": "Konfiguracja Dźwięku Środowiskowego",
@@ -2574,10 +2574,10 @@
         "CreateTable": "Utwórz Tabelę Rzutów",
         "InvalidDocumentType": "Dla tego Folderu podano nieprawidłowy typ Dokumentu \"{type}\".",
         "ExceededMaxDepth": "Nie można zagnieżdżać Folderów bardziej niż na {depth} poziomy.",
-        "DeleteName": "Delete All: {name}",
-        "RemoveName": "Remove Folder: {name}",
+        "DeleteName": "Usuń Wszystko: {name}",
+        "RemoveName": "Usuń Folder: {name}",
         "CreateTableConfirm": {
-            "Title": "Create Rollable Table: {folder}",
+            "Title": "Utwórz Tabelę Rzutów: {folder}",
             "Question": "Utworzyć nową Tabelę Rzutów używając zawartości tego Folderu jako wyników?"
         },
         "FIELDS": {
