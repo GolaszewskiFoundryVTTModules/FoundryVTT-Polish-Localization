@@ -1,14 +1,27 @@
 import os
 import datetime
 
-log_directory = "tools/LocalizationUpdater/Logs"
-current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-log_filename = os.path.join(log_directory, f"LocalizationUpdate_{current_time}.log")
+# --- LOGGING ---
+LOG_DIR = "tools/LocalizationUpdater/Logs"
+CURRENT_TIME = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+LOG_FILENAME = os.path.join(LOG_DIR, f"LocalizationUpdate_{CURRENT_TIME}.log")
 
-temp_en_old_directory = "tools/LocalizationUpdater/OldLocale/"
-core_en_directory = "lang/en/"
-core_pl_directory = "lang/pl/"
+# --- CORE TRANSLATION PATHS ---
+CORE_EN_DIR = "lang/en/"
+CORE_PL_DIR = "lang/pl/"
 
-en_to_pl_file_pairs = [
+# --- SOURCE DATA DIRECTORY ---
+SOURCE_DATA_DIR = "downloaded-source/"
+
+# --- TEMPORARY & OUTPUT PATHS ---
+TEMP_CORE_EN_DIR = "tools/LocalizationUpdater/OldLocale/"
+
+# --- CORE FILE MAPPINGS & LISTS ---
+CORE_FILE_PAIRS = [
     ("en", "pl"),
+]
+
+# Files that are considered complete and need verbose logging
+COMPLETED_FILES = [
+    "lang/pl.json",
 ]

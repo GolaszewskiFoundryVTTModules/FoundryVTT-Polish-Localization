@@ -1,1 +1,9 @@
-tools/LocalizationUpdater/*/
+tools/LocalizationUpdater/OldLocale/
+tools/LocalizationUpdater/Logs/
+node_modules/
+foundryvtt-polish-localization/
+buildconfig.json
+.env
+downloaded-source/
+__pycache__/
+*.pyc

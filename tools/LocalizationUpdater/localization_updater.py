@@ -8,7 +8,7 @@ import datetime
 from difflib import SequenceMatcher
 from typing import Dict, List, Set, Tuple, Optional
 
-from auto_translation_regex import replacement_patterns
+from auto_translation_regex import PATTERN_MAPPING
 
 class LocalizationUpdater:
     # Reference symbols detection regex patterns
@@ -21,12 +21,15 @@ class LocalizationUpdater:
         r'\\n'
     ]
 
-    def __init__(self, en_old_path: str, en_path: str, pl_path: str, verbose: bool):
+    def __init__(self, en_old_path: str, en_path: str, pl_path: str, verbose: bool, log_identifier: str, is_new_file: bool = False, logger=None):
         self.en_old_path = en_old_path
         self.en_path = en_path
         self.pl_path = pl_path
         self.verbose = verbose
-
+        self.log_identifier = log_identifier
+        self.is_new_file = is_new_file
+        self.logger = logger
+        
         self.en_old_extracted = {}
         self.en_extracted = {}
         self.pl_extracted = {}
@@ -37,14 +40,57 @@ class LocalizationUpdater:
         self.outdated_keys = []
         self.updated_eng_keys = []
         self.rudimentary_translations_updated = []
+        self.review_needed_keys = []
 
-        # Pre-compile all auto-translation regex patterns
-        self.compiled_replacement_patterns = [
-            (regex.compile(pattern), replacement)
-            for pattern, replacement in replacement_patterns
-        ]
+        # Placeholder for patterns, will be compiled in process()
+        self.compiled_replacement_patterns = []
 
         self.compiled_patterns = [regex.compile(pattern) for pattern in self.RUDIMENTARY_TRANSLATION_REGEX_PATTERNS]
+
+        # Compiled patterns for bracket protection and restoration
+        self.bracket_pattern = regex.compile(r'\[(?:[^\[\]]|(?R))*\]')
+        self.placeholder_pattern = regex.compile(r'__PLACEHOLDER_(\d+)__')
+
+    def _compile_patterns(self):
+        """Selects and compiles regex patterns based on the 'label' field or filename."""
+        # Determine category based on label in English file (most reliable)
+        # Use .get() to avoid errors if 'label' key is missing
+        label = str(self.en_extracted.get("label", "")).lower()
+        
+        # Fallback to filename if label is empty or missing
+        if not label:
+            label = os.path.basename(self.en_path).lower()
+
+        selected_patterns = PATTERN_MAPPING['default']
+
+        # Check mapping for specific overrides
+        # We iterate to find if any keyword is present in the label
+        for search_terms, patterns in PATTERN_MAPPING.items():
+            if search_terms == 'default':
+                continue
+            
+            if any(term in label for term in search_terms):
+                selected_patterns = patterns
+                break
+
+        self.compiled_replacement_patterns = [
+            (regex.compile(pattern), replacement)
+            for pattern, replacement in selected_patterns
+        ]
+
+
+    def _log_and_print(self, message, level='info', color=''):
+        """Helper function to log to file and print to console with color."""
+        if self.logger:
+            self.logger.print_header_if_needed()
+            
+        if level == 'info':
+            logging.info(message)
+            if self.verbose:
+                print(f"{color}{message}{Style.RESET_ALL}")
+        elif level == 'warning':
+            logging.warning(message)
+            print(f"{color}{message}{Style.RESET_ALL}")
 
     def _get_file_from_directory(self, filepath):
         try:
@@ -133,16 +179,11 @@ class LocalizationUpdater:
         return nested_json
 
     def _generate_concise_diff(self, old_value: str, new_value: str) -> str:
-        """
-        Generate a human-readable diff between old and new values with context.
-        
-        Args:
-            old_value: Original string
-            new_value: Modified string
-            
-        Returns:
-            A formatted string showing the differences with context
-        """
+        """Generates a concise diff string between two strings."""
+        # Ensure inputs are strings to avoid TypeError with difflib
+        old_value = str(old_value)
+        new_value = str(new_value)
+
         def clean_for_display(text: str) -> str:
             """Format text for display by escaping newlines and reducing whitespace"""
             return text.replace("\n", "\\n").strip()
@@ -166,9 +207,9 @@ class LocalizationUpdater:
 
         return '\n'.join(diff_parts)
 
-    def _is_translation_rudimentary(self, en_str: str, pl_str: str) -> bool:
+    def _is_translation_rudimentary(self, en_str: str, pl_str: str, key: Optional[str] = None) -> bool:
         if not en_str or not pl_str:
-            print("Attempted to compare null string(s)")
+            print(f"Attempted to compare null string(s) for key: {key}")
             return False
         
         def clean_string(s: str, patterns: List[regex.Pattern]) -> str:
@@ -189,56 +230,40 @@ class LocalizationUpdater:
         similarity = matcher.ratio()
         return similarity >= similarity_threshold
 
-    def _auto_pretranslate(self, en_str: Optional[str]) -> Optional[str]:
+    def _auto_pretranslate(self, en_str: Optional[str], key: Optional[str] = None) -> Optional[str]:
         def save_and_replace_brackets(text):
             """
             Detects text encapsulated in square brackets, including nested ones,
             replaces them with placeholders, and saves the original texts.
 
-            :param text: The original text to process.
-            :return: Modified text with placeholders, and a list of the original bracketed texts.
+            Uses recursive regex for better performance.
             """
             bracketed_texts = []
-            open_brackets = []
-            placeholders = []
+            
+            def replace_match(match):
+                bracketed_texts.append(match.group(0))
+                return f"__PLACEHOLDER_{len(bracketed_texts) - 1}__"
 
-            def generate_placeholder(index):
-                return f"__PLACEHOLDER_{index}__"
+            # Use regex.sub to replace and collect in one pass using the pre-compiled pattern
+            text_with_placeholders = self.bracket_pattern.sub(replace_match, text)
 
-            i = 0
-            while i < len(text):
-                if text[i] == '[':
-                    open_brackets.append(i)
-                elif text[i] == ']' and open_brackets:
-                    start = open_brackets.pop()
-                    
-                    # skip until the outermost bracket
-                    if open_brackets:
-                        continue
-                    
-                    encapsulated = text[start:i+1]
-                    bracketed_texts.append(encapsulated)
-                    placeholder = generate_placeholder(len(bracketed_texts) - 1)
-                    placeholders.append((start, i, placeholder))
-                i += 1
-
-            # Replace the bracketed text with placeholders
-            for start, end, placeholder in reversed(placeholders):
-                text = text[:start] + placeholder + text[end+1:]
-
-            return text, bracketed_texts
+            return text_with_placeholders, bracketed_texts
 
         def restore_bracketed_text(modified_text, bracketed_texts):
             """
             Restores the originally bracketed text using the placeholders.
-
-            :param modified_text: The text after regex modifications.
-            :param bracketed_texts: The list of original bracketed texts.
-            :return: The final text with the original bracketed texts restored.
+            Uses regex substitution for single-pass restoration.
             """
-            for i, original_text in enumerate(bracketed_texts):
-                modified_text = modified_text.replace(f"__PLACEHOLDER_{i}__", original_text)
-            return modified_text
+            def restore_match(match):
+                try:
+                    index = int(match.group(1))
+                    if 0 <= index < len(bracketed_texts):
+                        return bracketed_texts[index]
+                except (ValueError, IndexError):
+                    pass
+                return match.group(0)
+
+            return self.placeholder_pattern.sub(restore_match, modified_text)
         
         def replace_with_patterns(text: str, compiled_replacements) -> str:
             """
@@ -254,7 +279,7 @@ class LocalizationUpdater:
             return text
 
         if en_str is None:
-            print("Cannot pretranslate empty string")
+            print(f"Cannot pretranslate empty string for key: {key}")
             return en_str
 
         # Step 1: Save and replace bracketed sections with placeholders
@@ -270,7 +295,6 @@ class LocalizationUpdater:
     
     def _update_localization(self):
         # Count occurrences of each value in both dictionaries
-        pl_path_basename = os.path.basename(self.pl_path)
         en_old_keys_set = set(self.en_old_extracted.keys())
         en_new_keys_set = set(self.en_extracted.keys())
         
@@ -278,10 +302,10 @@ class LocalizationUpdater:
         value_mappings = self._calculate_value_mappings()
         
         # Process new/updated translations
-        self._process_translations(value_mappings, pl_path_basename)
+        self._process_translations(value_mappings)
         
         # Remove obsolete keys
-        self._remove_obsolete_keys(en_old_keys_set, en_new_keys_set, pl_path_basename)
+        self._remove_obsolete_keys(en_old_keys_set, en_new_keys_set)
 
     def _calculate_value_mappings(self):
         """Pre-calculate all value mappings for faster lookup"""
@@ -309,7 +333,7 @@ class LocalizationUpdater:
             'unique_new_values': unique_new_values
         }
 
-    def _process_translations(self, value_mappings, pl_path_basename):
+    def _process_translations(self, value_mappings):
         """Process all translations with optimized lookups"""
         old_to_key = value_mappings['old_to_key']
         unique_new_values = value_mappings['unique_new_values']
@@ -320,33 +344,46 @@ class LocalizationUpdater:
         
         for new_key, new_value in tqdm(
             self.en_extracted.items(), 
-            desc=f"Processing {pl_path_basename}"
+            desc=f"Processing {self.log_identifier}"
         ):
-            if new_key in self.pl_extracted:
-                # Key is already up to date
+            # rename key if both before and after the value is unique
+            old_key = old_to_key.get(new_value)
+            if old_key and old_key != new_key and new_value in unique_new_values:
+                self._handle_key_rename(new_key, old_key)
+
+            elif new_key in self.pl_extracted:
+                # If the value in the Polish file is identical to the new English value
                 if self.pl_extracted[new_key] == new_value:
-                    continue
+                    # If this is a brand new file, it means we just copied the English content.
+                    # We must run the initial auto-translation pass on it.
+                    if self.is_new_file:
+                        self.pl_extracted[new_key] = auto_pretranslate(new_value, new_key)
+                        self.new_keys.append(new_key)
+                    else:
+                        # Otherwise, it's an existing file where the values match, so no action is needed.
+                        pass
                 
-                # if the key exists in translation, and the value changed
-                if new_value != self.en_old_extracted.get(new_key):
+                # Scenario: Key exists in PL and EN_NEW, but NOT in EN_OLD
+                elif new_key not in self.en_old_extracted:
+                    self.review_needed_keys.append(new_key)
+                    # Keep existing pl_extracted[new_key] as is
+                
+                # If the key exists in translation, and the value changed, and it was in old_en
+                elif new_value != self.en_old_extracted.get(new_key): # .get() is redundant here due to above check but safe
                     self._handle_value_update(
                         new_key, 
                         new_value, 
                         auto_pretranslate,
                         is_translation_rudimentary
                     )
-                    continue
-
-            # rename key if both before and after the value is unique
-            old_key = old_to_key.get(new_value)
-            if old_key and old_key != new_key and new_value in unique_new_values:
-                self._handle_key_rename(new_key, old_key, pl_path_basename)
-                continue
 
             # if value does not exist in translation, add it
-            if new_key not in self.pl_extracted:
-                self.pl_extracted[new_key] = auto_pretranslate(new_value)
+            elif new_key not in self.pl_extracted:
+                self.pl_extracted[new_key] = auto_pretranslate(new_value, new_key)
                 self.new_keys.append(new_key)
+
+            if self.perform_regex_translate and new_key in self.pl_extracted:
+                self.pl_extracted[new_key] = auto_pretranslate(self.pl_extracted[new_key], new_key)
 
     def _handle_value_update(self, new_key, new_value, auto_pretranslate, is_translation_rudimentary):
         """Handle updates to existing translations"""
@@ -355,14 +392,14 @@ class LocalizationUpdater:
 
         # if value was kept in english, update it outright
         if current_pl == old_en_value:
-            self.pl_extracted[new_key] = auto_pretranslate(new_value)
+            self.pl_extracted[new_key] = auto_pretranslate(new_value, new_key)
             self.updated_eng_keys.append(new_key)
             return
 
         # if translation is rudimentary (usually due to the effect of global regex operations) auto-update it to save time
-        old_en_pretranslated = auto_pretranslate(old_en_value)
-        if is_translation_rudimentary(old_en_pretranslated, current_pl):
-            self.pl_extracted[new_key] = auto_pretranslate(new_value)
+        old_en_pretranslated = auto_pretranslate(old_en_value, key=new_key)
+        if is_translation_rudimentary(old_en_pretranslated, current_pl, key=new_key):
+            self.pl_extracted[new_key] = auto_pretranslate(new_value, key=new_key)
             self.rudimentary_translations_updated.append(new_key)
             return
 
@@ -370,10 +407,10 @@ class LocalizationUpdater:
         diff_string = self._generate_concise_diff(old_en_value, new_value)
         self.outdated_keys.append((new_key, diff_string))
 
-    def _handle_key_rename(self, new_key, old_key, pl_path_basename):
+    def _handle_key_rename(self, new_key, old_key):
         """Handle key rename operations"""
         if old_key not in self.pl_extracted:
-            print(f"Did not find old key {old_key} in polish {pl_path_basename}. "
+            print(f"Did not find old key {old_key} in {self.log_identifier}. "
                   "It may have been updated already")
             return
 
@@ -381,7 +418,7 @@ class LocalizationUpdater:
         del self.pl_extracted[old_key]  # Remove the old key after renaming
         self.renamed_keys.append((old_key, new_key))
 
-    def _remove_obsolete_keys(self, en_old_keys_set, en_new_keys_set, pl_path_basename):
+    def _remove_obsolete_keys(self, en_old_keys_set, en_new_keys_set):
         """Remove obsolete keys efficiently"""
         # remove obsolete keys
         obsolete_keys = en_old_keys_set - en_new_keys_set
@@ -391,7 +428,7 @@ class LocalizationUpdater:
 
         for old_key in tqdm(
             obsolete_keys,
-            desc=f"Deleting obsolete keys in {pl_path_basename}",
+            desc=f"Deleting obsolete keys in {self.log_identifier}",
             leave=False
         ):
             self.pl_extracted.pop(old_key, None)
@@ -443,72 +480,77 @@ class LocalizationUpdater:
         if not self._load_and_validate_files():
             return
 
-        pl_path_basename = os.path.basename(self.pl_path)
-        
-        # Handle different processing modes
-        if perform_regex_translate:
-            self._apply_regex_translations(pl_path_basename)
-        else:
-            # Skip if translation is already up to date
-            if self.pl_extracted == self.en_extracted:
-                return
-            self._update_localization()
+        # Compile regex patterns based on loaded content
+        self._compile_patterns()
 
-        # Skip further processing if no changes and not doing regex translation
-        if not self._has_changes() and not perform_regex_translate:
-            return
+        self.perform_regex_translate = perform_regex_translate
+        self._update_localization()
 
-        # Log changes and validate results
-        self._log_changes(pl_path_basename)
-        
+        # Only log if changes exist
+        if self._has_any_changes():
+            self._log_changes()
+    
         # Sort and save the final dictionary
         self._sort_and_save_translations()
 
     def _load_and_validate_files(self):
         """Load and validate all required localization files"""
-        self.en_old_extracted = self._extract_localization_dict(self._get_file_from_directory(self.en_old_path))
+        if os.path.exists(self.en_old_path):
+            self.en_old_extracted = self._extract_localization_dict(self._get_file_from_directory(self.en_old_path))
+        else:
+            self.en_old_extracted = {} # Treat as empty if it doesn't exist
+
         self.en_extracted = self._extract_localization_dict(self._get_file_from_directory(self.en_path))
         self.pl_extracted = self._extract_localization_dict(self._get_file_from_directory(self.pl_path))
 
-        if self.en_old_extracted is None or self.en_extracted is None or self.pl_extracted is None:
-            logging.info(f"{os.path.basename(self.pl_path)}:")
-            logging.error("Unable to proceed due to missing data.")
+        if self.en_extracted is None or self.pl_extracted is None:
+            logging.info(f"{self.log_identifier}:")
+            logging.error("Unable to proceed due to missing 'en' or 'pl' data.")
             return False
         return True
 
-    def _apply_regex_translations(self, pl_path_basename):
+    def _apply_regex_translations(self):
         """Apply regex translations to all records"""
         for key, value in tqdm(self.pl_extracted.items(), 
-                             desc=f"Regex-translating {pl_path_basename}"):
-            self.pl_extracted[key] = self._auto_pretranslate(self.pl_extracted[key])
+                             desc=f"Regex-translating {self.log_identifier}"):
+            self.pl_extracted[key] = self._auto_pretranslate(self.pl_extracted[key], key)
 
-    def _has_changes(self):
+    def _has_any_changes(self):
         """Check if any changes were made during processing"""
         return any([
             self.new_keys,
             self.removed_keys,
             self.renamed_keys,
             self.updated_eng_keys,
-            self.outdated_keys
+            self.outdated_keys,
+            self.review_needed_keys,
+            self.rudimentary_translations_updated,
+        ])
+    
+    def _has_notable_changes(self):
+        """Check for changes that need manual review"""
+        return any([
+            self.outdated_keys,
+            self.review_needed_keys,
         ])
 
-    def _log_changes(self, pl_path_basename):
+    def _log_changes(self):
         """Log all changes if verbose or if there are outdated keys"""
-        if not (self.verbose or self.outdated_keys):
+        has_changes = self._has_any_changes() if self.verbose else self._has_notable_changes()
+        if not has_changes:
             return
 
         # Log the processed file name
-        logging.info(f"{pl_path_basename}:")
+        logging.info(f"{self.log_identifier}:")
         
-        change_logs = [
-            ("Added keys", self.new_keys),
-            ("Deleted keys", self.removed_keys),
-            ("Updated english keys", self.updated_eng_keys),
-            ("Rudimentary translations updated", self.rudimentary_translations_updated)
-        ]
-
-        # Log simple changes if verbose
         if self.verbose:
+            change_logs = [
+                ("Added keys", self.new_keys),
+                ("Deleted keys", self.removed_keys),
+                ("Updated english keys", self.updated_eng_keys),
+                ("Rudimentary translations updated", self.rudimentary_translations_updated)
+            ]
+
             for description, items in change_logs:
                 if items:
                     logging.info(f"  {description}: {len(items)}")
@@ -526,6 +568,12 @@ class LocalizationUpdater:
             logging.info(f"  Outdated records: {len(self.outdated_keys)}")
             for key, diff in self.outdated_keys:
                 logging.info(f"    Key: {key}\n    Diff:\n{diff}\n")
+        
+        # Always log keys needing review
+        if self.review_needed_keys:
+            logging.info(f"  Keys in need of review (existed in PL, new/changed in EN, but missing from old EN baseline): {len(self.review_needed_keys)}")
+            for key in self.review_needed_keys:
+                logging.info(f"    Key: {key}\n")
 
         # Validate and log results
         self._validate_and_log_results()
@@ -539,32 +587,32 @@ class LocalizationUpdater:
             logging.error("Validation failed, the keys in English and Polish files do not match.")
         else:
             logging.info("Validation successful, all keys match.")
+        logging.info("\n")
 
     def _sort_and_save_translations(self):
         """Sort translations according to template and save to file"""
         # Sort the dictionary according to template
-        # ordered_pl = {
-        #     key: self.pl_extracted.get(key, None)
-        #     for key in self.en_extracted.keys()
-        # }
+        ordered_pl = {
+            key: self.pl_extracted.get(key, None)
+            for key in self.en_extracted.keys()
+        }
         
-        # self.pl_extracted = ordered_pl
+        self.pl_extracted = ordered_pl
 
-        # Save the final result
+        # Save the final result for Polish file
         self._save_file_to_directory(
             self.pl_path,
             self._rebuild_nested_json(self.pl_extracted)
         )
-        
-        ordered_en = {
-            key: self.en_extracted.get(key)
-            for key in self.pl_extracted.keys()
-        }
-        
-        self.en_extracted = ordered_en
 
-        # Save the final result
+        # Also save the English source file to ensure consistent formatting
         self._save_file_to_directory(
-            self.en_path,
+            self.en_path, # Save back to the source English path
+            self._rebuild_nested_json(self.en_extracted)
+        )
+
+        # Update old files to latest
+        self._save_file_to_directory(
+            self.en_old_path, # Save back to the source English path
             self._rebuild_nested_json(self.en_extracted)
         )

@@ -1,0 +1,13 @@
+Die rolls:
+([0-9]*)(d)([0-9]+)
+$1k$3
+
+Die rolls not in formulas:
+(?<!\[[^\]]*)([0-9]*)(d)([0-9]+)(?![^\[]*\])
+$1k$3
+
+// Zaklęcia
+@UUID\[Compendium\.pf2e\.spells-srd\.Item\.([a-zA-Z0-9]*)\]\{([a-zA-Z0-9 \p{L}]*)\}
+
+// References
+((: "|\{)(Efekt: |Efekt Zaklęcia: |Postawa: |Aura: )?)Refocus("|\}| \()

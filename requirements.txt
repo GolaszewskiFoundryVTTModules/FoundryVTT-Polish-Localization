@@ -1,0 +1,10 @@
+# Python dependencies for localization tools
+
+# For terminal colors and formatting
+colorama>=0.4.6
+
+# For advanced regex support
+regex>=2023.0.0
+
+# For progress bars
+tqdm>=4.66.0
