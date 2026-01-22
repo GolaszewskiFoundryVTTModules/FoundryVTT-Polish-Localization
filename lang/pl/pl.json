@@ -90,7 +90,7 @@
     "Unknown": "Nieznane",
     "Update": "Aktualizuj",
     "URL": "Link",
-    "Vision": "Wizja",
+    "Vision": "Widzenie",
     "Warning": "Ostrzeżenie",
     "Warnings": "Ostrzeżenia",
     "Width": "Szerokość",
@@ -173,8 +173,8 @@
                 "label": "Kąt Rotacji"
             },
             "vision": {
-                "label": "Zapewnia Wizję",
-                "hint": "Źródło światła z tą opcją służy za dodatkowe źródło wizji dla Żetonów. Aktywuj ją aby sprawić, że Żetony zawsze będą widziały objęty nim obszar, nawet jeśli znajduje się on za ścianą lub poza stożkiem wzroku Żetonu."
+                "label": "Zapewnia Widzenie",
+                "hint": "Źródło światła z tą opcją służy za dodatkowe źródło widzenia dla Żetonów. Aktywuj ją aby sprawić, że Żetony zawsze będą widziały objęty nim obszar, nawet jeśli znajduje się on za ścianą lub poza stożkiem wzroku Żetonu."
             },
             "walls": {
                 "label": "Ograniczane Przez Ściany",
@@ -1653,7 +1653,7 @@
             },
             "negative": {
                 "label": "Jest Źródłem Ciemności",
-                "hint": "Źródło ciemności blokuje światła oraz wizję oraz tłumi światła lub źródła wizji znajdujące się w jego obszarze."
+                "hint": "Źródło ciemności blokuje światła oraz widzenie oraz tłumi światła lub źródła widzenia znajdujące się w jego obszarze."
             },
             "priority": {
                 "label": "Priorytet",
@@ -2073,8 +2073,8 @@
                 "hint": "Ilość dodatkowego odstępu od tła Sceny, zapewniająca dodatkową przestrzeń Płótna."
             },
             "tokenVision": {
-                "label": "Wzrok Żetonów",
-                "hint": "Ogranicz widoczność sceny w oparciu o wspólną wizję wszystkich kontrolowanych Żetonów. Jeśli dezaktywowane, widoczna jest cała Scena."
+                "label": "Widzenie Żetonów",
+                "hint": "Ogranicz widoczność sceny w oparciu o wspólne widzenie wszystkich kontrolowanych Żetonów. Jeśli dezaktywowane, widoczna jest cała Scena."
             },
             "fog": {
                 "exploration": {
@@ -2169,7 +2169,7 @@
             "SHEET": {
                 "basics": "Podstawy",
                 "grid": "Siatka",
-                "lighting": "Wizja i Oświetlenie",
+                "lighting": "Widzenie i Oświetlenie",
                 "ambience": "Środowisko i Atmosfera"
             },
             "AMBIENCE": {
@@ -2301,7 +2301,7 @@
         "ShowToolclipsH": "Określa czy Klipy Narzędzi powinny się pojawiać po najechaniu na ikony narzędzi na pasku bocznym.",
         "None": "Brak",
         "AnimVisionN": "Animuj Wzroku Żetonu",
-        "AnimVisionL": "Animuj wizję Żetonu i zmiany światła w trakcie ruchu Żetonu. Wyłączenie tej opcji może poprawić wydajność na słabszych maszynach.",
+        "AnimVisionL": "Animuj wzrok Żetonu i zmiany światła w trakcie ruchu Żetonu. Wyłączenie tej opcji może poprawić wydajność na słabszych maszynach.",
         "AnimLightN": "Animuj Źródła Światła",
         "AnimLightL": "Zezwól na animacje źródeł światła. Wyłączenie tej opcji może poprawić wydajność na słabszych maszynach.",
         "FPSMeterN": "Pokaż Licznik FPS",
@@ -2345,8 +2345,8 @@
         "TabSystem": "Ustawienia Systemu",
         "TokenAutoRotateN": "Automatyczna Rotacja Żetonów",
         "TokenAutoRotateL": "Gdy włączone, Żetony są domyślnie automatycznie obracane w kierunku ruchu. Niezależnie od tego ustawienia, ustawienie Blokady Obrotu na poszczególnych żetonach nadal uniemożliwi wizualne obracanie ich grafiki.",
-        "TokenDragPreviewN": "Wzrok Żetonu Przy Przemieszczaniu",
-        "TokenDragPreviewL": "Przy włączeniu, podgląd wzroku i światła Żetonu jest generowany w czasie rzeczywistym podczas przeciągania myszą. Domyślnie wyłączone, jako że może prowokować niepożądane meta-rozumowanie u graczy.",
+        "TokenDragPreviewN": "Widzenie Żetonu Przy Przemieszczaniu",
+        "TokenDragPreviewL": "Przy włączeniu, podgląd widzenia i światła Żetonu jest generowany w czasie rzeczywistym podczas przeciągania myszą. Domyślnie wyłączone, jako że może prowokować niepożądane meta-rozumowanie u graczy.",
         "PrototypeTokenOverrides": {
             "Name": "Nadpisania Prototypu Żetonu",
             "Label": "Konfiguruj Nadpisania Prototypu",
@@ -3635,9 +3635,9 @@
         "ScaleHint": "Dopasuj skalę obrazu w osi X i Y. Obraz może wypływać poza granice pola. Wartości ujemne odbiją obraz lustrzane.",
         "OcclusionModeNone": "Brak (Zawsze Widoczne)",
         "OcclusionModeFade": "Zanikanie (Całe Pole)",
-        "OcclusionModeRoof": "Sklepienie (Blokuje Wizję i Światło)",
+        "OcclusionModeRoof": "Sklepienie (Blokuje Widzenie i Światło)",
         "OcclusionModeRadial": "Promieniste (Wokół Żetonu)",
-        "OcclusionModeVision": "Wizja (Pole Widzenia Żetonu)",
+        "OcclusionModeVision": "Widzenie (Pole Widzenia Żetonu)",
         "VideoOptions": "Opcje Wideo",
         "ACTIONS": {
             "CREATE": "Stwórz Pole",
@@ -3760,7 +3760,7 @@
         "TABS": {
             "identity": "Tożsamość",
             "appearance": "Wygląd",
-            "vision": "Wizja",
+            "vision": "Widzenie",
             "light": "Światło",
             "resources": "Zasoby"
         },
@@ -3867,39 +3867,39 @@
             },
             "sight": {
                 "enabled": {
-                    "label": "Wizja Włączona",
+                    "label": "Widzenie Włączone",
                     "hint": "Pozwala Żetonowi na widzenie oświetlonych przestrzeni w jego linii wzroku."
                 },
                 "range": {
-                    "label": "Zasięg Wizji",
+                    "label": "Zasięg Widzenia",
                     "hint": "Dystans, na który Żeton może widzieć bez żadnego światła."
                 },
                 "angle": {
                     "label": "Kąt Widzenia",
-                    "hint": "Kąt stożka wizji żetonu (domyślnie 360 stopni)"
+                    "hint": "Kąt stożka widzenia żetonu (domyślnie 360 stopni)"
                 },
                 "visionMode": {
-                    "label": "Tryb Wizji",
-                    "hint": "Stosuje efekty wizualne do wizji żetonu aby odzwierciedlić specjalny zmysły (domyślnie Podstawowa Wizja)."
+                    "label": "Tryb Widzenia",
+                    "hint": "Stosuje efekty wizualne do widzenia żetonu aby odzwierciedlić specjalny zmysły (domyślnie Podstawowe Widzenie)."
                 },
                 "color": {
-                    "label": "Kolor Wizji"
+                    "label": "Kolor Widzenia"
                 },
                 "attenuation": {
                     "label": "Tłumienie",
-                    "hint": "Dopasuj siłę osłabienia źródła wizji żetonu (domyślnie 0)."
+                    "hint": "Dopasuj siłę osłabienia źródła widzenia żetonu (domyślnie 0)."
                 },
                 "brightness": {
-                    "label": "Jasność Wizji",
-                    "hint": "Dostosuj jasność tego źródła wizji. Im większa jasność tym lepiej postać widzi w ciemności (domyślnie 0)."
+                    "label": "Jasność Widzenia",
+                    "hint": "Dostosuj jasność tego źródła widzenia. Im większa jasność tym lepiej postać widzi w ciemności (domyślnie 0)."
                 },
                 "saturation": {
                     "label": "Nasycenie",
-                    "hint": "Dostosuj nasycenie tła, znajdującego się w zasięgu wizji Żetonu (domyślnie 0)."
+                    "hint": "Dostosuj nasycenie tła, znajdującego się w zasięgu widzenia Żetonu (domyślnie 0)."
                 },
                 "contrast": {
                     "label": "Kontrast",
-                    "hint": "Dostosuj kontrast tła, znajdującego się w zasięgu wizji Żetonu (domyślnie 0)."
+                    "hint": "Dostosuj kontrast tła, znajdującego się w zasięgu widzenia Żetonu (domyślnie 0)."
                 }
             },
             "turnMarker": {
@@ -4284,7 +4284,7 @@
     },
     "VISION": {
         "ModeBlindness": "Ślepota",
-        "ModeBasicVision": "Podstawowa Wizja",
+        "ModeBasicVision": "Podstawowe Widzenie",
         "ModeDetectInvisibility": "Wykrywanie Niewidzialności",
         "ModeDarkvision": "Widzenie w Ciemności",
         "ModeMonochromatic": "Monochromatyczna",
