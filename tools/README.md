@@ -16,13 +16,17 @@ Zaawansowany system Python do automatycznej aktualizacji tłumaczeń.
 ### Użycie:
 
 ```bash
-# Pobierz źródła i zaktualizuj tłumaczenia
+# Pobierz źródła z serwera
+npm run download
+
+# Zaktualizuj tłumaczenia na podstawie pobranych źródeł
 npm run update
 
-# Lub bezpośrednio:
-python tools/LocalizationUpdater/update_localization.py --UpdateSourceData
-
 # Wymusz ponowne tłumaczenie przez regex
+npm run translate
+
+# Lub bezpośrednio Python:
+python tools/LocalizationUpdater/update_localization.py --UpdateSourceData
 python tools/LocalizationUpdater/update_localization.py --PerformRegexTranslate
 
 # Tryb verbose (szczegółowe logi)

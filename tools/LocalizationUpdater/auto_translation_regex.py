@@ -2,10 +2,10 @@ import regex
 
 # Basic formatting and typography for Foundry VTT
 formatting_patterns = [
-    (r' [—-](\d+)', r' –\1'),
+    (r' [—\-](\d+)', r' –\1'),  # Match em-dash or hyphen before numbers
     (r'(\S)—(\S)', r'\1 — \2'),
-    (r'([„""])', r'"'),
-    (r'([''])', r"'"),
+    (r'„|"|"', r'"'),  # Polish/German quotes to standard
+    (r"'|'", r"'"),   # Curly apostrophes to standard
     (r'>\n<', r'><'),
     (r'…', r'...'),
 ]

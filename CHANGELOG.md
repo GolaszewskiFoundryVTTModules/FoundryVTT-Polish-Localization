@@ -10,13 +10,10 @@
   - Szczegółowe logi ze zmianami
 
 - **Nowe narzędzia CLI:**
-  - `npm run update` - pobiera źródła i automatycznie aktualizuje tłumaczenia
-  - `npm run translate` - wymusza ponowne tłumaczenie przez regex
-
-- **System Budowania:**
-  - `npm run build` - buduje moduł z walidacją JSON
   - `npm run download` - pobiera źródłowe pliki z serwera SFTP
-  - Inteligentna synchronizacja z serwerem (uploaduje tylko zmienione pliki)
+  - `npm run update` - aktualizuje tłumaczenia na podstawie pobranych źródeł
+  - `npm run translate` - wymusza ponowne tłumaczenie przez regex
+  - `npm run build` - buduje moduł z walidacją JSON i inteligentną synchronizacją z serwerem
 
 - **Dokumentacja:**
   - QUICKSTART.md - szybki przewodnik
